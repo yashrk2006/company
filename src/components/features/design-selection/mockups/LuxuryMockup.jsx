@@ -310,9 +310,9 @@ const LuxuryMockup = ({ theme }) => {
                   <p className="text-[10px] font-light uppercase tracking-[1.5em] opacity-40">Private Consultations // MMXXVI Protocols In Force</p>
                   <p className="text-xs font-light text-white/20 italic tracking-[0.5em]">Direct Link: +1 800 ZORVIA PRESTIGE</p>
                </div>
-            </div>
+            </motion.div>
          </div>
-      </motion.div>
+      </section>
 
       {/* 8. Global Presence Footer */}
       <footer className="p-12 md:p-48 bg-black border-t-8 border-black flex flex-col gap-48 relative z-10 overflow-hidden">
