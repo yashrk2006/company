@@ -1,8 +1,8 @@
 import emailjs from '@emailjs/browser';
 
 /**
- * Zorvia Intelligence: Unified Email OTP Synchronization Service
- * Bypassing Supabase natively using EmailJS for guaranteed delivery
+ * Zorvia: Email Verification Service
+ * Using EmailJS for reliable delivery
  */
 
 let verificationStore = {
@@ -51,7 +51,7 @@ export const otpService = {
       return { data: { success: true }, error: null };
     } catch (error) {
       console.error("EmailJS Error:", error);
-      return { data: null, error: { message: "Failed to dispatch verification code via EmailJS." } };
+      return { data: null, error: { message: "Failed to send verification code." } };
     }
   },
 
@@ -76,6 +76,6 @@ export const otpService = {
       return { data: null, error: { message: "Verification code has expired." } };
     }
 
-    return { data: null, error: { message: "INVALID AUTHENTICATION TOKEN." } };
+    return { data: null, error: { message: "Invalid verification code." } };
   }
 };

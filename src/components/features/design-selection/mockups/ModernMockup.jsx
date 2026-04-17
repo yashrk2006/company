@@ -1,155 +1,243 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Activity, BarChart3, Globe, Zap, Users, ShieldCheck, ChevronRight, Bell, Search } from 'lucide-react';
+import { Sparkles, Activity, BarChart3, Globe, Zap, Users, ShieldCheck, ChevronRight, Bell, Search, CheckCircle2, ArrowRight } from 'lucide-react';
+import { GithubIcon, TwitterIcon, LinkedinIcon } from '../../../ui/Icons';
 
 const ModernMockup = ({ theme }) => {
   const primary = theme.styles.primary || '#3b82f6';
   
   return (
-    <div className="min-h-screen relative overflow-hidden bg-slate-50 font-sans selection:bg-primary/20">
+    <div className="min-h-fit relative overflow-x-hidden bg-slate-50 font-sans selection:bg-primary/20 pb-4">
       {/* 1. Subtle Background Gradients */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="fixed inset-0 pointer-events-none z-0">
          <div className="absolute top-0 right-0 w-[60%] h-[60%] bg-primary/5 rounded-full blur-[120px]" />
          <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-indigo-500/5 rounded-full blur-[120px]" />
       </div>
 
       {/* 2. SaaS Header */}
-      <nav className="relative z-10 px-6 md:px-10 py-3 md:py-5 bg-white/80 backdrop-blur-md border-b border-slate-200 flex justify-between items-center">
-         <div className="flex items-center gap-10">
+      <nav className="sticky top-0 z-[100] px-6 md:px-12 py-4 bg-white/80 backdrop-blur-md border-b border-slate-200 flex justify-between items-center">
+         <div className="flex items-center gap-12">
             <div className="flex items-center gap-2">
-               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white shadow-lg">
-                  <Zap size={18} fill="currentColor" />
+               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                  <Zap size={20} fill="currentColor" />
                </div>
-               <span className="font-black text-xl tracking-tight text-slate-900 uppercase">ZORVIA.X</span>
+               <span className="font-black text-2xl tracking-tighter text-slate-900 uppercase">ZORVIA.X</span>
             </div>
-            <div className="hidden lg:flex gap-8 text-sm font-semibold text-slate-500">
-               {['Dashboard', 'Systems', 'Inquiries', 'Security'].map(item => (
-                 <a key={item} href="#" className="hover:text-primary transition-colors">{item}</a>
+            <div className="hidden lg:flex gap-10 text-sm font-bold text-slate-500">
+               {['Platform', 'Solutions', 'Enterprise', 'Security', 'Company'].map(item => (
+                 <a key={item} href="#" className="hover:text-primary transition-colors flex items-center gap-1">
+                    {item}
+                    {item === 'Solutions' && <ChevronRight size={12} className="rotate-90" />}
+                 </a>
                ))}
             </div>
          </div>
-          <div className="flex items-center gap-4 md:gap-6">
-            <Search className="text-slate-400 hidden sm:block" size={20} />
-            <Bell className="text-slate-400" size={20} />
-            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-100 border-2 border-white shadow-sm overflow-hidden flex items-center justify-center text-slate-400">
-               <Users size={18} />
+          <div className="flex items-center gap-6">
+            <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-400 border border-slate-200 focus-within:bg-white focus-within:border-primary/50 transition-all">
+               <Search size={16} />
+               <input className="bg-transparent border-none outline-none text-xs w-32 font-medium text-slate-900" placeholder="Search..." />
             </div>
+            <button className="px-6 py-2.5 bg-slate-900 text-white font-bold rounded-xl text-sm hover:bg-primary transition-all shadow-lg shadow-slate-900/10">Get Started</button>
           </div>
       </nav>
 
-      {/* 3. Dashboard Interface */}
-       <main className="relative z-10 p-6 md:p-10 lg:p-16 grid grid-cols-12 gap-6 md:gap-10">
-         {/* Hero / Hero Metrics */}
-         <div className="col-span-12 lg:col-span-8 space-y-10">
-            <div className="bg-white p-12 rounded-[2rem] border border-slate-200 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-4 md:p-8">
-                   <Sparkles size={80} className="text-primary/5 group-hover:text-primary/10 transition-colors" />
-                </div>
-               
-               <div className="relative z-10">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 rounded-full text-primary text-xs font-bold uppercase tracking-widest mb-8"
-                  >
-                     <Activity size={12} className="animate-pulse" />
-                     Live System Monitoring Active
-                  </motion.div>
+      {/* 3. Hero Section */}
+      <section className="relative z-10 px-6 md:px-16 pt-24 pb-4 max-w-7xl mx-auto flex flex-col items-center text-center">
+         <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-[10px] font-black uppercase tracking-widest mb-10 border border-primary/20 shadow-sm"
+         >
+            <Sparkles size={14} className="animate-pulse" />
+            v4.0 Update: Unified Intelligence Engine
+         </motion.div>
 
-                   <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-slate-900 tracking-tighter leading-tight mb-6">
-                     Exponential growth <br />
-                     delivered with <span className="text-primary drop-shadow-sm">precision.</span>
-                   </h2>
+         <h1 className="text-5xl md:text-8xl lg:text-9xl font-black text-slate-900 tracking-tighter leading-[0.9] mb-10">
+            Scale your vision <br />
+            with <span className="text-primary italic">global</span> precision.
+         </h1>
 
-                  <p className="text-xl text-slate-500 font-medium max-w-xl mb-12 leading-relaxed">
-                    Scale your enterprise architecture with high-performance digital solutions, automated workflows, and global security.
-                  </p>
+         <p className="text-xl md:text-2xl text-slate-500 font-medium max-w-3xl mb-16 leading-relaxed">
+            The next-generation digital ecosystem for enterprise growth. Automate workflows, secure architectures, and deliver excellence at scale.
+         </p>
 
-                   <div className="flex flex-col sm:flex-row gap-4">
-                      <button className="px-6 md:px-10 py-3 md:py-5 bg-primary text-white font-black rounded-2xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform flex items-center justify-center gap-3 group">
-                         Deploy Architecture
-                         <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                      </button>
-                      <button className="px-6 md:px-10 py-3 md:py-5 bg-white border border-slate-200 text-slate-900 font-black rounded-2xl hover:bg-slate-50 transition-colors">
-                         View Reports
-                      </button>
-                   </div>
+         <div className="flex flex-col sm:flex-row gap-6">
+            <button className="px-12 py-5 bg-primary text-white font-black rounded-2xl shadow-2xl shadow-primary/30 hover:scale-105 transition-transform flex items-center justify-center gap-4 text-lg">
+               Launch Dashboard
+               <ArrowRight size={22} strokeWidth={3} />
+            </button>
+            <button className="px-12 py-5 bg-white border border-slate-200 text-slate-900 font-black rounded-2xl hover:bg-slate-50 transition-colors shadow-sm text-lg">
+               Watch Demo
+            </button>
+         </div>
+
+         {/* Hero Dashboard Preview */}
+         <motion.div 
+           initial={{ opacity: 0, y: 40 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ delay: 0.3 }}
+           className="mt-32 w-full aspect-[16/9] bg-white rounded-[3rem] border border-slate-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] p-4 md:p-8"
+         >
+            <div className="w-full h-full bg-slate-50 rounded-[2rem] border border-slate-100 flex flex-col overflow-hidden">
+               <div className="p-6 border-b border-slate-200 flex justify-between items-center bg-white/50">
+                  <div className="flex gap-2">
+                     <div className="w-3 h-3 rounded-full bg-slate-200" />
+                     <div className="w-3 h-3 rounded-full bg-slate-200" />
+                     <div className="w-3 h-3 rounded-full bg-slate-200" />
+                  </div>
+                  <div className="flex gap-4">
+                     <div className="w-32 h-6 bg-slate-200 rounded-full" />
+                     <div className="w-10 h-6 bg-slate-200 rounded-full" />
+                  </div>
+               </div>
+               <div className="flex-1 p-8 grid grid-cols-12 gap-8">
+                  <div className="col-span-12 lg:col-span-8 flex flex-col gap-8">
+                     <div className="w-full h-48 bg-white border border-slate-200 rounded-3xl" />
+                     <div className="grid grid-cols-2 gap-8">
+                        <div className="h-32 bg-white border border-slate-200 rounded-3xl" />
+                        <div className="h-32 bg-white border border-slate-200 rounded-3xl" />
+                     </div>
+                  </div>
+                  <div className="col-span-12 lg:col-span-4 space-y-8">
+                     <div className="w-full h-full bg-white border border-slate-200 rounded-3xl" />
+                  </div>
                </div>
             </div>
+         </motion.div>
+      </section>
 
-            {/* Bottom Metrics Grid */}
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">
-               <div className="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col justify-between">
-                  <div className="flex justify-between items-start mb-6">
-                     <div className="p-3 bg-indigo-50 rounded-2xl text-indigo-500">
-                        <BarChart3 size={24} />
-                     </div>
-                     <span className="text-xs font-bold text-green-500">+12.5%</span>
+      {/* 4. Strategic Features */}
+      <section className="relative z-10 py-48 bg-white border-y border-slate-200">
+         <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+            {[
+              { title: "Global Intelligence", icon: Globe, desc: "Deploy resilient nodes across 40+ regions with optimized latency and high-tier security protocols." },
+              { title: "Unified Analytics", icon: BarChart3, desc: "Consolidate all enterprise data streams into a single source of truth for real-time decision making." },
+              { title: "Zero-Trust Security", icon: ShieldCheck, desc: "Military-grade encryption and automated threat detection for every byte within your ecosystem." },
+              { title: "Pulse Workflows", icon: Activity, desc: "High-frequency event processing that keeps your business running at the speed of thought." },
+              { title: "Elastic Scaling", icon: Zap, desc: "Automatically adapt your infrastructure to meet demand surges without a millisecond of downtime." },
+              { title: "User Cohesion", icon: Users, desc: "Collaborative tools designed to foster alignment and productivity across global teams." }
+            ].map((f, i) => (
+               <div key={i} className="group p-10 rounded-[2.5rem] hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100">
+                  <div className="w-16 h-16 rounded-2xl bg-slate-100 text-slate-400 group-hover:bg-primary group-hover:text-white transition-all flex items-center justify-center mb-8 shadow-sm">
+                     <f.icon size={32} />
                   </div>
-                  <div>
-                      <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Compute Efficiency</div>
-                      <div className="text-3xl md:text-4xl font-black text-slate-900 tabular-nums">99.98%</div>
+                  <h3 className="text-2xl font-black text-slate-900 mb-4">{f.title}</h3>
+                  <p className="text-slate-500 font-medium leading-relaxed">{f.desc}</p>
+               </div>
+            ))}
+         </div>
+      </section>
+
+      {/* 5. Metrics & Impact */}
+      <section className="py-48 px-6 md:px-16 max-w-7xl mx-auto flex flex-col items-center">
+         <div className="text-center space-y-6 mb-32">
+            <span className="text-xs font-black uppercase tracking-[0.4em] text-primary">Live Performance Metrics</span>
+            <h2 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter">Impact at scale.</h2>
+         </div>
+
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 w-full">
+            {[
+              { label: "Uptime Reliability", val: "99.998%", suffix: "Global Avg" },
+              { label: "Deployment Speed", val: "< 0.4s", suffix: "Instant Edge" },
+              { label: "Data Processed", val: "1.2 PB", suffix: "Weekly Throughput" }
+            ].map((m, i) => (
+               <div key={i} className="text-center p-12 bg-white rounded-[3rem] border border-slate-200 shadow-sm relative overflow-hidden group">
+                  <div className="absolute top-0 inset-x-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                  <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">{m.label}</div>
+                  <div className="text-6xl md:text-7xl font-black text-slate-900 tabular-nums mb-4">{m.val}</div>
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">{m.suffix}</div>
+               </div>
+            ))}
+         </div>
+      </section>
+
+      {/* 6. Pricing Plans */}
+      <section className="py-48 bg-slate-100 border-y border-slate-200">
+         <div className="max-w-7xl mx-auto px-6 md:px-16 flex flex-col items-center">
+             <div className="text-center mb-24 space-y-6">
+               <h2 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter">Strategic plans.</h2>
+               <p className="text-xl text-slate-500 font-medium">Choose the architecture that matches your ambition.</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full">
+               <div className="bg-white p-16 rounded-[4rem] border border-slate-200 shadow-sm space-y-12 group hover:-translate-y-2 transition-transform">
+                  <div className="space-y-6">
+                     <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Team Edition</span>
+                     <div className="text-8xl font-black text-slate-900 tracking-tighter leading-none">$490<span className="text-sm opacity-30 ml-4 font-bold uppercase tracking-widest mt-auto">/mo</span></div>
                   </div>
+                  <ul className="space-y-6 pt-10 border-t border-slate-100">
+                     {['Standard Cloud Access', '5 Regional Nodes', 'Basic Security Protocols', 'Daily System Audits'].map(feat => (
+                        <li key={feat} className="flex items-center gap-4 text-slate-500 font-semibold group-hover:text-slate-900 transition-colors">
+                           <CheckCircle2 size={24} className="text-primary opacity-40 group-hover:opacity-100" />
+                           {feat}
+                        </li>
+                     ))}
+                  </ul>
+                  <button className="w-full py-8 bg-slate-100 text-slate-900 font-black uppercase text-sm tracking-widest rounded-3xl hover:bg-slate-900 hover:text-white transition-all shadow-md">Deploy Standard</button>
                </div>
 
-               <div className="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col justify-between">
-                  <div className="flex justify-between items-start mb-6">
-                     <div className="p-3 bg-emerald-50 rounded-2xl text-emerald-500">
-                        <ShieldCheck size={24} />
-                     </div>
-                     <span className="text-xs font-bold text-slate-400">Secured</span>
+               <div className="bg-primary p-16 rounded-[4rem] text-white shadow-2xl shadow-primary/30 space-y-12 relative overflow-hidden group hover:-translate-y-2 transition-transform">
+                  <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:scale-110 transition-transform">
+                     <Zap size={200} fill="currentColor" />
                   </div>
-                  <div>
-                      <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Active Protocols</div>
-                      <div className="text-3xl md:text-4xl font-black text-slate-900 tabular-nums">482</div>
+                  <div className="space-y-6 relative z-10">
+                     <span className="text-[10px] font-black uppercase tracking-widest opacity-60 italic">Enterprise Max</span>
+                     <div className="text-8xl font-black tracking-tighter leading-none">$2.4k<span className="text-sm opacity-40 ml-4 font-black uppercase tracking-widest">/mo</span></div>
                   </div>
+                  <ul className="space-y-6 pt-10 border-t border-white/10 relative z-10">
+                     {['Full System Architecture', 'Global Node Cluster', 'Elite Security Vault', 'Real-time Neural Audits', 'VIP Support Node'].map(feat => (
+                        <li key={feat} className="flex items-center gap-4 font-bold opacity-80 group-hover:opacity-100 transition-opacity">
+                           <CheckCircle2 size={24} className="text-white" fill="white" fillOpacity={0.2} />
+                           {feat}
+                        </li>
+                     ))}
+                  </ul>
+                  <button className="w-full py-8 bg-white text-primary font-black uppercase text-sm tracking-widest rounded-3xl hover:scale-105 transition-transform shadow-2xl shadow-white/10 relative z-10">Initialize Enterprise</button>
                </div>
             </div>
          </div>
+      </section>
 
-         {/* Sidebar Widget Area */}
-         <div className="col-span-12 lg:col-span-4 space-y-10">
-            <div className="bg-white p-10 rounded-[2rem] border border-slate-200 shadow-sm">
-               <h3 className="text-xl font-black text-slate-900 mb-8 border-b border-slate-100 pb-4">Global Network</h3>
-               <div className="space-y-6">
-                  {[
-                    { country: 'North America', code: 'USA/CAN', status: 'Optimal' },
-                    { country: 'European Union', code: 'FRA/DEU', status: 'Optimal' },
-                    { country: 'Asia Pacific', code: 'IND/SGP', status: 'Maintenance' },
-                  ].map((region, i) => (
-                    <div key={i} className="flex justify-between items-center group cursor-pointer hover:bg-slate-50 p-2 rounded-xl transition-all">
-                       <div className="flex items-center gap-4">
-                          <Globe size={18} className="text-slate-400" />
-                          <div>
-                             <div className="text-sm font-bold text-slate-900">{region.country}</div>
-                             <div className="text-[10px] uppercase font-black tracking-widest text-slate-400">{region.code}</div>
-                          </div>
-                       </div>
-                       <div className={`px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-[0.2em] ${region.status === 'Optimal' ? 'bg-green-50 text-green-500' : 'bg-amber-50 text-amber-500'}`}>
-                          {region.status}
-                       </div>
-                    </div>
-                  ))}
-               </div>
+      {/* 7. SaaS Footer */}
+      <footer className="relative z-10 p-12 md:p-32 bg-white flex flex-col items-center text-center gap-24">
+         <div className="flex flex-col items-center gap-8 group">
+            <div className="w-20 h-20 bg-primary rounded-3xl flex items-center justify-center text-white shadow-2xl shadow-primary/20 group-hover:rotate-12 transition-transform">
+               <Zap size={40} fill="currentColor" />
             </div>
-
-            <div className="bg-primary p-10 rounded-[2rem] text-white shadow-xl shadow-primary/20 relative overflow-hidden group">
-               <div className="absolute -bottom-10 -right-10 opacity-20 rotate-12 group-hover:rotate-0 transition-transform">
-                  <Zap size={200} fill="currentColor" />
-               </div>
-               <div className="relative z-10">
-                  <h4 className="text-2xl font-black tracking-tight mb-4">Enterprise Plus</h4>
-                  <p className="text-sm opacity-80 mb-8 font-medium">Unlock full strategic architecture and global scaling protocols.</p>
-                  <button className="w-full py-4 bg-white text-primary font-black rounded-xl text-xs uppercase tracking-widest shadow-lg">
-                     Upgrade Plan
-                  </button>
-               </div>
+            <div className="space-y-4">
+               <h4 className="text-4xl font-black text-slate-900 tracking-tighter uppercase">Zorvia.X</h4>
+               <p className="text-xs font-black tracking-[0.8em] text-slate-300 italic uppercase">Enterprise Innovation Engine // MMXXVI</p>
             </div>
          </div>
-      </main>
+
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-24 flex-wrap max-w-5xl w-full text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">
+            {['Platform', 'Solutions', 'Security', 'Company', 'Archives', 'API', 'Docs', 'Support'].map(item => (
+                <a key={item} href="#" className="hover:text-primary transition-colors">{item}</a>
+            ))}
+         </div>
+
+         <div className="flex gap-10 pt-20 border-t border-slate-100 w-full max-w-4xl justify-center">
+            {[GithubIcon, TwitterIcon, LinkedinIcon].map((Icon, i) => (
+               <a key={i} href="#" className="w-14 h-14 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
+                  <Icon size={20} strokeWidth={2.5} />
+               </a>
+            ))}
+         </div>
+
+         <div className="flex flex-col md:flex-row justify-between w-full max-w-7xl pt-10 text-[10px] font-bold text-slate-300 gap-8">
+            <div className="flex gap-8 uppercase tracking-widest">
+               <span>© 2026 ZORVIA SYSTEMS</span>
+               <a href="#" className="hover:text-slate-900 transition-colors">Privacy Policy</a>
+               <a href="#" className="hover:text-slate-900 transition-colors">Terms of Work</a>
+            </div>
+            <div className="flex gap-8 uppercase tracking-widest">
+               <span>Status: Nominal</span>
+               <span>Cluster: 0x48-Ind</span>
+            </div>
+         </div>
+      </footer>
     </div>
   );
 };
 
 export default ModernMockup;
-

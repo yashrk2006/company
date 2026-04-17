@@ -20,6 +20,30 @@ const DesignSelection = () => {
   const [searchTerm, setSearchTerm]   = useState('');
   const [previewDevice, setPreviewDevice] = useState('desktop');
   const [showFilters, setShowFilters] = useState(false);
+  const [measuredHeight, setMeasuredHeight] = useState(2000); // Default fallback
+  const contentRef = useRef(null);
+
+  // Measure content height dynamically to remove empty space
+  useEffect(() => {
+    if (!contentRef.current) return;
+
+    const updateHeight = () => {
+      if (contentRef.current) {
+        setMeasuredHeight(contentRef.current.scrollHeight);
+      }
+    };
+
+    // Initial measurement
+    updateHeight();
+
+    // Use ResizeObserver for real-time adjustments (e.g. content loads, images, etc)
+    const observer = new ResizeObserver(() => {
+      updateHeight();
+    });
+
+    observer.observe(contentRef.current);
+    return () => observer.disconnect();
+  }, [selectedThemeId, previewDevice]);
 
   // Scaling refs
   const previewWrapRef = useRef(null);
@@ -60,7 +84,7 @@ const DesignSelection = () => {
   };
 
   const naturalW  = NATURAL_WIDTHS[previewDevice];
-  const scaledH   = NATURAL_HEIGHT * scale;
+  const scaledH   = measuredHeight * scale;
 
   return (
     <div className="h-[100dvh] bg-background text-foreground flex flex-col font-sans overflow-hidden">
@@ -247,7 +271,10 @@ const DesignSelection = () => {
         </aside>
 
         {/* ── Preview Pane ── */}
-        <section className="flex-1 flex flex-col min-h-0 overflow-hidden bg-slate-50/40">
+        <section 
+          className="flex-1 flex flex-col min-h-0 overflow-hidden transition-colors duration-500"
+          style={{ backgroundColor: selectedTheme.styles.bg + '1A' }} // Sync main bg slightly with theme
+        >
 
           {/* Device toggle — very compact */}
           <div className="shrink-0 px-3 py-1 border-b border-slate-100 bg-white/70 flex items-center justify-end">
@@ -324,16 +351,22 @@ const DesignSelection = () => {
                   {/* ── Scaled mockup viewport ── */}
                   <div
                     ref={previewWrapRef}
-                    className="w-full bg-white overflow-y-auto overflow-x-hidden no-scrollbar"
-                    style={{ height: scaledH || 500 }}
+                    className="w-full overflow-hidden border-t border-slate-100 transition-colors duration-500"
+                    style={{ 
+                      height: scaledH || 'auto',
+                      backgroundColor: selectedTheme.styles.bg 
+                    }}
                   >
                     <div
+                      ref={contentRef}
                       style={{
                         width: naturalW,
-                        height: NATURAL_HEIGHT,
+                        height: 'auto',
+                        minHeight: '100%',
                         transform: `scale(${scale})`,
-                        transformOrigin: 'top center',
-                        margin: '0 auto'
+                        transformOrigin: 'top left',
+                        margin: 0,
+                        backgroundColor: selectedTheme.styles.bg
                       }}
                     >
                       <MockupRenderer theme={selectedTheme} />

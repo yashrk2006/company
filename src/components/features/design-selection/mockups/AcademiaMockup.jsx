@@ -1,142 +1,282 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, PenTool, Search, Archive, Bookmark, Scroll, Library } from 'lucide-react';
+import { 
+  BookOpen, PenTool, Search, Archive, Bookmark, Scroll, Library,
+  Globe, Heart, Star, Anchor, Navigation, Shield, Zap,
+  ChevronDown, ArrowUpRight, Check, Waves, Trees, Tent,
+  Feather, Compass, GraduationCap, Microscope, Coffee
+} from 'lucide-react';
+import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
 const AcademiaMockup = ({ theme }) => {
   return (
-    <div className="min-h-screen relative overflow-hidden bg-[#FDFBF7] text-[#2C241E] font-serif selection:bg-[#4A3728] selection:text-[#FDFBF7]">
+    <div className="min-h-fit relative overflow-x-hidden bg-[#FDFBF7] text-[#2C241E] font-serif selection:bg-[#4A3728] selection:text-[#FDFBF7] flex flex-col">
       {/* 1. Paper Texture Overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/old-map.png')] grayscale" />
-      <div className="absolute inset-0 pointer-events-none opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
+      <div className="fixed inset-0 pointer-events-none opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/old-map.png')] grayscale z-0" />
+      <div className="fixed inset-0 pointer-events-none opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] z-0" />
 
       {/* 2. Manuscript Borders */}
-      <div className="absolute inset-10 border border-[#2C241E]/10 pointer-events-none" />
-      <div className="absolute top-10 left-10 w-24 h-[1px] bg-[#2C241E]/30" />
-      <div className="absolute top-10 left-10 h-24 w-[1px] bg-[#2C241E]/30" />
+      <div className="fixed inset-6 border border-[#2C241E]/10 pointer-events-none z-50 transition-all group-hover:inset-4" />
+      <div className="fixed top-12 left-12 w-32 h-[1px] bg-[#2C241E]/30 z-50" />
+      <div className="fixed top-12 left-12 h-32 w-[1px] bg-[#2C241E]/30 z-50" />
+      <div className="fixed bottom-12 right-12 w-32 h-[1px] bg-[#2C241E]/30 z-50" />
+      <div className="fixed bottom-12 right-12 h-32 w-[1px] bg-[#2C241E]/30 z-50" />
 
-      {/* 3. Scholarly Layout */}
-      <div className="relative z-10 h-full flex flex-col p-16 lg:p-24 overflow-y-auto custom-scrollbar">
-        
-        <header className="flex justify-between items-center mb-24 border-b border-[#2C241E]/20 pb-8">
-           <div className="flex items-center gap-4">
-              <Library size={24} className="opacity-60" />
-              <div className="flex flex-col">
-                 <span className="text-[10px] uppercase tracking-[0.3em] font-black opacity-40">Folio No. 042</span>
-                 <span className="text-xl font-bold tracking-tight">ZORVIA ACADEMY</span>
-              </div>
-           </div>
-           <nav className="hidden md:flex gap-12 text-[10px] font-black uppercase tracking-[0.2em] opacity-60">
-              {['Archives', 'Treatises', 'Lexicon', 'Curriculum'].map(item => (
-                <a key={item} href="#" className="hover:opacity-100 border-b border-transparent hover:border-[#2C241E] transition-all pb-1">{item}</a>
-              ))}
-           </nav>
-           <div className="flex gap-6">
-              <Search size={18} className="opacity-40" />
-              <Bookmark size={18} className="opacity-40" />
-           </div>
-        </header>
+      {/* 3. Scholarly Navbar */}
+      <nav className="sticky top-0 z-[100] bg-[#FDFBF7]/80 backdrop-blur-md px-12 md:px-24 py-10 flex justify-between items-center border-b border-[#2C241E]/10">
+         <div className="flex items-center gap-6 group cursor-pointer">
+            <div className="w-14 h-14 border-2 border-[#2C241E]/10 rounded-full flex items-center justify-center text-[#2C241E] shadow-sm transform group-hover:rotate-12 transition-transform">
+               <Library size={28} />
+            </div>
+            <div className="flex flex-col leading-none">
+               <span className="text-2xl font-bold tracking-tighter text-[#2C241E]">ZORVIA ACADEMY</span>
+               <span className="text-[9px] uppercase tracking-[0.6em] opacity-40 mt-1 font-black underline underline-offset-4 decoration-[#8B4513]/20">Folio No. 042 // Est. MMXXVI</span>
+            </div>
+         </div>
+         
+         <div className="hidden lg:flex gap-16 text-[10px] font-black uppercase tracking-[0.4em] opacity-60">
+            {['Archives', 'Treatises', 'The Lexicon', 'Curriculum'].map(item => (
+              <a key={item} href="#" className="hover:opacity-100 hover:text-[#8B4513] transition-all relative group">
+                {item}
+                <span className="absolute -bottom-2 left-0 w-0 h-[1.5px] bg-[#8B4513] group-hover:w-full transition-all duration-500" />
+              </a>
+            ))}
+         </div>
 
-        <main className="grid grid-cols-12 gap-16 flex-grow items-center">
-           {/* Section 01: Main Thesis */}
-           <div className="col-span-12 lg:col-span-8 space-y-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="space-y-6"
-              >
-                 <div className="flex items-center gap-3">
-                    <Scroll size={16} className="text-[#8B4513]" />
-                    <span className="text-xs italic opacity-60">Vol. VII: On Digital Architectures</span>
-                 </div>
+         <div className="flex items-center gap-10">
+            <button className="hidden sm:flex items-center gap-3 text-[10px] font-black uppercase tracking-widest opacity-40 hover:opacity-100 transition-all">
+               <Search size={16} />
+               <span>Ref_Search</span>
+            </button>
+            <button className="px-10 py-4 bg-[#2C241E] text-[#FDFBF7] text-[10px] font-black uppercase tracking-[0.3em] shadow-[6px_6px_0px_#8B4513] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
+               Apply for Folio
+            </button>
+         </div>
+      </nav>
 
-                 <h2 className="text-7xl lg:text-9xl font-bold leading-[0.9] tracking-tighter">
-                    Intellectual <br />
-                    Authority in the <br />
-                    <span className="italic font-light serif text-[#8B4513]">Sovereign Era.</span>
-                 </h2>
-              </motion.div>
+      {/* 4. Hero Section (The Thesis) */}
+      <section className="relative z-10 p-12 lg:p-40 flex flex-col items-center text-center max-w-7xl mx-auto min-h-fit">
+         <motion.div
+           initial={{ opacity: 0, scale: 0.95 }}
+           animate={{ opacity: 1, scale: 1 }}
+           transition={{ duration: 1 }}
+           className="space-y-16"
+         >
+            <div className="inline-flex items-center gap-4 text-[#8B4513] italic border-b border-[#8B4513]/20 pb-2">
+               <Scroll size={20} className="animate-pulse" />
+               <span className="text-sm tracking-widest uppercase font-medium">Vol. VII: On Sovereign Architectures</span>
+            </div>
 
-              <div className="flex gap-10 items-start">
-                 <div className="w-16 h-[1px] bg-[#2C241E]/40 mt-4" />
-                 <p className="max-w-xl text-xl font-medium italic leading-relaxed opacity-80">
-                   "The preservation of knowledge is not merely an archival task, but a reconstructive digital protocol. We build architectures that endure the erosion of digital time."
-                 </p>
-              </div>
+            <h1 className="text-7xl md:text-[9rem] lg:text-[11rem] font-bold leading-[0.85] tracking-tighter text-[#2C241E]">
+               Intellectual <br />
+               Authority in the <br />
+               <span className="italic font-light serif text-[#8B4513] underline underline-offset-[20px] decoration-[#8B4513]/10">Sovereign Era.</span>
+            </h1>
 
-              {/* Ink Blot / Annotation */}
-              <div className="relative w-fit">
-                 <motion.button 
-                   whileHover={{ scale: 1.02 }}
-                   className="px-12 py-5 bg-[#2C241E] text-[#FDFBF7] font-bold uppercase text-[10px] tracking-[0.3em] shadow-[4px_4px_0px_#8B4513] transition-all"
-                 >
-                    Read the Treatise
-                 </motion.button>
-                 <motion.div 
-                   animate={{ rotate: [-2, 2, -2] }}
-                   transition={{ duration: 5, repeat: Infinity }}
-                   className="absolute -right-24 -top-8 hidden lg:block"
-                 >
-                    <PenTool size={32} className="opacity-20 -rotate-12" />
-                    <div className="text-[10px] font-handwritten text-[#8B4513] border-b border-[#8B4513]/30 w-fit">
-                       * Marginalia on v1.0
-                    </div>
-                 </motion.div>
-              </div>
-           </div>
+            <div className="flex flex-col md:flex-row gap-12 items-center justify-center pt-8">
+               <div className="w-20 h-px bg-[#2C241E]/20" />
+               <p className="max-w-2xl text-2xl md:text-3xl font-medium italic leading-relaxed opacity-70 text-[#2C241E]">
+                 "The preservation of knowledge is not merely an archival task, but a reconstructive digital protocol. We build architectures that endure the erosion of digital time."
+               </p>
+               <div className="w-20 h-px bg-[#2C241E]/20" />
+            </div>
 
-           {/* Section 02: Footnotes / References */}
-           <div className="col-span-12 lg:col-span-4 bg-[#2C241E]/[0.02] p-12 border-l border-[#2C241E]/10 space-y-12 h-fit self-center">
-              <div className="flex items-center gap-3 border-b border-[#2C241E]/10 pb-4">
-                 <Archive size={16} className="opacity-40" />
-                 <span className="text-[10px] font-black uppercase tracking-widest opacity-40">Citation Index</span>
-              </div>
+            <div className="flex flex-wrap justify-center gap-12 pt-12 relative">
+               <motion.button 
+                 whileHover={{ scale: 1.05 }}
+                 className="px-16 py-8 bg-[#2C241E] text-[#FDFBF7] text-xs font-black uppercase tracking-[0.5em] shadow-[12px_12px_0px_rgba(44,36,30,0.1)] hover:shadow-none transition-all"
+               >
+                  Infiltrate Lexicon
+               </motion.button>
+               <button className="flex items-center gap-6 text-xs font-black uppercase tracking-[0.3em] group italic hover:text-[#8B4513] transition-colors">
+                  Current Treatises
+                  <Feather size={24} className="group-hover:rotate-45 transition-transform duration-700" />
+               </button>
+               <div className="absolute -right-32 top-0 opacity-10 rotate-12 pointer-events-none">
+                  <PenTool size={180} />
+               </div>
+            </div>
+         </motion.div>
+      </section>
 
-              <div className="space-y-8">
-                 {[
-                   { ref: '§ 1.1', title: 'The Archeology of Logic', author: 'Dr. Z. V.' },
-                   { ref: '§ 2.4', title: 'Manifold Structures', author: 'Prof. Lexa' },
-                   { ref: '§ 3.9', title: 'Ephemeral UI Nodes', author: 'Anon.' }
-                 ].map((cite, i) => (
-                   <motion.div 
-                     key={i}
-                     whileHover={{ x: 5 }}
-                     className="group cursor-pointer"
-                   >
-                      <div className="text-[10px] font-mono opacity-40 mb-1">{cite.ref}</div>
-                      <div className="text-lg font-bold group-hover:text-[#8B4513] transition-colors">{cite.title}</div>
-                      <div className="text-xs italic opacity-60">By {cite.author}</div>
-                   </motion.div>
-                 ))}
-              </div>
+      {/* 5. Manuscript Modules (Features) */}
+      <section className="relative z-10 py-48 px-12 md:px-32 bg-[#2C241E]/[0.02] border-y border-[#2C241E]/5">
+         <div className="max-w-7xl mx-auto space-y-40">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-end border-b border-[#2C241E]/10 pb-20">
+               <div className="space-y-8">
+                  <span className="text-[11px] font-black uppercase tracking-[0.6em] text-[#8B4513]">Scholarly Systems</span>
+                  <h2 className="text-6xl md:text-8xl font-bold tracking-tight text-[#2C241E]">The Archives.</h2>
+               </div>
+               <p className="text-xl font-medium italic opacity-50 leading-loose max-w-lg">
+                  Every module is a documented thesis. We treat digital components as preserved manuscripts—built to be cited, tested, and timeless.
+               </p>
+            </div>
 
-              <div className="pt-8 border-t border-[#2C241E]/10 flex flex-col items-center text-center gap-4">
-                 <BookOpen size={24} className="opacity-20" />
-                 <p className="text-[10px] font-black uppercase tracking-widest leading-none opacity-40">
-                    Full catalog available in the <br /> Great Library of Zorvia.
-                 </p>
-              </div>
-           </div>
-        </main>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+               {[
+                  { title: "Archeology_Node", icon: Archive, label: "REF_01", desc: "Digital excavation protocols for recovering lost logic and legacy architectures." },
+                  { title: "Scriptorium_Core", icon: BookOpen, label: "REF_02", desc: "High-density editorial suite for the curation of enterprise-grade content assets." },
+                  { title: "Logic_Hermeneutics", icon: Compass, label: "REF_03", desc: "Interpretive algorithms that align business vectors with classical strategic ethics." },
+                  { title: "Thesis_Engine", icon: GraduationCap, label: "REF_04", desc: "Automated peer-review cycles for validating code integrity and structural resilience." },
+                  { title: "Empirical_Vibe", icon: Microscope, label: "REF_05", desc: "Systematic observation of user interaction patterns through a classical lens." },
+                  { title: "Epoch_Anchor", icon: Anchor, label: "REF_06", desc: "Distributed ledger protocols that anchor digital identity across vast temporal spans." }
+               ].map((f, i) => (
+                  <div key={i} className="group p-14 bg-[#FDFBF7] border border-[#2C241E]/10 flex flex-col gap-10 hover:shadow-[20px_20px_40px_rgba(44,36,30,0.03)] transition-all duration-700 relative overflow-hidden">
+                     <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 transition-opacity">
+                        <f.icon size={140} strokeWidth={1} />
+                     </div>
+                     <div className="flex justify-between items-center text-[10px] font-black text-[#8B4513] uppercase tracking-[0.4em]">
+                        <span>{f.label}</span>
+                        <div className="w-12 h-px bg-[#8B4513]/20" />
+                     </div>
+                     <h3 className="text-4xl font-bold text-[#2C241E] group-hover:text-[#8B4513] transition-colors uppercase tracking-tighter italic">{f.title}.</h3>
+                     <p className="text-sm font-medium italic opacity-60 leading-relaxed uppercase tracking-widest">{f.desc}</p>
+                     <div className="pt-10 flex items-center justify-between text-[10px] font-black uppercase tracking-[0.6em] opacity-30 group-hover:opacity-100 transition-all">
+                        <span>CONSULT MANUAL</span>
+                        <ArrowUpRight size={18} />
+                     </div>
+                  </div>
+               ))}
+            </div>
+         </div>
+      </section>
 
-        <footer className="mt-20 border-t border-[#2C241E]/20 pt-8 flex justify-between items-center opacity-40 italic text-sm">
-           <span>The Zorvia Scriptorium, MCMXXVI</span>
-           <div className="flex gap-8 not-italic font-black text-[9px] uppercase tracking-widest">
-              <span>Authority</span>
-              <span>Heritage</span>
-              <span>Reason</span>
-           </div>
-        </footer>
-      </div>
+      {/* 6. Scholar Performance (Metrics) */}
+      <section className="py-48 px-12 md:px-32 bg-[#2C241E] text-[#FDFBF7] relative overflow-hidden z-10">
+         <div className="absolute top-0 right-0 p-40 opacity-[0.03] pointer-events-none">
+            <Library size={700} strokeWidth={1} />
+         </div>
+         <div className="max-w-7xl mx-auto flex flex-col items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 w-full">
+               {[
+                  { val: "1.4k", label: "CITATIONS_INDEX" },
+                  { val: "VII", label: "ACTIVE_VOLUMES" },
+                  { val: "100%", label: "HERITAGE_SYNC" },
+                  { val: "92", label: "SCHOLAR_NODES" }
+               ].map((m, i) => (
+                  <div key={i} className="flex flex-col items-center text-center p-12 border border-[#FDFBF7]/10 rounded-[2rem] hover:bg-[#FDFBF7]/5 transition-colors">
+                     <div className="text-7xl font-bold tracking-tighter italic text-[#8B4513] mb-6">{m.val}</div>
+                     <div className="text-[10px] font-black uppercase tracking-[0.6em] opacity-40">{m.label}</div>
+                  </div>
+               ))}
+            </div>
+            
+            <div className="mt-40 max-w-4xl p-16 border-l-4 border-[#8B4513] bg-[#FDFBF7]/5 italic text-3xl md:text-5xl font-light opacity-60 leading-relaxed uppercase tracking-tight text-center">
+               "Authority is built through the accumulation of reasoned architectures. We do not haste; we endure."
+            </div>
+         </div>
+      </section>
+
+      {/* 7. The Scholar Tiers (Pricing) */}
+      <section className="py-48 px-12 md:px-32 max-w-7xl mx-auto flex flex-col items-center z-10">
+         <div className="text-center mb-40 space-y-8">
+            <span className="text-[11px] font-black uppercase tracking-[0.8em] text-[#8B4513]">Allocated Scholarships</span>
+            <h2 className="text-6xl md:text-[10rem] font-bold tracking-tighter text-[#2C241E] uppercase italic leading-none">Curriculum.</h2>
+         </div>
+
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 w-full max-w-5xl">
+            <div className="p-20 bg-[#FDFBF7] border border-[#2C241E]/10 flex flex-col gap-16 group hover:shadow-[40px_40px_0px_rgba(44,36,30,0.02)] transition-all duration-1000">
+               <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-[0.4em] text-[#8B4513]">
+                  <span>Tier_I: Undergrad</span>
+                  <Coffee size={24} className="opacity-20 group-hover:rotate-12 transition-transform" />
+               </div>
+               <div className="text-8xl font-bold italic text-[#2C241E] tracking-tighter leading-none">$280<span className="text-sm font-black uppercase tracking-[0.3em] opacity-30 ml-4 not-italic">/annum</span></div>
+               <p className="text-sm font-medium italic opacity-60 leading-relaxed border-l border-[#2C241E]/20 pl-6 uppercase tracking-widest">Foundational access to the digital scriptorium. Perfect for early-stage institutional architectures.</p>
+               <ul className="space-y-6 pt-6">
+                  {['Great Library Access', 'Core Node Integration', 'Weekly Folio Updates', 'Standard Citation Help'].map(item => (
+                     <li key={item} className="flex items-center gap-6 text-[11px] font-black uppercase tracking-[0.2em] text-[#2C241E]/70 italic">
+                        <Check size={18} strokeWidth={4} className="text-[#8B4513]" /> {item}
+                     </li>
+                  ))}
+               </ul>
+               <button className="w-full py-8 border-2 border-[#2C241E] text-[#2C241E] font-black uppercase text-[11px] tracking-[0.4em] hover:bg-[#2C241E] hover:text-[#FDFBF7] transition-all mt-8 shadow-sm">Commit to Thesis</button>
+            </div>
+
+            <div className="p-20 bg-[#2C241E] text-[#FDFBF7] border-4 border-[#8B4513]/30 flex flex-col gap-16 relative overflow-hidden group">
+               <div className="absolute top-0 right-0 p-12 opacity-[0.03] rotate-[-20deg] group-hover:rotate-0 transition-transform duration-[2s]">
+                  <Scroll size={300} strokeWidth={1} />
+               </div>
+               <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-[0.6em] text-[#8B4513] relative z-10">
+                  <span className="px-5 py-2 border border-[#8B4513]/40">Tier_II: Doctorate</span>
+                  <Star size={24} className="text-[#8B4513] animate-pulse" />
+               </div>
+               <div className="text-8xl font-bold italic tracking-tighter leading-none relative z-10 text-[#FDFBF7]">$1,400<span className="text-sm font-black uppercase tracking-[0.3em] text-[#8B4513] ml-4 not-italic font-serif">/annum</span></div>
+               <p className="text-xs font-medium italic opacity-40 leading-loose uppercase tracking-[0.3em] relative z-10">Absolute authority over the Zorvia global archive. Sovereign governance for planetary-scale institutions.</p>
+               <ul className="space-y-6 pt-6 relative z-10">
+                  {['Full Scriptorium Control', 'Unlimited Archive Storage', 'Priority Thesis Review', 'Direct Line to the Scriptor', 'Neural Archive Sync'].map(item => (
+                     <li key={item} className="flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-[#FDFBF7]/80">
+                        <Plus size={18} className="text-[#8B4513]" /> {item}
+                     </li>
+                  ))}
+               </ul>
+               <button className="w-full py-8 bg-[#8B4513] text-[#FDFBF7] font-black uppercase text-[12px] tracking-[0.6em] shadow-[10px_10px_30px_rgba(139,69,19,0.3)] hover:bg-[#FDFBF7] hover:text-[#2C241E] transition-all mt-8 relative z-10">Claim the Chair</button>
+            </div>
+         </div>
+      </section>
+
+      {/* 8. Antique Footer */}
+      <footer className="p-12 md:p-40 bg-[#F2EDE4] border-t border-[#2C241E]/10 flex flex-col items-center gap-32 relative z-10">
+         <div className="absolute top-0 left-0 p-32 opacity-[0.02] pointer-events-none rotate-12">
+            <Archive size={400} strokeWidth={1} />
+         </div>
+         
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 relative z-10 w-full max-w-7xl">
+            <div className="lg:col-span-2 space-y-12">
+               <div className="flex items-center gap-10 group">
+                  <div className="w-24 h-24 rounded-full border-4 border-[#2C241E]/5 flex items-center justify-center text-[#2C241E] shadow-inner group-hover:border-[#8B4513]/20 transition-all duration-1000">
+                     <Library size={64} strokeWidth={1} className="opacity-40 group-hover:opacity-100" />
+                  </div>
+                  <div className="space-y-4">
+                     <h4 className="text-5xl font-bold text-[#2C241E] tracking-tighter uppercase italic leading-none">The Academy</h4>
+                     <p className="text-[11px] font-black tracking-[1em] text-[#8B4513] uppercase italic">Est. MCMXXVI // Zorvia Systems</p>
+                  </div>
+               </div>
+               <p className="max-w-md text-sm font-medium uppercase italic tracking-[0.3em] text-[#2C241E]/40 leading-loose border-l-2 border-[#2C241E]/10 pl-10">Cultural and architectural preservation in a decentralized era. We honor the heritage of thought through the precision of logic.</p>
+            </div>
+
+            <div className="space-y-10">
+               <div className="text-[11px] font-black text-[#2C241E] uppercase tracking-[0.5em] italic">THE_ARCHIVES</div>
+               <div className="flex flex-col gap-6 text-[10px] font-black text-[#2C241E]/50 uppercase tracking-[0.4em] italic">
+                  <a href="#" className="hover:text-[#8B4513] transition-all">Folio_Catalog</a>
+                  <a href="#" className="hover:text-[#8B4513] transition-all">Manuscript_Map</a>
+                  <a href="#" className="hover:text-[#8B4513] transition-all">Index_General</a>
+               </div>
+            </div>
+
+            <div className="space-y-10">
+               <div className="text-[11px] font-black text-[#2C241E] uppercase tracking-[0.5em] italic">HERITAGE</div>
+               <div className="flex flex-col gap-6 text-[10px] font-black text-[#2C241E]/50 uppercase tracking-[0.4em] italic">
+                  <a href="#" className="hover:text-[#8B4513] transition-all">Privacy_Treatise</a>
+                  <a href="#" className="hover:text-[#8B4513] transition-all">Legal_Lexicon</a>
+                  <a href="#" className="hover:text-[#8B4513] transition-all">Support_Hall</a>
+               </div>
+            </div>
+         </div>
+
+         <div className="flex flex-wrap justify-center gap-16 pt-32 border-t border-[#2C241E]/5 w-full max-w-7xl relative z-10">
+            {[GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon].map((Icon, i) => (
+               <a key={i} href="#" className="w-16 h-16 border border-[#2C241E]/10 rounded-full flex items-center justify-center text-[#2C241E]/20 hover:text-[#8B4513] hover:border-[#8B4513]/50 transition-all font-serif italic">
+                  <Icon size={24} strokeWidth={1} />
+               </a>
+            ))}
+         </div>
+
+         <div className="flex flex-col md:flex-row justify-between w-full max-w-7xl pt-16 text-[10px] font-black text-[#2C241E]/20 uppercase tracking-[1em] italic leading-loose">
+            <span>© MCMXXVI Zorvia Academy of Digital Thought</span>
+            <div className="flex gap-10">
+               <span>Pecunia Non Olet</span>
+               <PenTool size={12} />
+            </div>
+         </div>
+      </footer>
 
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,400&display=swap');
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
         .font-handwritten { font-family: 'Dancing Script', cursive; }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #2C241E22; border-radius: 10px; }
       `}} />
     </div>
   );
 };
 
 export default AcademiaMockup;
-

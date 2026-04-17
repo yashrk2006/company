@@ -5,19 +5,24 @@ const supabaseAdminKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhY
 const supabase = createClient(supabaseUrl, supabaseAdminKey);
 
 async function checkAdminRecords() {
-  console.log("Fetching project inquiries using Admin Service Key...");
-  const { data, error } = await supabase
-    .from('project_inquiries')
-    .select('*')
-    .order('created_at', { ascending: false });
+  const tables = ['project_inquiries', 'job_applications', 'strategic_updates', 'team_members', 'portfolio_projects', 'support_tickets'];
+  
+  for (const table of tables) {
+    console.log(`--- Checking table: ${table} ---`);
+    const { data, error } = await supabase
+      .from(table)
+      .select('*')
+      .limit(1);
 
-  if (error) {
-    console.error("Error fetching:", error);
-  } else {
-    console.log(`Found ${data.length} inquiries.`);
-    if (data.length > 0) {
-      console.log("Recent Inquiries:", JSON.stringify(data.slice(0, 2), null, 2));
+    if (error) {
+      console.error(`Error fetching ${table}:`, error.message);
+    } else {
+      console.log(`Found ${data.length} records in ${table}.`);
+      if (data.length > 0) {
+        console.log(`Columns for ${table}:`, Object.keys(data[0]).join(', '));
+      }
     }
+    console.log('\n');
   }
 }
 

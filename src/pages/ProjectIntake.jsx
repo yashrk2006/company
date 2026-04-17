@@ -104,7 +104,7 @@ const ProjectIntake = () => {
           const { error } = await otpService.sendEmailOtp(formData.email);
           setIsSubmitting(false);
           if (error) {
-            setErrors({ global: error.message || "Failed to dispatch verification code." });
+            setErrors({ global: error.message || "Failed to send verification code." });
           } else {
             setIsOtpSent(true);
             setErrors({});
@@ -115,7 +115,7 @@ const ProjectIntake = () => {
           const { error } = await otpService.verifyOtp(formData.email, verificationCode);
           setIsSubmitting(false);
           if (error) {
-            setErrors({ verification: "INVALID AUTHENTICATION TOKEN." });
+            setErrors({ verification: "Invalid verification code." });
             return;
           } else {
             setIsEmailVerified(true);
@@ -136,12 +136,12 @@ const ProjectIntake = () => {
 
   const handleSubmit = async () => {
     if (formData.website_url) {
-      setErrors({ global: "Bot detection triggered. Access denied." });
+      setErrors({ global: "Access denied." });
       return;
     }
     
     if (!formData.agreedToTerms) {
-      setErrors({ agreedToTerms: "Protocol violation: Consent missing." });
+      setErrors({ agreedToTerms: "Please agree to the terms." });
       return;
     }
 
@@ -201,7 +201,7 @@ ${browserInfo}
       setIsSuccess(true);
     } catch (err) {
       console.error('Supabase Sync Error:', err);
-      setErrors({ global: "Submission failed. Please verify your connection and retry. If this persists, our engineering team has been notified." });
+      setErrors({ global: "Submission failed. Please check your connection and try again. If this continues, our team has been notified." });
     } finally {
       setIsSubmitting(false);
     }

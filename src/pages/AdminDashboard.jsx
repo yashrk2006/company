@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabaseAdmin as supabase } from '../lib/supabaseAdminClient';
 import { themes } from '../data/themes';
+import emailjs from '@emailjs/browser';
 import { 
   BarChart3, 
   Users, 
   Layers, 
   RefreshCcw, 
-  Trash,
   Trash2, 
   ChevronRight, 
   ShieldCheck, 
@@ -20,7 +20,11 @@ import {
   Clock, 
   AlertCircle, 
   Plus,
-  X
+  X,
+  Mail,
+  UserPlus,
+  Key,
+  Database
 } from 'lucide-react';
 
 const ACCESS_KEY = "ZORVIA_HQ_2026";
@@ -28,7 +32,7 @@ const ACCESS_KEY = "ZORVIA_HQ_2026";
 const AdminDashboard = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [accessKey, setAccessKey] = useState("");
-  const [activeTab, setActiveTab] = useState('inquiries'); // inquiries, updates, team, portfolio
+  const [activeTab, setActiveTab] = useState('inquiries'); // inquiries, updates, team, portfolio, employees
   const [employeeId, setEmployeeId] = useState(null);
   
   const [inquiries, setInquiries] = useState([]);
@@ -36,6 +40,7 @@ const AdminDashboard = () => {
   const [updates, setUpdates] = useState([]);
   const [team, setTeam] = useState([]);
   const [portfolio, setPortfolio] = useState([]);
+  const [employees, setEmployees] = useState([]);
   
   const [isLoading, setIsLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
@@ -43,6 +48,14 @@ const AdminDashboard = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
   const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+
+  // Employee Form State
+  const [employeeForm, setEmployeeForm] = useState({
+    username: '',
+    password: '',
+    role: 'employee',
+    email: ''
+  });
 
   useEffect(() => {
     const isEmployeeAuth = localStorage.getItem('zorvia_employee_auth') === 'true';
@@ -66,19 +79,28 @@ const AdminDashboard = () => {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const [inqRes, appRes, updRes, teamRes, portRes] = await Promise.all([
+      // Parallel fetch but handle each individually to avoid one 404 breaking everything
+      const results = await Promise.allSettled([
         supabase.from('project_inquiries').select('*').order('created_at', { ascending: false }),
         supabase.from('job_applications').select('*').order('created_at', { ascending: false }),
         supabase.from('strategic_updates').select('*').order('created_at', { ascending: false }),
         supabase.from('team_members').select('*').order('created_at', { ascending: false }),
-        supabase.from('portfolio_projects').select('*').order('created_at', { ascending: false })
+        supabase.from('portfolio_projects').select('*').order('created_at', { ascending: false }),
+        supabase.from('employees').select('*').order('created_at', { ascending: false })
       ]);
+
+      const [inqRes, appRes, updRes, teamRes, portRes, empRes] = results.map(r => r.status === 'fulfilled' ? r.value : { data: [], error: r.reason });
 
       setInquiries(inqRes.data || []);
       setApplications(appRes.data || []);
       setUpdates(updRes.data || []);
       setTeam(teamRes.data || []);
       setPortfolio(portRes.data || []);
+      setEmployees(empRes.data || []);
+
+      if (results.some(r => r.status === 'fulfilled' && r.value.error && r.value.error.code !== 'PGRST116')) {
+         console.warn("Some data synchronization failed (likely missing tables).");
+      }
     } catch (err) {
       console.error("Error fetching data:", err);
       setErrorMsg("Cloud synchronization failed. Please verify your connection.");
@@ -88,7 +110,7 @@ const AdminDashboard = () => {
   };
 
   const handleDelete = async (table, id) => {
-    if (!window.confirm("Are you certain you want to purge this record? This action is irreversible.")) return;
+    if (!window.confirm("Are you sure you want to delete this record? This cannot be undone.")) return;
     
     try {
       const { error } = await supabase.from(table).delete().eq('id', id);
@@ -96,7 +118,34 @@ const AdminDashboard = () => {
       fetchData();
       setSelectedItem(null);
     } catch (err) {
-      alert("Purge failed. Check console for details.");
+      alert("Delete failed. Please try again.");
+    }
+  };
+
+  const sendStatusEmail = async (item, status) => {
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !publicKey) {
+      console.warn("EmailJS keys missing. Skipping email notification.");
+      return;
+    }
+
+    const templateParams = {
+      to_email: item.email,
+      to_name: item.name,
+      project_name: item.project_type || "Your Project",
+      status: status.toUpperCase(),
+      message: `Greetings from Zorvia HQ. Your project status has been updated to ${status.toUpperCase()}. Our engineers are now processing the next phase of your digital evolution.`,
+      update_time: new Date().toLocaleString()
+    };
+
+    try {
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      console.log(`Notification sent to ${item.email}`);
+    } catch (err) {
+      console.error("Failed to send status email:", err);
     }
   };
 
@@ -107,13 +156,64 @@ const AdminDashboard = () => {
         .update({ status: newStatus })
         .eq('id', id);
       
-      if (error) throw error;
+      if (error) {
+        if (error.code === '42703') { // Undefined column
+          alert("DATABASE ARCHITECTURE ERROR: 'status' column missing in 'project_inquiries' table. Please add this column in Supabase dashboard.");
+        }
+        throw error;
+      }
+
+      // If update successful, send emails
+      if (selectedItem) {
+        await sendStatusEmail(selectedItem, newStatus);
+        
+        // Notify team
+        const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "admin@zorvia.com";
+        await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            to_email: adminEmail,
+            to_name: "Zorvia Team",
+            subject: `[Update] Project Status Changed: ${selectedItem.name}`,
+            message: `The status for client ${selectedItem.name} has been updated to ${newStatus.toUpperCase()}. Please check the dashboard for details.`,
+            update_time: new Date().toLocaleString()
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+      }
+
       fetchData();
       if (selectedItem && selectedItem.id === id) {
         setSelectedItem({ ...selectedItem, status: newStatus });
       }
     } catch (err) {
-      alert("Status synchronization failed.");
+      console.error("Status update error:", err);
+      alert("Status synchronization failed. Check if the 'status' column exists in your database.");
+    }
+  };
+
+  const handleAddEmployee = async (e) => {
+    e.preventDefault();
+    try {
+      const { error } = await supabase
+        .from('employees')
+        .insert([{
+          username: employeeForm.username,
+          password: employeeForm.password, // In a real app, hash this!
+          role: employeeForm.role,
+          email: employeeForm.email
+        }]);
+      
+      if (error) throw error;
+      
+      alert("Employee account created successfully.");
+      setEmployeeForm({ username: '', password: '', role: 'employee', email: '' });
+      setShowAddForm(false);
+      fetchData();
+    } catch (err) {
+      console.error(err);
+      alert("Employee creation failed. Please check your database.");
     }
   };
 
@@ -146,7 +246,7 @@ const AdminDashboard = () => {
   const handleAddPortfolio = async (e) => {
     e.preventDefault();
     if (!portfolioForm.name || !portfolioForm.description || !portfolioForm.tech_stack) {
-      alert('Validation Failed: Project identity and blueprints required.');
+      alert('Please fill in all fields.');
       return;
     }
     try {
@@ -189,10 +289,10 @@ const AdminDashboard = () => {
           <div className="absolute top-0 right-0 p-8 opacity-20">
              <ShieldCheck size={120} className="text-primary" />
           </div>
-          <h2 className="text-3xl font-heading font-black mb-8 tracking-tighter text-white">ZORVIA<br/>COMMAND CENTER</h2>
+          <h2 className="text-3xl font-heading font-black mb-8 tracking-tighter text-white">ADMIN<br/>DASHBOARD</h2>
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
-              <label className="block font-heading text-[10px] uppercase font-black text-muted-foreground tracking-widest mb-3">Master Access Key</label>
+              <label className="block font-heading text-[10px] uppercase font-black text-muted-foreground tracking-widest mb-3">Admin Password</label>
               <input 
                 type="password"
                 value={accessKey}
@@ -206,7 +306,7 @@ const AdminDashboard = () => {
               type="submit"
               className="w-full py-5 bg-primary text-white font-heading font-black uppercase tracking-widest rounded-2xl shadow-pop hover:shadow-pop-active transition-all"
             >
-              Initialize Access
+              Login
             </button>
           </form>
         </motion.div>
@@ -220,6 +320,7 @@ const AdminDashboard = () => {
     if (activeTab === 'updates') return updates;
     if (activeTab === 'team') return team;
     if (activeTab === 'portfolio') return portfolio;
+    if (activeTab === 'employees') return employees;
     return [];
   };
 
@@ -233,7 +334,7 @@ const AdminDashboard = () => {
       <div className="lg:hidden flex items-center justify-between bg-white border-2 border-foreground p-4 rounded-2xl shadow-pop">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-black text-white rounded-lg flex items-center justify-center font-black">Z</div>
-          <span className="font-heading font-black uppercase text-sm tracking-tight">HQ Command</span>
+          <span className="font-heading font-black uppercase text-sm tracking-tight">Admin Dashboard</span>
         </div>
         <button 
           onClick={() => setShowMobileSidebar(!showMobileSidebar)}
@@ -262,8 +363,8 @@ const AdminDashboard = () => {
                  <ShieldCheck size={24} />
               </div>
               <div>
-                 <h1 className="font-heading font-black text-lg tracking-tight">{employeeId ? "Staff Portal" : "Admin Portal"}</h1>
-                 <p className="text-[10px] font-black text-primary uppercase tracking-widest">{employeeId || "Master Control"}</p>
+                 <h1 className="font-heading font-black text-lg tracking-tight">{employeeId ? "Staff Portal" : "Admin Panel"}</h1>
+                 <p className="text-[10px] font-black text-primary uppercase tracking-widest">{employeeId || "Management"}</p>
               </div>
            </div>
 
@@ -299,6 +400,15 @@ const AdminDashboard = () => {
                 <Briefcase size={18} /> Portfolio Assets
               </button>
               
+              {!employeeId && (
+                <button 
+                  onClick={() => { setActiveTab('employees'); setShowAddForm(false); }}
+                  className={`w-full flex items-center gap-3 px-6 py-4 rounded-2xl font-heading font-black text-xs uppercase transition-all ${activeTab === 'employees' ? 'bg-primary text-white shadow-pop' : 'hover:bg-muted'}`}
+                >
+                  <UserPlus size={18} /> Employee Mgmt
+                </button>
+              )}
+
               <button 
                 onClick={() => {
                   localStorage.removeItem('zorvia_employee_auth');
@@ -307,14 +417,14 @@ const AdminDashboard = () => {
                 }}
                 className="w-full flex items-center gap-3 px-6 py-4 rounded-2xl font-heading font-black text-[10px] uppercase text-red-500 hover:bg-red-500 hover:text-white transition-all border-2 border-dashed border-red-500/20 mt-12 group"
               >
-                <Trash size={16} className="group-hover:rotate-12 transition-transform" /> 
-                Decommission Session
+                <X size={16} className="group-hover:rotate-12 transition-transform" /> 
+                Logout
               </button>
            </nav>
         </div>
 
         <div className="p-8 bg-foreground text-white border-4 border-foreground rounded-[2.5rem] shadow-pop">
-           <h3 className="font-heading font-black uppercase text-[10px] tracking-widest mb-6 opacity-60">Fleet Overview</h3>
+           <h3 className="font-heading font-black uppercase text-[10px] tracking-widest mb-6 opacity-60">Overview</h3>
            <div className="space-y-6">
               <div className="flex justify-between items-end">
                  <div>
@@ -374,12 +484,12 @@ const AdminDashboard = () => {
            </div>
            
            <div className="flex gap-4">
-             {(activeTab === 'team' || activeTab === 'portfolio') && (
+             {(activeTab === 'team' || activeTab === 'portfolio' || activeTab === 'employees') && (
                <button 
                  onClick={() => setShowAddForm(!showAddForm)} 
                  className={`px-6 py-4 border-2 border-foreground rounded-2xl font-heading font-black text-xs uppercase flex items-center gap-2 transition-all shadow-pop hover:shadow-none hover:translate-y-1 ${showAddForm ? 'bg-secondary text-white' : 'bg-primary text-white'}`}
                >
-                 <Plus size={16} /> Add {activeTab === 'team' ? 'Member' : 'Project'}
+                 <Plus size={16} /> Add {activeTab === 'team' ? 'Member' : activeTab === 'portfolio' ? 'Project' : 'Employee'}
                </button>
              )}
              <button 
@@ -390,6 +500,21 @@ const AdminDashboard = () => {
              </button>
            </div>
         </div>
+
+        {showAddForm && activeTab === 'employees' && (
+          <form onSubmit={handleAddEmployee} className="w-full bg-white border-4 border-foreground rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-8 mb-8 shadow-pop-lg grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+            <h3 className="md:col-span-2 text-xl lg:text-2xl font-heading font-black flex items-center gap-3"><UserPlus /> Add New Employee</h3>
+            <input type="text" placeholder="Username" required value={employeeForm.username} onChange={(e)=>setEmployeeForm({...employeeForm, username: e.target.value})} className="p-3 lg:p-4 border-2 border-foreground rounded-xl" />
+            <input type="password" placeholder="Password" required value={employeeForm.password} onChange={(e)=>setEmployeeForm({...employeeForm, password: e.target.value})} className="p-3 lg:p-4 border-2 border-foreground rounded-xl" />
+            <input type="email" placeholder="Email" required value={employeeForm.email} onChange={(e)=>setEmployeeForm({...employeeForm, email: e.target.value})} className="p-3 lg:p-4 border-2 border-foreground rounded-xl" />
+            <select value={employeeForm.role} onChange={(e)=>setEmployeeForm({...employeeForm, role: e.target.value})} className="p-3 lg:p-4 border-2 border-foreground rounded-xl appearance-none bg-white font-bold">
+              <option value="employee">Staff</option>
+              <option value="manager">Manager</option>
+              <option value="admin">Admin</option>
+            </select>
+            <button type="submit" className="md:col-span-2 p-4 bg-primary text-white border-2 border-foreground rounded-xl font-heading font-black uppercase shadow-pop hover:shadow-none transition-all">Create Account</button>
+          </form>
+        )}
 
         {showAddForm && activeTab === 'team' && (
           <form onSubmit={handleAddTeam} className="w-full bg-white border-4 border-foreground rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-8 mb-8 shadow-pop-lg grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
@@ -440,18 +565,18 @@ const AdminDashboard = () => {
                  <thead>
                     <tr className="bg-muted/30 border-b-2 border-foreground">
                        <th className="px-8 py-6 font-heading font-black text-[10px] uppercase tracking-widest">
-                         {activeTab === 'team' || activeTab === 'portfolio' ? 'Identifier' : activeTab === 'applications' ? 'Candidate' : 'Technological Lead'}
+                         {activeTab === 'team' || activeTab === 'portfolio' ? 'Name' : activeTab === 'employees' ? 'Username' : activeTab === 'applications' ? 'Candidate' : 'Client Name'}
                        </th>
                        <th className="px-8 py-6 font-heading font-black text-[10px] uppercase tracking-widest">
-                         {activeTab === 'team' ? 'Role' : activeTab === 'portfolio' ? 'Category' : activeTab === 'applications' ? 'Role Applied' : 'Contact Identity'}
+                         {activeTab === 'team' || activeTab === 'employees' ? 'Role' : activeTab === 'portfolio' ? 'Category' : activeTab === 'applications' ? 'Role' : 'Email'}
                        </th>
                        <th className="px-8 py-6 font-heading font-black text-[10px] uppercase tracking-widest">
-                         {activeTab === 'team' || activeTab === 'portfolio' ? 'Details' : activeTab === 'applications' ? 'Team' : 'Category'}
+                         {activeTab === 'team' || activeTab === 'portfolio' ? 'Details' : activeTab === 'employees' ? 'Email' : activeTab === 'applications' ? 'Team' : 'Project'}
                        </th>
                        <th className="px-8 py-6 font-heading font-black text-[10px] uppercase tracking-widest min-w-[150px]">
-                         {activeTab === 'team' || activeTab === 'portfolio' ? 'Links' : activeTab === 'applications' ? 'Phone' : 'Deployment Status'}
+                         {activeTab === 'team' || activeTab === 'portfolio' ? 'Status' : activeTab === 'employees' ? 'Status' : activeTab === 'applications' ? 'Phone' : 'Status'}
                        </th>
-                       <th className="px-8 py-6 font-heading font-black text-[10px] uppercase tracking-widest">Time Sync</th>
+                       <th className="px-8 py-6 font-heading font-black text-[10px] uppercase tracking-widest">Date</th>
                        <th className="px-8 py-6 font-heading font-black text-[10px] uppercase tracking-widest">Actions</th>
                     </tr>
                  </thead>
@@ -468,16 +593,18 @@ const AdminDashboard = () => {
                          onClick={() => activeTab === 'inquiries' || activeTab === 'updates' || activeTab === 'applications' ? setSelectedItem(item) : null}
                        >
                           <td className="px-8 py-6">
-                             <p className="font-heading font-black tracking-tight">{item.name || (activeTab === 'updates' ? "Strategic Update" : "N/A")}</p>
+                             <p className="font-heading font-black tracking-tight">{item.username || item.name || (activeTab === 'updates' ? "Strategic Update" : "N/A")}</p>
                           </td>
                           <td className="px-8 py-6">
                              <p className="font-sans font-bold text-sm text-muted-foreground whitespace-nowrap">
-                               {activeTab === 'team' ? item.role : activeTab === 'portfolio' ? item.category : activeTab === 'applications' ? item.role : item.email}
+                               {activeTab === 'team' || activeTab === 'employees' ? item.role : activeTab === 'portfolio' ? item.category : activeTab === 'applications' ? item.role : item.email}
                              </p>
                           </td>
                           <td className="px-8 py-6">
                              {activeTab === 'team' || activeTab === 'portfolio' ? (
                                 <p className="text-xs font-medium text-muted-foreground line-clamp-1 max-w-[200px]">{item.bio || item.description}</p>
+                             ) : activeTab === 'employees' ? (
+                                <p className="text-xs font-bold text-muted-foreground">{item.email}</p>
                              ) : activeTab === 'applications' ? (
                                 <span className="px-4 py-1.5 bg-secondary border-2 border-foreground/10 rounded-full text-[9px] font-black uppercase tracking-widest whitespace-nowrap text-white">
                                    {item.team || "N/A"}
@@ -493,6 +620,11 @@ const AdminDashboard = () => {
                                 <div className="flex items-center gap-2">
                                    <div className={`w-2 h-2 rounded-full ${item.status === 'contacted' ? 'bg-secondary' : item.status === 'active' ? 'bg-primary' : 'bg-muted-foreground'}`} />
                                    <p className="text-[10px] font-black uppercase opacity-60">{item.status || 'new'}</p>
+                                </div>
+                             ) : activeTab === 'employees' ? (
+                                <div className="flex items-center gap-2 text-primary">
+                                   <Key size={12} />
+                                   <p className="text-[10px] font-black uppercase">Active</p>
                                 </div>
                              ) : activeTab === 'applications' ? (
                                 <p className="text-xs font-bold opacity-60">{item.phone}</p>
@@ -511,7 +643,7 @@ const AdminDashboard = () => {
                              <button 
                                onClick={(e) => { 
                                  e.stopPropagation(); 
-                                 const tableMapping = { 'inquiries': 'project_inquiries', 'applications': 'job_applications', 'updates': 'strategic_updates', 'team': 'team_members', 'portfolio': 'portfolio_projects' };
+                                 const tableMapping = { 'inquiries': 'project_inquiries', 'applications': 'job_applications', 'updates': 'strategic_updates', 'team': 'team_members', 'portfolio': 'portfolio_projects', 'employees': 'employees' };
                                  handleDelete(tableMapping[activeTab], item.id); 
                                }}
                                className="p-2 text-muted-foreground hover:text-secondary hover:bg-secondary/10 rounded-lg transition-colors border-2 border-transparent hover:border-secondary"
@@ -527,7 +659,7 @@ const AdminDashboard = () => {
               {filteredItems.length === 0 && !isLoading && (
                  <div className="py-20 text-center">
                     <MessageSquare size={48} className="mx-auto mb-4 text-muted-foreground opacity-20" />
-                    <p className="font-heading font-black text-muted-foreground uppercase text-xs tracking-widest">Zero Data Synchronized</p>
+                    <p className="font-heading font-black text-muted-foreground uppercase text-xs tracking-widest">No Data Found</p>
                  </div>
               )}
            </div>
@@ -554,12 +686,12 @@ const AdminDashboard = () => {
                   <div className="p-8 lg:p-12 overflow-y-auto">
                      <div className="flex justify-between items-start mb-12">
                         <div>
-                           <p className="text-primary font-black text-[10px] uppercase tracking-[0.4em] mb-4">// Intelligence Detail</p>
+                           <p className="text-primary font-black text-[10px] uppercase tracking-[0.4em] mb-4">// Project Details</p>
                            <h2 className="text-4xl font-heading font-black tracking-tighter leading-none">{selectedItem.name || (activeTab === 'updates' ? "System Update" : "Candidate")}</h2>
                            <p className="text-lg font-sans font-bold text-muted-foreground mt-4">{selectedItem.email}</p>
                            <div className="flex gap-4 mt-2">
                               <span className="text-[10px] font-black uppercase opacity-40">ID: {selectedItem.id}</span>
-                              <span className="text-[10px] font-black uppercase opacity-40">Timestamp: {new Date(selectedItem.created_at).toLocaleString()}</span>
+                              <span className="text-[10px] font-black uppercase opacity-40">Date: {new Date(selectedItem.created_at).toLocaleString()}</span>
                            </div>
                         </div>
                         <button 
@@ -575,9 +707,9 @@ const AdminDashboard = () => {
                            <>
                               <div className="space-y-8">
                                  <div>
-                                    <label className="block text-[8px] font-black uppercase text-secondary tracking-widest mb-2">Project Vision</label>
+                                    <label className="block text-[8px] font-black uppercase text-secondary tracking-widest mb-2">Project Description</label>
                                     <p className="font-sans font-medium leading-relaxed bg-muted/30 p-6 border-2 border-foreground/5 rounded-2xl whitespace-pre-wrap">
-                                       {selectedItem.project_description || "No project blueprint provided."}
+                                       {selectedItem.project_description || "No description provided."}
                                     </p>
                                  </div>
                                  <div className="grid grid-cols-2 gap-4">
@@ -652,13 +784,13 @@ const AdminDashboard = () => {
                                     </button>
                                     <button 
                                       onClick={() => {
-                                        if (window.confirm("Permanent deletion of intelligence record?")) {
+                                        if (window.confirm("Are you sure you want to delete this record?")) {
                                           handleDelete('project_inquiries', selectedItem.id);
                                           setSelectedItem(null);
                                         }
                                       }}
                                       className="p-4 border-4 border-foreground rounded-2xl hover:bg-red-500 hover:text-white transition-all"
-                                      title="Purge Record"
+                                      title="Delete"
                                     >
                                        <Trash2 size={20} />
                                     </button>
@@ -727,7 +859,7 @@ const AdminDashboard = () => {
                                  <div className="flex justify-end">
                                     <button 
                                       onClick={() => {
-                                        if (window.confirm("Purge job application record?")) {
+                                        if (window.confirm("Delete job application?")) {
                                           handleDelete('job_applications', selectedItem.id);
                                           setSelectedItem(null);
                                         }
@@ -735,7 +867,7 @@ const AdminDashboard = () => {
                                       className="flex items-center gap-3 px-8 py-4 bg-red-50 text-red-600 border-4 border-red-200 rounded-2xl font-heading font-black text-[10px] uppercase tracking-widest hover:bg-red-600 hover:text-white hover:border-red-600 transition-all shadow-pop-sm"
                                     >
                                        <Trash2 size={16} />
-                                       Purge Application
+                                       Delete Application
                                     </button>
                                  </div>
                               </div>
@@ -751,7 +883,7 @@ const AdminDashboard = () => {
                               <div className="flex justify-end">
                                  <button 
                                    onClick={() => {
-                                     if (window.confirm("Purge strategic update?")) {
+                                     if (window.confirm("Delete update?")) {
                                        handleDelete('strategic_updates', selectedItem.id);
                                        setSelectedItem(null);
                                      }
@@ -759,7 +891,7 @@ const AdminDashboard = () => {
                                    className="flex items-center gap-3 px-8 py-4 bg-red-50 text-red-600 border-4 border-red-200 rounded-2xl font-heading font-black text-[10px] uppercase tracking-widest hover:bg-red-600 hover:text-white hover:border-red-600 transition-all shadow-pop-sm"
                                  >
                                     <Trash2 size={16} />
-                                    Purge Update
+                                    Delete Update
                                  </button>
                               </div>
                            </div>

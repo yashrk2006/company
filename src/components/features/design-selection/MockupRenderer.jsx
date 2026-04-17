@@ -71,7 +71,7 @@ const MockupRenderer = ({ theme }) => {
 
   return (
     <div 
-      className="h-full w-full transition-all duration-500 relative overflow-hidden"
+      className="min-h-full w-full transition-all duration-500 relative overflow-hidden"
       style={{ 
         backgroundColor: theme.styles.bg, 
         color: theme.mode === 'Light' ? '#000000' : '#ffffff' 
