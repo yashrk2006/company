@@ -3,17 +3,9 @@ import { motion } from 'framer-motion';
 import { Newspaper, TrendingUp, Globe, Anchor, Bookmark, Share2, Search, Menu, Clock, AlertCircle, Quote, CheckCircle, ChevronRight, PenTool, Hash, Filter } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
-const NOISE_SVG = "data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E";
-
 const NewspaperMockup = ({ theme }) => {
   return (
     <div className="min-h-fit relative overflow-x-hidden bg-[#F9F9F7] text-[#111111] font-serif selection:bg-[#CC0000] selection:text-white pb-4">
-
-      {/* 1. Global Texture Overlay */}
-      <div
-        className="fixed inset-0 pointer-events-none opacity-[0.15] mix-blend-multiply z-50"
-        style={{ backgroundImage: `url("${NOISE_SVG}")` }}
-      />
 
       {/* 2. Top Bar (Live Status) */}
       <div className="border-b border-black/10 px-8 py-3 flex justify-between items-center bg-[#F9F9F7]/80 backdrop-blur-md sticky top-0 z-[100]">
