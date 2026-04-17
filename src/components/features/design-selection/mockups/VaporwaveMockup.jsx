@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Sun, Cloud, Music, Monitor, Zap, Heart, Sparkles, Send, Play, Radio, Volume2, CassetteTape, Disc, Mic2, Star, CheckCircle2 } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
+const NOISE_SVG = "data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E";
+
 const VaporwaveMockup = ({ theme }) => {
   const accents = ['#FF71CE', '#01CDFE', '#05FFA1', '#B967FF', '#FFFB96'];
 
@@ -184,7 +186,10 @@ const VaporwaveMockup = ({ theme }) => {
       {/* 6. Massive Footer */}
       <footer className="p-12 md:p-32 bg-[#1A103C] border-t-8 border-[#05FFA1] flex flex-col items-center gap-24 text-center relative overflow-hidden">
          {/* Background noise texture */}
-         <div className="absolute inset-0 opacity-5 pointer-events-none mix-blend-overlay bg-[url('data:image/svg+xml,%3Csvg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noiseFilter\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.65\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noiseFilter)\"/%3E%3C/svg%3E')]" />
+         <div
+           className="absolute inset-0 opacity-5 pointer-events-none mix-blend-overlay"
+           style={{ backgroundImage: `url("${NOISE_SVG}")` }}
+         />
          
          <div className="relative z-10 flex flex-col items-center gap-12 group">
             <div className="w-40 h-40 bg-[#FF71CE] flex items-center justify-center text-white rotate-12 group-hover:rotate-0 transition-transform cursor-pointer border-4 border-white shadow-[12px_12px_0px_#05FFA1]">
