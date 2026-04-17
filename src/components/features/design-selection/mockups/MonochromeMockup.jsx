@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Activity, Plus, Maximize, ArrowUpRight, Copy, Check, Menu, X, ArrowRight, 
-  Layers, Smartphone, Code, ShieldCheck, Zap, Command, Box, 
+  Layers, Smartphone, Code, ShieldCheck, Zap, Command, Box, Hash,
   Activity as ActivityIcon, Sliders, Globe, Cpu, Search, 
   ArrowDownCircle, Lock, Mail, Phone, MapPin, ExternalLink
 } from 'lucide-react';
