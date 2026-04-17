@@ -67,7 +67,7 @@ const AcademiaMockup = ({ theme }) => {
                <span className="text-sm tracking-widest uppercase font-medium">Vol. VII: On Sovereign Architectures</span>
             </div>
 
-            <h1 className="text-7xl md:text-[9rem] lg:text-[11rem] font-bold leading-[0.85] tracking-tighter text-[#2C241E]">
+            <h1 className="text-7xl md:text-[9rem] lg:text-6xl font-bold leading-[0.85] tracking-tighter text-[#2C241E]">
                Intellectual <br />
                Authority in the <br />
                <span className="italic font-light serif text-[#8B4513] underline underline-offset-[20px] decoration-[#8B4513]/10">Sovereign Era.</span>
@@ -100,9 +100,9 @@ const AcademiaMockup = ({ theme }) => {
       </section>
 
       {/* 5. Manuscript Modules (Features) */}
-      <section className="relative z-10 py-48 px-12 md:px-32 bg-[#2C241E]/[0.02] border-y border-[#2C241E]/5">
+      <section className="relative z-10 py-16 px-12 md:px-10 bg-[#2C241E]/[0.02] border-y border-[#2C241E]/5">
          <div className="max-w-7xl mx-auto space-y-40">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-end border-b border-[#2C241E]/10 pb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end border-b border-[#2C241E]/10 pb-20">
                <div className="space-y-8">
                   <span className="text-[11px] font-black uppercase tracking-[0.6em] text-[#8B4513]">Scholarly Systems</span>
                   <h2 className="text-6xl md:text-8xl font-bold tracking-tight text-[#2C241E]">The Archives.</h2>
@@ -142,12 +142,12 @@ const AcademiaMockup = ({ theme }) => {
       </section>
 
       {/* 6. Scholar Performance (Metrics) */}
-      <section className="py-48 px-12 md:px-32 bg-[#2C241E] text-[#FDFBF7] relative overflow-hidden z-10">
+      <section className="py-16 px-12 md:px-10 bg-[#2C241E] text-[#FDFBF7] relative overflow-hidden z-10">
          <div className="absolute top-0 right-0 p-40 opacity-[0.03] pointer-events-none">
             <Library size={700} strokeWidth={1} />
          </div>
          <div className="max-w-7xl mx-auto flex flex-col items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
                {[
                   { val: "1.4k", label: "CITATIONS_INDEX" },
                   { val: "VII", label: "ACTIVE_VOLUMES" },
@@ -168,14 +168,14 @@ const AcademiaMockup = ({ theme }) => {
       </section>
 
       {/* 7. The Scholar Tiers (Pricing) */}
-      <section className="py-48 px-12 md:px-32 max-w-7xl mx-auto flex flex-col items-center z-10">
+      <section className="py-16 px-12 md:px-10 max-w-7xl mx-auto flex flex-col items-center z-10">
          <div className="text-center mb-40 space-y-8">
             <span className="text-[11px] font-black uppercase tracking-[0.8em] text-[#8B4513]">Allocated Scholarships</span>
-            <h2 className="text-6xl md:text-[10rem] font-bold tracking-tighter text-[#2C241E] uppercase italic leading-none">Curriculum.</h2>
+            <h2 className="text-6xl md:text-5xl font-bold tracking-tighter text-[#2C241E] uppercase italic leading-none">Curriculum.</h2>
          </div>
 
-         <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 w-full max-w-5xl">
-            <div className="p-20 bg-[#FDFBF7] border border-[#2C241E]/10 flex flex-col gap-16 group hover:shadow-[40px_40px_0px_rgba(44,36,30,0.02)] transition-all duration-1000">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full max-w-5xl">
+            <div className="p-8 bg-[#FDFBF7] border border-[#2C241E]/10 flex flex-col gap-16 group hover:shadow-[40px_40px_0px_rgba(44,36,30,0.02)] transition-all duration-1000">
                <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-[0.4em] text-[#8B4513]">
                   <span>Tier_I: Undergrad</span>
                   <Coffee size={24} className="opacity-20 group-hover:rotate-12 transition-transform" />
@@ -192,7 +192,7 @@ const AcademiaMockup = ({ theme }) => {
                <button className="w-full py-8 border-2 border-[#2C241E] text-[#2C241E] font-black uppercase text-[11px] tracking-[0.4em] hover:bg-[#2C241E] hover:text-[#FDFBF7] transition-all mt-8 shadow-sm">Commit to Thesis</button>
             </div>
 
-            <div className="p-20 bg-[#2C241E] text-[#FDFBF7] border-4 border-[#8B4513]/30 flex flex-col gap-16 relative overflow-hidden group">
+            <div className="p-8 bg-[#2C241E] text-[#FDFBF7] border-4 border-[#8B4513]/30 flex flex-col gap-16 relative overflow-hidden group">
                <div className="absolute top-0 right-0 p-12 opacity-[0.03] rotate-[-20deg] group-hover:rotate-0 transition-transform duration-[2s]">
                   <Scroll size={300} strokeWidth={1} />
                </div>
@@ -215,12 +215,12 @@ const AcademiaMockup = ({ theme }) => {
       </section>
 
       {/* 8. Antique Footer */}
-      <footer className="p-12 md:p-40 bg-[#F2EDE4] border-t border-[#2C241E]/10 flex flex-col items-center gap-32 relative z-10">
-         <div className="absolute top-0 left-0 p-32 opacity-[0.02] pointer-events-none rotate-12">
+      <footer className="p-12 md:p-40 bg-[#F2EDE4] border-t border-[#2C241E]/10 flex flex-col items-center gap-10 relative z-10">
+         <div className="absolute top-0 left-0 p-10 opacity-[0.02] pointer-events-none rotate-12">
             <Archive size={400} strokeWidth={1} />
          </div>
          
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 relative z-10 w-full max-w-7xl">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 w-full max-w-7xl">
             <div className="lg:col-span-2 space-y-12">
                <div className="flex items-center gap-10 group">
                   <div className="w-24 h-24 rounded-full border-4 border-[#2C241E]/5 flex items-center justify-center text-[#2C241E] shadow-inner group-hover:border-[#8B4513]/20 transition-all duration-1000">

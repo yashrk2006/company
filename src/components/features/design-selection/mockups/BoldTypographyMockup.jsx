@@ -82,7 +82,7 @@ const BoldTypographyMockup = ({ theme }) => {
                   <div className="h-[4px] flex-grow bg-white/20" />
                   <span className="text-xl font-black opacity-20">[MMXXVI]</span>
                </div>
-               <h2 className="text-[14vw] md:text-[14rem] lg:text-[18rem] font-black leading-[0.7] tracking-tighter uppercase italic pr-8 relative">
+               <h2 className="text-[14vw] md:text-7xl lg:text-8xl font-black leading-[0.7] tracking-tighter uppercase italic pr-8 relative">
                   <span className="block border-t-[20px] border-white pt-10">FORM_</span>
                   <span className="block text-transparent bg-clip-text relative hover:text-white transition-all cursor-default" style={{ WebkitTextStroke: '3px white' }}>
                     FOLLOWS
@@ -92,7 +92,7 @@ const BoldTypographyMockup = ({ theme }) => {
                </h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start lg:items-end">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start lg:items-end">
                <div className="lg:col-span-7 space-y-16">
                   <p className="text-4xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.8] italic bg-white text-black p-8 shadow-[30px_30px_0px_white/10]">
                      "Strip away the digital containers. Silence the aesthetic noise. Let the syntax define the superstructure."
@@ -128,7 +128,7 @@ const BoldTypographyMockup = ({ theme }) => {
            className="flex whitespace-nowrap gap-28 h-auto items-center"
          >
             {[...Array(10)].map((_, i) => (
-               <span key={i} className="text-[14rem] font-black uppercase tracking-tighter italic flex items-center gap-12">
+               <span key={i} className="text-7xl font-black uppercase tracking-tighter italic flex items-center gap-12">
                   THE_TEXT_IS_THE_INTERFACE <Hash size={80} strokeWidth={8} /> TYPOGRAPHY_IS_THE_CODE <Zap size={80} strokeWidth={8} fill="currentColor" /> 
                </span>
             ))}
@@ -136,10 +136,10 @@ const BoldTypographyMockup = ({ theme }) => {
       </section>
 
       {/* 5. Manifesto Matrix (Core Pillars) */}
-      <section className="relative z-10 w-full bg-black text-white py-64 px-8 md:px-24">
-         <div className="max-w-screen-2xl mx-auto space-y-48">
+      <section className="relative z-10 w-full bg-black text-white py-20 px-8 md:px-24">
+         <div className="max-w-screen-2xl mx-auto space-y-12">
             <div className="flex flex-col lg:flex-row justify-between items-end gap-16 border-b-[12px] border-white pb-20">
-               <h2 className="text-8xl md:text-[16rem] font-black tracking-tighter uppercase italic leading-[0.7] text-white">THE_SYNTAX.</h2>
+               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase italic leading-[0.7] text-white">THE_SYNTAX.</h2>
                <div className="max-w-md text-right space-y-8">
                   <div className="text-sm font-black uppercase tracking-[1.5em] opacity-30 italic">Strategic Alignment</div>
                   <p className="text-2xl font-bold uppercase tracking-widest leading-none bg-white text-black px-4 py-2 italic inline-block">Absolute control over the visual hierarchy.</p>
@@ -175,8 +175,8 @@ const BoldTypographyMockup = ({ theme }) => {
       </section>
 
       {/* 6. Semantic Audit (Showcase/Pricing) */}
-      <section className="relative z-10 w-full bg-white text-black py-64 px-8 md:px-24">
-         <div className="max-w-screen-2xl mx-auto space-y-48">
+      <section className="relative z-10 w-full bg-white text-black py-20 px-8 md:px-24">
+         <div className="max-w-screen-2xl mx-auto space-y-12">
             <div className="text-center space-y-12">
                <h2 className="text-8xl md:text-[20rem] font-black uppercase text-center tracking-tighter leading-none italic underline decoration-black decoration-[24px] underline-offset-[30px] mb-20">THE_INDEX.</h2>
                <p className="text-2xl font-black uppercase tracking-[1.5em] opacity-30 italic">Investment Tiering // System Access</p>
@@ -187,7 +187,7 @@ const BoldTypographyMockup = ({ theme }) => {
                   { tier: "VOL. 01 (LITE)", price: "240", accent: "black", items: ["3 Core Static Typefaces", "Basic Grid Foundation", "Monochrome Identity Seal", "24hr Response Latency", "Semantic Basic Audit"] },
                   { tier: "VOL. 02 (ENT)", price: "980", featured: true, accent: "black", items: ["Infinite Typeface Access", "Manifesto Engine V4.8", "Full Distributed Nodes", "VIP Direct Semantic Uplink", "Custom Kerning Logic", "Zero Latency Ops"] }
                ].map((p, i) => (
-                  <div key={i} className={`p-24 space-y-20 bg-white group hover:bg-black hover:text-white transition-all duration-1000 flex flex-col justify-between`}>
+                  <div key={i} className={`p-8 space-y-20 bg-white group hover:bg-black hover:text-white transition-all duration-1000 flex flex-col justify-between`}>
                      <div className="space-y-16">
                         <div className="flex justify-between items-start border-b-[10px] border-black group-hover:border-white pb-8">
                            <span className="text-xl font-black uppercase tracking-[0.5em] italic">{p.tier}</span>
@@ -195,7 +195,7 @@ const BoldTypographyMockup = ({ theme }) => {
                               <Zap size={20} className={p.featured ? "fill-current" : ""} />
                            </div>
                         </div>
-                        <div className="text-[12rem] md:text-[18rem] font-black tracking-tighter leading-none italic relative group-hover:scale-110 transition-transform">
+                        <div className="text-6xl md:text-8xl font-black tracking-tighter leading-none italic relative group-hover:scale-110 transition-transform">
                            <span className="text-3xl font-black opacity-30 absolute top-0 left-[-2rem]">$</span>{p.price}
                            <span className="text-sm font-black uppercase tracking-[0.6em] opacity-10 absolute bottom-0 right-[-4rem] rotate-[-90deg] invisible md:visible">Participation / Year</span>
                         </div>
@@ -220,7 +220,7 @@ const BoldTypographyMockup = ({ theme }) => {
       </section>
 
       {/* 7. The Final Assertion (Call to Action) */}
-      <section className="relative z-10 w-full bg-black text-white py-64 px-12 md:px-32 text-center overflow-hidden border-t-[20px] border-white">
+      <section className="relative z-10 w-full bg-black text-white py-20 px-12 md:px-10 text-center overflow-hidden border-t-[20px] border-white">
          <div className="absolute inset-0 pattern-dots opacity-5 pointer-events-none" />
          <motion.div
            initial={{ scale: 0.8, opacity: 0 }}
@@ -229,14 +229,14 @@ const BoldTypographyMockup = ({ theme }) => {
            viewport={{ once: true }}
            className="max-w-7xl mx-auto space-y-32 relative z-10"
          >
-            <h2 className="text-[14vw] md:text-[16rem] lg:text-[22rem] font-black italic tracking-tighter leading-[0.6] uppercase text-white drop-shadow-[0_20px_50px_rgba(255,255,255,0.2)]">
+            <h2 className="text-[14vw] md:text-7xl lg:text-8xl font-black italic tracking-tighter leading-[0.6] uppercase text-white drop-shadow-[0_20px_50px_rgba(255,255,255,0.2)]">
                SAY_IT<br/>LOUDER.
             </h2>
             <div className="flex flex-col items-center gap-16">
                <motion.button 
                   whileHover={{ scale: 1.1, skewX: -15, rotate: 2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="px-32 py-16 bg-white text-black font-black uppercase text-4xl md:text-7xl tracking-[0.2em] shadow-[50px_50px_0px_white/10] hover:shadow-none transition-all flex items-center gap-12"
+                  className="px-10 py-16 bg-white text-black font-black uppercase text-4xl md:text-7xl tracking-[0.2em] shadow-[50px_50px_0px_white/10] hover:shadow-none transition-all flex items-center gap-12"
                >
                   COMMENCE <ArrowRight size={80} strokeWidth={8} />
                </motion.button>
@@ -246,21 +246,21 @@ const BoldTypographyMockup = ({ theme }) => {
       </section>
 
       {/* 8. Extra-Large Typographic Footer */}
-      <footer className="w-full p-12 md:p-40 bg-white text-black border-t-[40px] border-black flex flex-col items-center gap-48 text-center relative z-110 overflow-hidden">
+      <footer className="w-full p-12 md:p-40 bg-white text-black border-t-[40px] border-black flex flex-col items-center gap-12 text-center relative z-110 overflow-hidden">
          <div className="absolute top-[-10%] right-[-10%] text-[40vw] font-black opacity-[0.03] italic pointer-events-none uppercase">TYPE</div>
          
-         <div className="flex flex-col items-center gap-20 group transition-all cursor-crosshair">
+         <div className="flex flex-col items-center gap-8 group transition-all cursor-crosshair">
             <div className="w-64 h-64 bg-black flex items-center justify-center text-white -rotate-12 group-hover:rotate-12 transition-transform duration-700 shadow-[30px_30px_0px_#ccc] relative">
-               <span className="text-[12rem] font-black italic">Z</span>
+               <span className="text-6xl font-black italic">Z</span>
                <div className="absolute top-4 right-4 text-[10px] font-black tracking-widest opacity-40">[048]</div>
             </div>
             <div className="space-y-8">
-               <div className="text-8xl md:text-[14rem] lg:text-[18rem] font-black tracking-tighter italic leading-none uppercase text-black">ZORVIA.TXT</div>
+               <div className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter italic leading-none uppercase text-black">ZORVIA.TXT</div>
                <div className="text-[14px] font-black tracking-[3em] opacity-40 uppercase italic ml-6">Archived Transmission // SYS_V.4.8</div>
             </div>
          </div>
 
-         <div className="grid grid-cols-2 lg:grid-cols-4 gap-24 w-full max-w-screen-2xl text-[14px] font-black uppercase tracking-[1.2em] opacity-30 border-y-[10px] border-black/5 py-24">
+         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-screen-2xl text-[14px] font-black uppercase tracking-[1.2em] opacity-30 border-y-[10px] border-black/5 py-24">
             <a href="#" className="hover:opacity-100 hover:tracking-[1.5em] transition-all underline decoration-4 underline-offset-8">Manifesto</a>
             <a href="#" className="hover:opacity-100 hover:tracking-[1.5em] transition-all underline decoration-4 underline-offset-8">Archives</a>
             <a href="#" className="hover:opacity-100 hover:tracking-[1.5em] transition-all underline decoration-4 underline-offset-8">Protocols</a>
@@ -277,7 +277,7 @@ const BoldTypographyMockup = ({ theme }) => {
 
          <div className="pt-32 flex flex-col md:flex-row justify-between w-full max-w-screen-2xl items-center gap-12 text-[16px] font-black uppercase tracking-[1em] opacity-20 italic">
             <span>© MMXXVI ZORVIA SYSTEMS // ALL RIGHTS RESERVED // V.4.8</span>
-            <div className="flex gap-20 items-center">
+            <div className="flex gap-8 items-center">
                <div className="flex items-center gap-4">
                   <div className="w-3 h-3 bg-black rounded-full animate-pulse" />
                   <span>LATENCY: ZERO</span>

@@ -43,7 +43,7 @@ const ProfessionalMockup = ({ theme }) => {
       </nav>
 
       {/* 2. Hero Section (Authority) */}
-      <section className="relative z-10 pt-32 pb-48 px-8 md:px-16 flex flex-col items-center text-center max-w-7xl mx-auto min-h-fit">
+      <section className="relative z-10 pt-32 pb-12 px-8 md:px-16 flex flex-col items-center text-center max-w-7xl mx-auto min-h-fit">
          <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
@@ -82,9 +82,9 @@ const ProfessionalMockup = ({ theme }) => {
       </section>
 
       {/* 3. High-Trust Solutions (Features Grid) */}
-      <section className="relative z-10 py-48 px-12 md:px-32 bg-white border-y border-slate-200">
+      <section className="relative z-10 py-16 px-12 md:px-10 bg-white border-y border-slate-200">
          <div className="max-w-7xl mx-auto space-y-32">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-end pb-16 border-b border-slate-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end pb-16 border-b border-slate-100">
                <div className="space-y-6">
                   <span className="text-[11px] font-black uppercase tracking-[0.4em] text-[#1E40AF]">Global Practice</span>
                   <h2 className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight leading-none">Institutional <br/> Competence.</h2>
@@ -119,9 +119,9 @@ const ProfessionalMockup = ({ theme }) => {
       </section>
 
       {/* 4. Performance Metrics (Dashboard Visual) */}
-      <section className="py-48 px-12 md:px-32 bg-slate-900 text-white relative overflow-hidden z-10">
+      <section className="py-16 px-12 md:px-10 bg-slate-900 text-white relative overflow-hidden z-10">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/micro-carbon.png')] opacity-30 pointer-events-none" />
-         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-32 relative z-10">
+         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10 relative z-10">
             <div className="space-y-16 max-w-xl">
                <div className="space-y-6">
                   <span className="text-[11px] font-black uppercase tracking-[0.5em] text-blue-400">System Telemetry</span>
@@ -167,7 +167,7 @@ const ProfessionalMockup = ({ theme }) => {
       </section>
 
       {/* 5. Advisory Membership (Pricing) */}
-      <section className="py-48 px-12 md:px-32 max-w-7xl mx-auto flex flex-col items-center z-10">
+      <section className="py-16 px-12 md:px-10 max-w-7xl mx-auto flex flex-col items-center z-10">
          <div className="text-center mb-40 space-y-6">
             <span className="text-[11px] font-black uppercase tracking-[0.8em] text-[#1E40AF]">Partnership Structuring</span>
             <h2 className="text-6xl md:text-9xl font-bold text-slate-900 tracking-tight leading-none">Advisory Tiers.</h2>
@@ -235,8 +235,8 @@ const ProfessionalMockup = ({ theme }) => {
       </section>
 
       {/* 6. Corporate Footer */}
-      <footer className="p-12 md:p-32 bg-[#F8FAFC] border-t border-slate-200 flex flex-col items-center gap-32 relative z-10">
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 w-full max-w-7xl">
+      <footer className="p-12 md:p-10 bg-[#F8FAFC] border-t border-slate-200 flex flex-col items-center gap-10 relative z-10">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl">
             <div className="lg:col-span-2 space-y-12">
                <div className="flex items-center gap-10 group cursor-pointer">
                   <div className="w-24 h-24 bg-[#1E40AF] rounded-2xl flex items-center justify-center text-white shadow-xl rotate-0 group-hover:rotate-6 transition-transform">

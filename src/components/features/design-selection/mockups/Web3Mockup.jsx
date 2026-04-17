@@ -61,7 +61,7 @@ const Web3Mockup = ({ theme }) => {
       </nav>
 
       {/* 4. Hero Section (The Protocol) */}
-      <section className="relative z-10 pt-32 pb-48 px-12 md:px-24 flex flex-col items-center text-center max-w-7xl mx-auto min-h-fit">
+      <section className="relative z-10 pt-32 pb-12 px-12 md:px-24 flex flex-col items-center text-center max-w-7xl mx-auto min-h-fit">
          <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ const Web3Mockup = ({ theme }) => {
                Institutional Protocol_Ref42
             </div>
 
-            <h1 className="text-7xl md:text-[8rem] lg:text-[11rem] font-black leading-[0.8] tracking-tighter text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[0.8] tracking-tighter text-white">
                Decentralized <br />
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F59E0B] to-orange-400">Institutional.</span>
             </h1>
@@ -96,9 +96,9 @@ const Web3Mockup = ({ theme }) => {
       </section>
 
       {/* 5. Network Visualization (The Data Layer) */}
-      <section className="relative z-10 py-48 px-8 md:px-24 bg-black/40 border-y border-white/5 backdrop-blur-sm">
+      <section className="relative z-10 py-16 px-8 md:px-24 bg-black/40 border-y border-white/5 backdrop-blur-sm">
          <div className="max-w-7xl mx-auto space-y-40">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-end pb-16 border-b border-white/10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end pb-16 border-b border-white/10">
                <div className="space-y-8">
                   <span className="text-[11px] font-black uppercase tracking-[0.8em] text-[#F59E0B]">Network Capacity</span>
                   <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white uppercase leading-none italic">The_Grid.</h2>
@@ -140,14 +140,14 @@ const Web3Mockup = ({ theme }) => {
       </section>
 
       {/* 6. Sovereign Governance (Stake Pricing) */}
-      <section className="py-48 px-12 md:px-32 max-w-7xl mx-auto flex flex-col items-center z-10">
+      <section className="py-16 px-12 md:px-10 max-w-7xl mx-auto flex flex-col items-center z-10">
          <div className="text-center mb-40 space-y-6">
             <span className="text-[11px] font-black uppercase tracking-[1em] text-[#F59E0B]">Yield Allocation</span>
-            <h2 className="text-6xl md:text-[10rem] font-black tracking-[-0.1em] text-white leading-none italic uppercase">Staking.</h2>
+            <h2 className="text-6xl md:text-5xl font-black tracking-[-0.1em] text-white leading-none italic uppercase">Staking.</h2>
          </div>
 
          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-5xl">
-            <div className="p-20 bg-white/5 border-2 border-white/10 rounded-[4rem] group hover:bg-white/10 transition-all duration-1000 flex flex-col justify-between">
+            <div className="p-8 bg-white/5 border-2 border-white/10 rounded-[4rem] group hover:bg-white/10 transition-all duration-1000 flex flex-col justify-between">
                <div className="space-y-12">
                   <div className="flex justify-between items-center">
                      <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#F59E0B]">L_Tier: Node Pilot</span>
@@ -190,12 +190,12 @@ const Web3Mockup = ({ theme }) => {
       </section>
 
       {/* 7. Decentralized Footer */}
-      <footer className="p-12 md:p-40 bg-black border-t-2 border-white/5 flex flex-col items-center gap-32 relative z-10">
+      <footer className="p-12 md:p-40 bg-black border-t-2 border-white/5 flex flex-col items-center gap-10 relative z-10">
          <div className="absolute bottom-0 right-0 p-40 opacity-[0.03] pointer-events-none rotate-12">
             <Globe size={400} strokeWidth={1} />
          </div>
          
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 relative z-10 w-full max-w-7xl">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 w-full max-w-7xl">
             <div className="lg:col-span-2 space-y-12">
                <div className="flex items-center gap-8 group cursor-pointer">
                   <div className="w-24 h-24 bg-white/5 border border-white/20 rounded-[2rem] flex items-center justify-center text-[#F59E0B] shadow-[0_0_40px_rgba(245,158,11,0.1)] group-hover:border-[#F59E0B] transition-all">

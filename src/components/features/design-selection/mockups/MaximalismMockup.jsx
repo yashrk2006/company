@@ -119,7 +119,7 @@ const MaximalismMockup = ({ theme }) => {
       </nav>
 
       {/* 4. Hero: The Maximum Overload */}
-      <section className="relative z-20 w-full px-8 md:px-24 pt-48 pb-64 flex flex-col items-center text-center max-w-screen-2xl mx-auto overflow-visible mb-64">
+      <section className="relative z-20 w-full px-8 md:px-24 pt-12 pb-16 flex flex-col items-center text-center max-w-screen-2xl mx-auto overflow-visible mb-16">
          <motion.div
            initial={{ rotate: -20, scale: 0.5, opacity: 0 }}
            whileInView={{ rotate: 10, scale: 1.1, opacity: 1 }}
@@ -131,7 +131,7 @@ const MaximalismMockup = ({ theme }) => {
             <div className="absolute -bottom-10 -left-10 bg-[#39FF14] text-black px-6 py-2 border-4 border-black font-black rotate-[-15deg] group-hover:rotate-0 transition-all uppercase">MMXXVI_PROTOCOL</div>
          </motion.div>
 
-         <h1 className="text-8xl md:text-[16rem] lg:text-[22rem] font-black uppercase tracking-tighter leading-[0.7] mb-32 text-shadow-max-mega group decoration-white underline decoration-[20px] underline-offset-[30px] hover:no-underline transition-all relative">
+         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.7] mb-32 text-shadow-max-mega group decoration-white underline decoration-[20px] underline-offset-[30px] hover:no-underline transition-all relative">
             MORE IS <br />
             <span className="text-transparent" style={{ WebkitTextStroke: '6px white' }}>ALWAYS</span> <br />
             <span className="bg-white text-black px-16 inline-block hover:bg-[#39FF14] transition-colors cursor-default">MORE.</span>
@@ -140,7 +140,7 @@ const MaximalismMockup = ({ theme }) => {
             </div>
          </h1>
 
-         <p className="text-3xl md:text-6xl lg:text-7xl font-black max-w-7xl leading-[0.8] uppercase italic text-[#FFFF00] mb-48 drop-shadow-[10px_10px_0px_black] border-y-[30px] border-white/5 py-24 relative overflow-hidden group">
+         <p className="text-3xl md:text-6xl lg:text-7xl font-black max-w-7xl leading-[0.8] uppercase italic text-[#FFFF00] mb-12 drop-shadow-[10px_10px_0px_black] border-y-[30px] border-white/5 py-24 relative overflow-hidden group">
             <motion.div 
                animate={{ x: ['-100%', '100%'] }} 
                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
@@ -153,20 +153,20 @@ const MaximalismMockup = ({ theme }) => {
             <motion.button 
               whileHover={{ scale: 1.1, rotate: -3, skewX: -10 }}
               whileTap={{ scale: 0.9 }}
-              className="w-full lg:w-auto px-32 py-12 bg-[#00FFFF] text-black border-[12px] border-white font-black uppercase text-5xl md:text-7xl shadow-[30px_30px_0px_#8B00FF] hover:shadow-none hover:translate-x-6 hover:translate-y-6 transition-all flex items-center justify-center gap-12 group"
+              className="w-full lg:w-auto px-10 py-12 bg-[#00FFFF] text-black border-[12px] border-white font-black uppercase text-5xl md:text-7xl shadow-[30px_30px_0px_#8B00FF] hover:shadow-none hover:translate-x-6 hover:translate-y-6 transition-all flex items-center justify-center gap-12 group"
             >
                LAUNCH_NOW <Rocket size={80} fill="currentColor" className="group-hover:translate-y-[-20px] transition-transform" />
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.1, rotate: 3, skewX: 10 }}
-              className="w-full lg:w-auto px-32 py-12 bg-white text-black border-[12px] border-black font-black uppercase text-5xl md:text-7xl shadow-[30px_30px_0px_#FF00FF] hover:shadow-none hover:translate-x-6 hover:translate-y-6 transition-all flex items-center justify-center gap-12 italic"
+              className="w-full lg:w-auto px-10 py-12 bg-white text-black border-[12px] border-black font-black uppercase text-5xl md:text-7xl shadow-[30px_30px_0px_#FF00FF] hover:shadow-none hover:translate-x-6 hover:translate-y-6 transition-all flex items-center justify-center gap-12 italic"
             >
                STUDIO_VOID <Plus size={80} strokeWidth={8} />
             </motion.button>
          </div>
 
          {/* Hyper-Element Parade */}
-         <div className="mt-80 w-full flex flex-wrap justify-center gap-24 md:gap-48 overflow-visible">
+         <div className="mt-80 w-full flex flex-wrap justify-center gap-8 md:gap-12 overflow-visible">
             {[Sparkles, Zap, Star, Heart, Moon, Sun, Cloud, Ghost, Disc, Radio].map((Icon, i) => (
                <motion.div 
                  key={i}
@@ -194,12 +194,12 @@ const MaximalismMockup = ({ theme }) => {
       </section>
 
       {/* 5. Feature Overload (Matrix) */}
-      <section className="relative z-20 py-80 bg-white text-black border-y-[40px] border-[#FF00FF] flex flex-col items-center overflow-hidden">
+      <section className="relative z-20 py-24 bg-white text-black border-y-[40px] border-[#FF00FF] flex flex-col items-center overflow-hidden">
          <div className="absolute top-0 left-0 w-full h-full opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'linear-gradient(90deg, #000 2px, transparent 2px)', backgroundSize: '50px 50px' }} />
          
-         <div className="max-w-7xl mx-auto px-8 md:px-24 flex flex-col items-center space-y-64 w-full">
+         <div className="max-w-7xl mx-auto px-8 md:px-24 flex flex-col items-center space-y-16 w-full">
             <div className="text-center space-y-12 relative">
-               <h2 className="text-9xl md:text-[18rem] font-black text-black tracking-tighter uppercase italic leading-none drop-shadow-[20px_20px_0px_#00FFFF] border-b-[30px] border-black/5 pb-10">THE_INFRA.</h2>
+               <h2 className="text-5xl md:text-8xl font-black text-black tracking-tighter uppercase italic leading-none drop-shadow-[8px_8px_0px_#00FFFF] border-b-[30px] border-black/5 pb-10">THE_INFRA.</h2>
                <div className="text-4xl font-black uppercase tracking-[1.5em] opacity-40 italic mt-8 animate-pulse text-center w-full">Infinite Visual Bandwidth</div>
             </div>
             
@@ -217,7 +217,7 @@ const MaximalismMockup = ({ theme }) => {
                   <motion.div 
                     key={i} 
                     whileHover={{ backgroundColor: "#000", color: "#fff" }}
-                    className="group p-20 bg-white space-y-16 transition-all duration-300 min-h-[500px] flex flex-col justify-between"
+                    className="group p-8 bg-white space-y-16 transition-all duration-300 min-h-0 flex flex-col justify-between"
                   >
                      <div className="space-y-12">
                         <div className="w-32 h-32 border-[8px] border-current flex items-center justify-center transition-colors shadow-[10px_10px_0px_current]" style={{ color: accents[i % accents.length] }}>
@@ -242,13 +242,13 @@ const MaximalismMockup = ({ theme }) => {
       </section>
 
       {/* 6. Strategic Chaos (Pricing Index) */}
-      <section className="py-80 px-12 md:px-24 w-full flex flex-col items-center z-10 bg-black">
-         <div className="text-center mb-64 space-y-16">
-            <h2 className="text-9xl md:text-[22rem] font-black text-white tracking-tighter uppercase italic leading-none underline decoration-[#8B00FF] decoration-[40px] underline-offset-[30px] drop-shadow-[20px_20px_0px_#FF00FF]">THE_INDEX.</h2>
+      <section className="py-24 px-12 md:px-24 w-full flex flex-col items-center z-10 bg-black">
+         <div className="text-center mb-16 space-y-16">
+            <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase italic leading-none underline decoration-[#8B00FF] decoration-[40px] underline-offset-[30px] drop-shadow-[8px_8px_0px_#FF00FF]">THE_INDEX.</h2>
             <div className="text-3xl font-black uppercase tracking-[2em] opacity-20 italic">Planetary Investment Reserves MMXXVI</div>
          </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-32 w-full lg:max-w-7xl">
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full lg:max-w-7xl">
             {[
                { tier: "VOL. 01 (CORE)", price: "480", color: "#FF00FF", accent: "#00FFFF", desc: "For independent creative clusters requiring basic visual overload and planetary sync.", items: ["Infinite Color Core v1", "Dopamine Architecture Sync", "Basic Archive Access", "Standard Vibe Routing", "Email Support (Priority High)"] },
                { tier: "VOL. 02 (MAX)", price: "1.9k", featured: true, color: "#00FFFF", accent: "#FFFF00", desc: "For massive institutions demanding the absolute total planetary surplus of visual signals.", items: ["Omni-Channel Visual Excess", "Neural Dopamine Loop v4.8", "Military Grade Neon Vault", "VIP Chaos Counsel Access", "Custom Particle Forge Engine", "Full Source Sovereignty Key"] }
@@ -256,7 +256,7 @@ const MaximalismMockup = ({ theme }) => {
                <motion.div 
                  key={i} 
                  whileHover={{ y: -40, rotate: i === 0 ? -3 : 3 }}
-                 className={`p-24 border-[16px] border-white group relative transition-all duration-700 overflow-hidden flex flex-col justify-between h-[1000px] ${p.featured ? 'bg-white text-black' : 'bg-white/5 text-white'}`}
+                 className={`p-8 border-[16px] border-white group relative transition-all duration-700 overflow-hidden flex flex-col justify-between h-auto ${p.featured ? 'bg-white text-black' : 'bg-white/5 text-white'}`}
                >
                   <div className="absolute inset-x-0 top-0 h-8" style={{ backgroundColor: p.color }} />
                   <div className="space-y-24 relative z-10">
@@ -270,7 +270,7 @@ const MaximalismMockup = ({ theme }) => {
                         </div>
                      </div>
                      <div className="text-center space-y-12">
-                        <div className="text-[12rem] md:text-[18rem] font-black tracking-tighter leading-none italic relative inline-block">
+                        <div className="text-6xl md:text-8xl font-black tracking-tighter leading-none italic relative inline-block">
                            <span className="text-6xl font-black opacity-20 absolute top-0 left-[-6rem] italic">$</span>{p.price}
                            <span className="text-sm font-black uppercase tracking-[2em] opacity-20 absolute bottom-[-4rem] left-0 text-center w-full">Absolute_Annual_Fee</span>
                         </div>
@@ -298,23 +298,23 @@ const MaximalismMockup = ({ theme }) => {
       </section>
 
       {/* 7. Total Immersive Call (CTA) */}
-      <section className="w-full py-80 px-12 md:px-32 relative overflow-hidden text-center z-10 bg-[#FF00FF] text-white border-t-[50px] border-black">
+      <section className="w-full py-24 px-12 md:px-10 relative overflow-hidden text-center z-10 bg-[#FF00FF] text-white border-t-[50px] border-black">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 pointer-events-none" />
          <motion.div
            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
            whileInView={{ opacity: 1, scale: 1.3, rotate: 0 }}
            transition={{ duration: 1.5, type: "spring" }}
            viewport={{ once: true }}
-           className="max-w-7xl mx-auto space-y-64 relative z-10"
+           className="max-w-7xl mx-auto space-y-16 relative z-10"
          >
-            <h2 className="text-[15vw] md:text-[22vw] lg:text-[28vw] font-black italic tracking-tighter leading-[0.5] uppercase text-black drop-shadow-[30px_30px_0px_white]">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black italic tracking-tighter leading-[0.5] uppercase text-black drop-shadow-[10px_10px_0px_white]">
                ALL_IN<br/>NOW.
             </h2>
-            <div className="flex flex-col items-center gap-32">
+            <div className="flex flex-col items-center gap-10">
                <motion.button 
                   whileHover={{ scale: 1.15, rotate: 5, skewX: -10 }}
                   whileTap={{ scale: 0.9 }}
-                  className="px-48 py-24 bg-white border-[16px] border-black text-black font-black uppercase text-7xl md:text-[10rem] tracking-[0.2em] shadow-[50px_50px_0px_black] hover:shadow-none transition-all flex items-center gap-32 group"
+                  className="px-12 py-24 bg-white border-[16px] border-black text-black font-black uppercase text-4xl md:text-5xl tracking-[0.2em] shadow-[50px_50px_0px_black] hover:shadow-none transition-all flex items-center gap-10 group"
                >
                   YES! <Sparkles size={160} strokeWidth={8} className="group-hover:rotate-[360deg] transition-all duration-[2000ms]" />
                </motion.button>
@@ -324,11 +324,11 @@ const MaximalismMockup = ({ theme }) => {
       </section>
 
       {/* 8. Hyper-Branded Over-the-Top Footer */}
-      <footer className="w-full p-12 md:p-64 bg-black text-white border-t-[80px] border-white flex flex-col items-center gap-64 relative z-[110] overflow-hidden text-center">
+      <footer className="w-full p-12 md:p-16 bg-black text-white border-t-[80px] border-white flex flex-col items-center gap-16 relative z-[110] overflow-hidden text-center">
          <div className="absolute top-0 left-0 w-full h-full pattern-dots opacity-10 pointer-events-none" />
          <div className="absolute top-[-20%] right-[-10%] text-[60vw] font-black opacity-[0.03] italic pointer-events-none uppercase text-white">MAX</div>
          
-         <div className="grid grid-cols-1 lg:grid-cols-3 gap-64 w-full max-w-screen-2xl mx-auto items-center relative z-10 text-left">
+         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 w-full max-w-screen-2xl mx-auto items-center relative z-10 text-left">
             <div className="lg:col-span-2 space-y-32">
                <div className="flex items-center gap-16 group cursor-pointer transition-all duration-700">
                   <div className="relative">
@@ -338,7 +338,7 @@ const MaximalismMockup = ({ theme }) => {
                      <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#39FF14] border-8 border-black rounded-full animate-bounce shadow-[10px_10px_0px_white]" />
                   </div>
                   <div className="flex flex-col">
-                     <span className="font-black text-9xl md:text-[14rem] tracking-tighter uppercase italic leading-none text-white drop-shadow-[15px_15px_0px_#FF00FF]">MAX.ZORVIA</span>
+                     <span className="font-black text-5xl md:text-7xl tracking-tighter uppercase italic leading-none text-white drop-shadow-[6px_6px_0px_#FF00FF]">MAX.ZORVIA</span>
                      <span className="text-[14px] font-black tracking-[5em] text-[#00FFFF] uppercase mt-12 italic">Total Transmission Institutionalized // Absolute Reserves</span>
                   </div>
                </div>
@@ -347,7 +347,7 @@ const MaximalismMockup = ({ theme }) => {
                </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-24 w-full text-right">
+            <div className="grid grid-cols-2 gap-8 w-full text-right">
                {['Architecture', 'The_Void', 'Spells', 'Protocols', 'Archives', 'Essence', 'Manifesto', 'Chaos', 'Nodes', 'Legal', 'Privacy', 'Gallery'].map(item => (
                   <a key={item} href="#" className="text-3xl font-black uppercase tracking-widest text-[#FF00FF] hover:text-[#39FF14] hover:translate-x-[-20px] transition-all underline decoration-[12px] underline-offset-[20px] decoration-white/5 italic">
                      {item}
@@ -356,7 +356,7 @@ const MaximalismMockup = ({ theme }) => {
             </div>
          </div>
 
-         <div className="flex flex-wrap justify-center gap-20 w-full max-w-screen-2xl mx-auto pt-64 border-t-[20px] border-white/5 relative z-10">
+         <div className="flex flex-wrap justify-center gap-8 w-full max-w-screen-2xl mx-auto pt-16 border-t-[20px] border-white/5 relative z-10">
             {[GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon, Mail, Phone, MapPin, Globe2].map((Icon, i) => (
                <motion.a 
                   key={i} 
@@ -371,7 +371,7 @@ const MaximalismMockup = ({ theme }) => {
 
          <div className="flex flex-col md:flex-row justify-between w-full max-w-screen-2xl mx-auto pt-32 text-2xl font-black text-white/10 uppercase tracking-[2em] italic">
             <span>© MMXXVI MAX.ZORVIA PROTOCOLS // ALL RIGHTS RESERVED_TOTAL</span>
-            <div className="flex gap-48 items-center">
+            <div className="flex gap-12 items-center">
                <div className="flex items-center gap-10">
                   <div className="w-8 h-8 bg-[#39FF14] rounded-full animate-pulse shadow-[0_0_40px_#39FF14]" />
                   <span>TRANSMISSION: PEAK</span>

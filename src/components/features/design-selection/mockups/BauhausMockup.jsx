@@ -18,7 +18,7 @@ const BauhausMockup = ({ theme }) => {
          <motion.div 
            animate={{ scale: [1, 1.15, 1], x: [0, 40, 0], rotate: 10 }}
            transition={{ duration: 15, repeat: Infinity }}
-           className="absolute -top-20 -left-20 w-96 h-96 bg-[#FFE100] rounded-full border-8 border-black mix-blend-multiply opacity-20" 
+           className="absolute -top-8 -left-20 w-96 h-96 bg-[#FFE100] rounded-full border-8 border-black mix-blend-multiply opacity-20" 
          />
          <motion.div 
            animate={{ rotate: 360 }}
@@ -59,7 +59,7 @@ const BauhausMockup = ({ theme }) => {
 
       {/* 3. Hero Composition (Functionalism) */}
       <section className="relative z-10 flex border-x-8 border-black mx-auto w-full max-w-screen-2xl divide-x-8 divide-black border-b-8">
-         <div className="flex-grow p-16 md:p-32 space-y-16 bg-white/40 backdrop-blur-sm">
+         <div className="flex-grow p-16 md:p-10 space-y-16 bg-white/40 backdrop-blur-sm">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -68,7 +68,7 @@ const BauhausMockup = ({ theme }) => {
                <div className="inline-flex items-center gap-4 px-6 py-2 bg-black text-white text-[10px] font-black uppercase tracking-[0.5em]">
                   <Shapes size={14} /> Structural Mastery
                </div>
-               <h1 className="text-8xl md:text-[14rem] font-black uppercase leading-[0.8] tracking-tighter text-black">
+               <h1 className="text-5xl md:text-7xl font-black uppercase leading-[0.8] tracking-tighter text-black">
                   FORM <br /> 
                   FOLLOWS <br />
                   <span className="text-transparent" style={{ WebkitTextStroke: '3px black' }}>FUNCTION.</span>
@@ -113,12 +113,12 @@ const BauhausMockup = ({ theme }) => {
       </section>
 
       {/* 4. The Grid Matrix (Features) */}
-      <section className="relative z-10 py-48 px-12 md:px-32 bg-white border-b-8 border-black">
+      <section className="relative z-10 py-16 px-12 md:px-10 bg-white border-b-8 border-black">
          <div className="max-w-7xl mx-auto space-y-40">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-end pb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end pb-16">
                <div className="space-y-6">
                   <span className="text-[11px] font-black uppercase tracking-[0.8em] text-[#E6192E]">Design Principles</span>
-                  <h2 className="text-7xl md:text-[10rem] font-black tracking-tighter text-black uppercase leading-none">The_Matrix.</h2>
+                  <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-black uppercase leading-none">The_Matrix.</h2>
                </div>
                <p className="text-2xl font-black uppercase tracking-widest text-black/30 italic leading-none border-t-8 border-black pt-10">
                   Universal design language optimized for industrial-scale digital output.
@@ -152,11 +152,11 @@ const BauhausMockup = ({ theme }) => {
       </section>
 
       {/* 5. Performance Diagnostics (Data Visualization) */}
-      <section className="py-48 px-12 md:px-32 bg-black text-white z-10 relative overflow-hidden">
+      <section className="py-16 px-12 md:px-10 bg-black text-white z-10 relative overflow-hidden">
          <div className="absolute top-0 right-0 p-40 opacity-10 pointer-events-none grayscale">
             <Layers size={600} strokeWidth={1} />
          </div>
-         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-32 relative z-10">
+         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10 relative z-10">
             <div className="space-y-16 max-w-xl">
                <div className="space-y-6">
                   <span className="text-[11px] font-black uppercase tracking-[0.6em] text-[#FFE100]">System Telemetry</span>
@@ -201,14 +201,14 @@ const BauhausMockup = ({ theme }) => {
       </section>
 
       {/* 6. Unified Tiers (Pricing) */}
-      <section className="py-48 px-12 md:px-32 max-w-7xl mx-auto flex flex-col items-center z-10 bg-[#ECF0F1]/20">
+      <section className="py-16 px-12 md:px-10 max-w-7xl mx-auto flex flex-col items-center z-10 bg-[#ECF0F1]/20">
          <div className="text-center mb-40 space-y-6">
             <span className="text-[11px] font-black uppercase tracking-[0.8em] text-[#0055A4]">Institutional Tiers</span>
-            <h2 className="text-7xl md:text-[12rem] font-black uppercase tracking-[-0.1em] text-black leading-none italic">Foundation.</h2>
+            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-[-0.1em] text-black leading-none italic">Foundation.</h2>
          </div>
 
          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-full max-w-5xl border-8 border-black divide-x-8 divide-black">
-            <div className="p-20 bg-white flex flex-col gap-12 group hover:bg-[#ECF0F1] transition-all">
+            <div className="p-8 bg-white flex flex-col gap-12 group hover:bg-[#ECF0F1] transition-all">
                <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-[0.4em] text-black">
                   <span>Standard Laboratory</span>
                   <Box size={24} className="opacity-20 group-hover:text-[#E6192E] transition-all" />
@@ -224,7 +224,7 @@ const BauhausMockup = ({ theme }) => {
                <button className="w-full py-8 bg-black text-white font-black uppercase text-xl tracking-[0.3em] hover:bg-[#0055A4] transition-all mt-10">Select_Tier_A</button>
             </div>
 
-            <div className="p-20 bg-[#FFE100] text-black flex flex-col gap-12 relative overflow-hidden group hover:bg-white transition-all duration-700">
+            <div className="p-8 bg-[#FFE100] text-black flex flex-col gap-12 relative overflow-hidden group hover:bg-white transition-all duration-700">
                <div className="absolute top-0 right-0 p-12 opacity-10 rotate-[-15deg] group-hover:rotate-0 transition-transform duration-700 pointer-events-none">
                   <Triangle size={300} fill="currentColor" />
                </div>
@@ -252,7 +252,7 @@ const BauhausMockup = ({ theme }) => {
             <Hash size={400} strokeWidth={4} />
          </div>
          
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 relative z-10 w-full max-w-7xl">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 w-full max-w-7xl">
             <div className="lg:col-span-2 space-y-16">
                <div className="flex items-center gap-12 group cursor-pointer">
                   <div className="w-28 h-28 bg-[#E6192E] flex items-center justify-center text-white border-4 border-black group-hover:translate-x-4 transition-transform shadow-[12px_12px_0_0_black]">
@@ -286,7 +286,7 @@ const BauhausMockup = ({ theme }) => {
             </div>
          </div>
 
-         <div className="flex flex-wrap justify-center gap-20 pt-32 border-t-8 border-black w-full max-w-7xl relative z-10">
+         <div className="flex flex-wrap justify-center gap-8 pt-32 border-t-8 border-black w-full max-w-7xl relative z-10">
             {[GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon].map((Icon, i) => (
                <a key={i} href="#" className="w-24 h-24 bg-white border-8 border-black flex items-center justify-center text-black hover:bg-[#FFE100] hover:-translate-y-4 transition-all shadow-[12px_12px_0_0_black]">
                   <Icon size={40} />

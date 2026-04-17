@@ -21,7 +21,7 @@ const MinimalDarkMockup = ({ theme }) => {
               rotate: [0, 5, 0]
             }}
             transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[-20%] left-[-10%] w-[1000px] h-[1000px] bg-[radial-gradient(circle,#EAB308_0%,transparent_70%)] blur-[150px]"
+            className="absolute top-[-20%] left-[-10%] w-[1000px] h-auto bg-[radial-gradient(circle,#EAB308_0%,transparent_70%)] blur-[150px]"
           />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-10" />
       </div>
@@ -73,7 +73,7 @@ const MinimalDarkMockup = ({ theme }) => {
          >
             <div className="w-px h-64 bg-gradient-to-b from-transparent via-[#EAB308] to-transparent opacity-20 shadow-[0_0_20px_#EAB308]" />
             
-            <h1 className="text-8xl md:text-[14rem] lg:text-[18rem] font-extralight tracking-[0.15em] leading-[0.85] uppercase text-white transition-all hover:tracking-[0.2em] cursor-default">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-[0.15em] leading-[0.85] uppercase text-white transition-all hover:tracking-[0.2em] cursor-default">
                NOTHING <br />
                <span className="text-[#EAB308] italic font-light drop-shadow-[0_0_30px_rgba(234,179,8,0.3)]">EXTRA.</span>
             </h1>
@@ -83,7 +83,7 @@ const MinimalDarkMockup = ({ theme }) => {
                <span className="text-sm tracking-[1.5em] opacity-30 mt-4 leading-none">Institutional Restraint MMXXVI</span>
             </p>
 
-            <div className="pt-24 flex flex-col items-center gap-20 w-full max-w-sm">
+            <div className="pt-24 flex flex-col items-center gap-8 w-full max-w-sm">
                <motion.button 
                  whileHover={{ scale: 1.05, letterSpacing: "1em" }}
                  className="w-full py-10 bg-transparent border-2 border-[#EAB308]/20 text-[#EAB308] text-[14px] uppercase font-light tracking-[0.6em] hover:border-[#EAB308] transition-all duration-1000 group flex items-center justify-center gap-6 relative overflow-hidden"
@@ -112,9 +112,9 @@ const MinimalDarkMockup = ({ theme }) => {
       </section>
 
       {/* 4. Infrastructure Matrix (Core Features) */}
-      <section className="relative z-10 py-64 bg-white/5 border-y border-white/5">
+      <section className="relative z-10 py-20 bg-white/5 border-y border-white/5">
          <div className="max-w-screen-2xl mx-auto px-8 md:px-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                {[
                  { title: "Quiet_Sync", icon: Wind, desc: "Background processes that operate with zero thermal noise or distraction for the executive user." },
                  { title: "Pure_View", icon: Eye, desc: "A visual interface that prioritizes readability over decorative excess and information density." },
@@ -146,12 +146,12 @@ const MinimalDarkMockup = ({ theme }) => {
       </section>
 
       {/* 5. Metrics of Silence (Stats) */}
-      <section className="py-64 px-8 md:px-24 bg-transparent z-10 relative overflow-hidden">
-         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-end gap-32">
+      <section className="py-20 px-8 md:px-24 bg-transparent z-10 relative overflow-hidden">
+         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-end gap-10">
             <div className="space-y-24 max-w-3xl">
                <div className="space-y-8">
                   <span className="text-[11px] font-light uppercase tracking-[1em] opacity-30 italic">Prescribed Performance</span>
-                  <h2 className="text-8xl md:text-[12rem] font-extralight uppercase tracking-tighter leading-none text-white italic">The_Void.</h2>
+                  <h2 className="text-5xl md:text-6xl font-extralight uppercase tracking-tighter leading-none text-white italic">The_Void.</h2>
                </div>
                <p className="text-2xl font-extralight italic leading-loose opacity-60 uppercase tracking-[0.4em] text-white border-l-2 border-[#EAB308]/20 pl-12 py-6">
                   Monitoring the absence of noise across 10^12 clusters. High-fidelity structural purity delivered through silent execution metrics.
@@ -187,16 +187,16 @@ const MinimalDarkMockup = ({ theme }) => {
       </section>
 
       {/* 6. Selective Models (Pricing) */}
-      <section className="py-64 px-8 md:px-24 max-w-7xl mx-auto flex flex-col items-center z-10">
-         <div className="text-center mb-48 space-y-12">
+      <section className="py-20 px-8 md:px-24 max-w-7xl mx-auto flex flex-col items-center z-10">
+         <div className="text-center mb-12 space-y-12">
             <Wind size={48} className="mx-auto opacity-20" strokeWidth={1} />
-            <h2 className="text-7xl md:text-[14rem] font-extralight text-white tracking-[0.4em] uppercase leading-none italic">PRIVATE.</h2>
+            <h2 className="text-7xl md:text-7xl font-extralight text-white tracking-[0.4em] uppercase leading-none italic">PRIVATE.</h2>
             <p className="text-[12px] font-light uppercase tracking-[1.5em] opacity-30 italic">Selective Access // Restricted Nodes</p>
          </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 w-full lg:max-w-6xl">
-            <div className="p-24 border border-white/5 hover:border-[#EAB308]/20 bg-black group relative transition-all duration-1000 overflow-hidden flex flex-col justify-between">
-               <div className="absolute top-0 right-0 p-24 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full lg:max-w-6xl">
+            <div className="p-8 border border-white/5 hover:border-[#EAB308]/20 bg-black group relative transition-all duration-1000 overflow-hidden flex flex-col justify-between">
+               <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
                   <Globe size={300} strokeWidth={0.5} />
                </div>
                <div className="space-y-20 relative z-10">
@@ -205,7 +205,7 @@ const MinimalDarkMockup = ({ theme }) => {
                      <Minus size={24} strokeWidth={1} className="opacity-40" />
                   </div>
                   <div className="space-y-6">
-                     <div className="text-[10rem] font-extralight text-[#EAB308] tracking-tighter leading-none italic">$320<span className="text-xs opacity-20 tracking-[1em] ml-8 not-italic">/term</span></div>
+                     <div className="text-5xl font-extralight text-[#EAB308] tracking-tighter leading-none italic">$320<span className="text-xs opacity-20 tracking-[1em] ml-8 not-italic">/term</span></div>
                      <p className="text-sm font-light uppercase tracking-[0.4em] opacity-40 leading-relaxed max-w-[280px] italic border-l border-[#EAB308]/20 pl-6">Essential refinement for the solitary digital architect.</p>
                   </div>
                   <ul className="space-y-10 py-12">
@@ -219,9 +219,9 @@ const MinimalDarkMockup = ({ theme }) => {
                </div>
             </div>
 
-            <div className="p-24 bg-[#EAB308]/5 border border-[#EAB308]/40 relative group overflow-hidden shadow-[0_0_100px_rgba(234,179,8,0.05)] transition-all duration-[2000ms] flex flex-col justify-between">
+            <div className="p-8 bg-[#EAB308]/5 border border-[#EAB308]/40 relative group overflow-hidden shadow-[0_0_100px_rgba(234,179,8,0.05)] transition-all duration-[2000ms] flex flex-col justify-between">
                <div className="absolute inset-x-0 bottom-0 h-0 group-hover:h-2 bg-[#EAB308] transition-all duration-[2000ms]" />
-               <div className="absolute top-0 right-0 p-24 opacity-10 rotate-12 group-hover:rotate-0 transition-transform duration-[2000ms]">
+               <div className="absolute top-0 right-0 p-8 opacity-10 rotate-12 group-hover:rotate-0 transition-transform duration-[2000ms]">
                   <Lock size={350} strokeWidth={0.5} />
                </div>
                <div className="space-y-20 relative z-10">
@@ -233,7 +233,7 @@ const MinimalDarkMockup = ({ theme }) => {
                      <Zap size={32} strokeWidth={1} className="text-[#EAB308]" />
                   </div>
                   <div className="space-y-6 text-center">
-                     <div className="text-[12rem] font-extralight text-[#EAB308] tracking-tighter leading-none italic">$980<span className="text-xs opacity-40 tracking-[1.5em] ml-12 not-italic underline decoration-1">/eternity</span></div>
+                     <div className="text-6xl font-extralight text-[#EAB308] tracking-tighter leading-none italic">$980<span className="text-xs opacity-40 tracking-[1.5em] ml-12 not-italic underline decoration-1">/eternity</span></div>
                      <p className="text-sm font-light uppercase tracking-[0.4em] leading-loose opacity-60 text-white italic max-w-md mx-auto">Full institutionalization across all global vectors. Reserved for high-value clusters and sovereign legacies.</p>
                   </div>
                   <div className="w-full h-px bg-[#EAB308]/20 my-12" />
@@ -251,7 +251,7 @@ const MinimalDarkMockup = ({ theme }) => {
       </section>
 
       {/* 7. The Final Audience (Inquiry) */}
-      <section className="bg-black py-64 px-12 md:px-32 relative overflow-hidden text-center z-10 border-t border-white/5">
+      <section className="bg-black py-20 px-12 md:px-10 relative overflow-hidden text-center z-10 border-t border-white/5">
          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(234,179,8,0.05)_0%,transparent_70%)] pointer-events-none" />
          <motion.div
            initial={{ opacity: 0, scale: 0.9 }}
@@ -261,7 +261,7 @@ const MinimalDarkMockup = ({ theme }) => {
            className="max-w-6xl mx-auto space-y-32 relative z-10"
          >
             <div className="space-y-12">
-               <h2 className="text-8xl md:text-[14rem] lg:text-[18rem] font-extralight text-white tracking-[0.2em] uppercase leading-[0.8] italic">
+               <h2 className="text-5xl md:text-7xl lg:text-8xl font-extralight text-white tracking-[0.2em] uppercase leading-[0.8] italic">
                   SILENT <br/> <span className="opacity-30 text-[#EAB308] tracking-[0.3em]">ALLIANCE.</span>
                </h2>
                <div className="w-64 h-px bg-[#EAB308]/30 mx-auto transition-all hover:w-full duration-1000" />
@@ -270,7 +270,7 @@ const MinimalDarkMockup = ({ theme }) => {
             <div className="flex flex-col items-center gap-20">
                <motion.button 
                  whileHover={{ scale: 1.1, letterSpacing: '1.2em' }}
-                 className="px-32 py-12 bg-transparent border-2 border-[#EAB308] text-[#EAB308] font-light uppercase tracking-[0.8em] text-4xl hover:bg-[#EAB308] hover:text-black transition-all duration-1000 shadow-3xl"
+                 className="px-10 py-12 bg-transparent border-2 border-[#EAB308] text-[#EAB308] font-light uppercase tracking-[0.8em] text-4xl hover:bg-[#EAB308] hover:text-black transition-all duration-1000 shadow-3xl"
                >
                   Inquire
                </motion.button>
@@ -283,10 +283,10 @@ const MinimalDarkMockup = ({ theme }) => {
       </section>
 
       {/* 8. Global Minimal Footer */}
-      <footer className="p-12 md:p-48 bg-black border-t-8 border-black flex flex-col items-center gap-48 relative z-[110] overflow-hidden">
+      <footer className="p-12 md:p-48 bg-black border-t-8 border-black flex flex-col items-center gap-12 relative z-[110] overflow-hidden">
          <div className="absolute top-[-20%] right-[-10%] text-[40vw] font-black opacity-[0.02] italic pointer-events-none uppercase">VOID</div>
          
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-32 relative z-10 w-full max-w-screen-2xl mx-auto text-left">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10 w-full max-w-screen-2xl mx-auto text-left">
             <div className="lg:col-span-2 space-y-24">
                <div className="flex items-center gap-16 group cursor-pointer">
                   <div className="w-24 h-24 border border-[#EAB308]/20 flex items-center justify-center text-[#EAB308] group-hover:border-[#EAB308] transition-all duration-1000 relative">
@@ -324,7 +324,7 @@ const MinimalDarkMockup = ({ theme }) => {
             </div>
          </div>
 
-         <div className="flex flex-wrap justify-center gap-24 pt-48 border-t border-[#EAB308]/10 w-full max-w-screen-2xl mx-auto relative z-10">
+         <div className="flex flex-wrap justify-center gap-8 pt-12 border-t border-[#EAB308]/10 w-full max-w-screen-2xl mx-auto relative z-10">
             {[GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon, Mail, Phone].map((Icon, i) => (
                <a key={i} href="#" className="w-20 h-20 border border-[#EAB308]/10 flex items-center justify-center text-[#EAB308]/20 hover:text-[#EAB308] hover:border-[#EAB308] hover:bg-[#EAB308]/5 hover:-translate-y-8 transition-all duration-1000 shadow-2xl">
                   <Icon size={28} strokeWidth={1} />
@@ -334,7 +334,7 @@ const MinimalDarkMockup = ({ theme }) => {
 
          <div className="flex flex-col md:flex-row justify-between w-full max-w-screen-2xl mx-auto pt-24 text-[12px] font-light text-[#EAB308]/10 uppercase tracking-[2em] italic leading-loose">
             <span>© MMXXVI MINIMAL SYSTEMS LABORATORY // VOID UNIT</span>
-            <div className="flex gap-20 items-center">
+            <div className="flex gap-8 items-center">
                <div className="flex items-center gap-4">
                   <div className="w-3 h-3 bg-[#EAB308] rounded-full animate-pulse shadow-[0_0_15px_#EAB308]" />
                   <span>STATUS: ABSOLUTE</span>

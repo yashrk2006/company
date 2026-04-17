@@ -46,7 +46,7 @@ const SketchMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero Section (The Drafting Board) */}
-      <section className="relative z-10 p-12 lg:p-32 flex flex-col lg:flex-row gap-20 items-center justify-between min-h-fit">
+      <section className="relative z-10 p-12 lg:p-10 flex flex-col lg:flex-row gap-8 items-center justify-between min-h-fit">
          <motion.div
            initial={{ opacity: 0, x: -30 }}
            animate={{ opacity: 1, x: 0 }}
@@ -56,7 +56,7 @@ const SketchMockup = ({ theme }) => {
                STRICTLY_IN_DRAFT
             </div>
             
-            <h1 className="text-6xl md:text-[10rem] font-black leading-[0.85] tracking-tight uppercase italic mb-12">
+            <h1 className="text-6xl md:text-5xl font-black leading-[0.85] tracking-tight uppercase italic mb-12">
                Sketch it. <br />
                <span className="text-white drop-shadow-[4px_4px_0px_#2C4872] relative">
                   Verify it.
@@ -133,7 +133,7 @@ const SketchMockup = ({ theme }) => {
       </section>
 
       {/* 4. Blueprint Components (Feature Matrix) */}
-      <section className="relative z-10 py-32 px-12 md:px-32 bg-white/40 border-y-[3px] border-[#2C4872]">
+      <section className="relative z-10 py-32 px-12 md:px-10 bg-white/40 border-y-[3px] border-[#2C4872]">
          <div className="max-w-7xl mx-auto space-y-24">
             <div className="flex flex-col md:flex-row justify-between items-end gap-8 pb-12 border-b-2 border-dashed border-[#2C4872]">
                <div className="space-y-4">
@@ -175,7 +175,7 @@ const SketchMockup = ({ theme }) => {
       </section>
 
       {/* 5. Pricing (Blueprint Access) */}
-      <section className="py-32 px-12 md:px-32">
+      <section className="py-32 px-12 md:px-10">
          <div className="max-w-7xl mx-auto flex flex-col items-center">
             <h2 className="text-6xl md:text-9xl font-black uppercase italic tracking-tighter text-center mb-32">
                Licensing <br /> <span className="text-white drop-shadow-[4px_4px_0px_#2C4872]">Protocols.</span>
@@ -230,12 +230,12 @@ const SketchMockup = ({ theme }) => {
       </section>
 
       {/* 6. Scribbled Footer */}
-      <footer className="p-12 md:p-32 bg-[#E7EEF6] border-t-[4px] border-[#2C4872] flex flex-col gap-24 relative overflow-hidden">
+      <footer className="p-12 md:p-10 bg-[#E7EEF6] border-t-[4px] border-[#2C4872] flex flex-col gap-8 relative overflow-hidden">
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] rotate-[-15deg] pointer-events-none">
             <Edit3 size={1000} strokeWidth={1} />
          </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 relative z-10">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             <div className="lg:col-span-2 space-y-12">
                <div className="flex items-center gap-8">
                   <div className="w-24 h-24 border-[3px] border-[#2C4872] rounded-[15px_30px_10px_20px] bg-white flex items-center justify-center text-[#2C4872] text-5xl font-black rotate-[-6deg] shadow-md">Z</div>

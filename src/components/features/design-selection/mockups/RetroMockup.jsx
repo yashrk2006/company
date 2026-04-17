@@ -72,7 +72,7 @@ const RetroMockup = ({ theme }) => {
       </nav>
 
       {/* 4. Hero: The Maximum Groovy Vibe */}
-      <section className="relative z-10 w-full px-8 md:px-24 pt-32 pb-64 flex flex-col items-center text-center max-w-screen-2xl mx-auto overflow-visible mb-64">
+      <section className="relative z-10 w-full px-8 md:px-24 pt-32 pb-16 flex flex-col items-center text-center max-w-screen-2xl mx-auto overflow-visible mb-16">
          <motion.div
            initial={{ scale: 0.8, opacity: 0, rotate: -15 }}
            animate={{ scale: 1, opacity: 1, rotate: 5 }}
@@ -84,11 +84,11 @@ const RetroMockup = ({ theme }) => {
             <div className="absolute -top-8 -right-8 bg-[#991B1B] text-white px-4 py-2 rounded-xl text-xs font-black rotate-12 group-hover:rotate-0 transition-transform">MMXXVI</div>
          </motion.div>
 
-         <h1 className="text-8xl md:text-[14rem] lg:text-[18rem] font-black uppercase tracking-tighter italic leading-[0.75] text-[#991B1B] drop-shadow-[15px_15px_0px_white] mb-20 relative group transition-all">
+         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter italic leading-[0.75] text-[#991B1B] drop-shadow-[6px_6px_0px_white] mb-20 relative group transition-all">
             GROOVY <br/> 
             <span className="text-[#EA580C] relative px-12 group-hover:tracking-tighter transition-all">
                LOGIC & 
-               <Rainbow size={100} className="absolute -top-24 -right-12 opacity-40 group-hover:opacity-100 transition-all text-[#FBBF24]" />
+               <Rainbow size={100} className="absolute -top-8 -right-12 opacity-40 group-hover:opacity-100 transition-all text-[#FBBF24]" />
             </span> <br/>
             RADICAL <br/>
             <span className="relative inline-block hover:scale-110 transition-all cursor-default">
@@ -119,7 +119,7 @@ const RetroMockup = ({ theme }) => {
          </div>
 
          {/* Hero Shape Parade (Interative) */}
-         <div className="mt-64 w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 md:gap-20">
+         <div className="mt-16 w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 md:gap-20">
             {[Music, Camera, Gamepad, Radio, Disc, Tv].map((Icon, i) => (
                <motion.div 
                  key={i}
@@ -139,9 +139,9 @@ const RetroMockup = ({ theme }) => {
       </section>
 
       {/* 5. Feature Matrix (The Manifesto) */}
-      <section className="relative z-10 py-64 w-full bg-[#991B1B] text-white border-y-[20px] border-black flex flex-col items-center">
-         <div className="max-w-7xl mx-auto px-8 md:px-24 text-center mb-48 space-y-12">
-            <h2 className="text-8xl md:text-[14rem] font-black uppercase tracking-tighter italic drop-shadow-[15px_15px_0px_black] text-white leading-none">THE_MANIFESTO.</h2>
+      <section className="relative z-10 py-20 w-full bg-[#991B1B] text-white border-y-[20px] border-black flex flex-col items-center">
+         <div className="max-w-7xl mx-auto px-8 md:px-24 text-center mb-12 space-y-12">
+            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter italic drop-shadow-[6px_6px_0px_black] text-white leading-none">THE_MANIFESTO.</h2>
             <div className="flex flex-col items-center gap-8">
                <div className="h-6 w-[80vw] bg-[#FDE68A] border-[6px] border-black shadow-[10px_10px_0px_#000]" />
                <p className="text-2xl font-black uppercase tracking-[1em] opacity-40 italic">Structural Radiance MMXXVI</p>
@@ -184,17 +184,17 @@ const RetroMockup = ({ theme }) => {
       </section>
 
       {/* 6. Tape Deck Telemetry (Stats) */}
-      <section className="py-64 w-full px-8 md:px-24 bg-[#FEF3C7] z-10 relative flex flex-col items-center">
-         <div className="max-w-7xl mx-auto space-y-48 w-full">
+      <section className="py-20 w-full px-8 md:px-24 bg-[#FEF3C7] z-10 relative flex flex-col items-center">
+         <div className="max-w-7xl mx-auto space-y-12 w-full">
             <div className="flex flex-col lg:flex-row justify-between items-end gap-16 border-b-[16px] border-black pb-20">
-               <h2 className="text-8xl md:text-[14rem] font-black uppercase tracking-tighter italic leading-[0.7] text-[#991B1B]">AUDIO_LOGS.</h2>
+               <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter italic leading-[0.7] text-[#991B1B]">AUDIO_LOGS.</h2>
                <div className="max-w-md text-right space-y-8">
                   <div className="text-sm font-black uppercase tracking-[1.5em] opacity-30 italic">Playback Frequency</div>
                   <p className="text-2xl font-bold uppercase tracking-widest leading-none bg-black text-white px-6 py-3 italic inline-block">Absolute sonic fidelity in every signal.</p>
                </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                <div className="bg-white border-[12px] border-black rounded-[4rem] p-16 shadow-[30px_30px_0px_#EA580C] space-y-16 relative overflow-hidden group">
                   <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
                      <Disc size={400} strokeWidth={1} className="animate-spin-slow" />
@@ -259,13 +259,13 @@ const RetroMockup = ({ theme }) => {
       </section>
 
       {/* 7. Retro Pricing (Memberships) */}
-      <section className="py-64 px-8 md:px-24 w-full max-w-7xl mx-auto flex flex-col items-center z-10">
-         <div className="text-center mb-48 space-y-12">
-            <h2 className="text-8xl md:text-[18rem] font-black text-[#991B1B] tracking-tighter uppercase italic leading-none drop-shadow-[20px_20px_0px_white]">THE_ARCHIVE.</h2>
+      <section className="py-20 px-8 md:px-24 w-full max-w-7xl mx-auto flex flex-col items-center z-10">
+         <div className="text-center mb-12 space-y-12">
+            <h2 className="text-5xl md:text-7xl font-black text-[#991B1B] tracking-tighter uppercase italic leading-none drop-shadow-[8px_8px_0px_white]">THE_ARCHIVE.</h2>
             <p className="text-[14px] font-black uppercase tracking-[2.5em] opacity-30 italic">Investment Clusters // Legacy Access</p>
          </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 w-full lg:max-w-6xl">
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full lg:max-w-6xl">
             {[
                { tier: "VOL. 01 (LITE)", price: "240", desc: "For independent explorers and solitary digital architects requiring retro clarity.", items: ["3 Core Static Themes", "Classic Audio Pack V1", "Standard Signal Access", "Monthly Tape Mailer", "Basic Protocol Key"] },
                { tier: "VOL. 02 (RAD)", price: "880", featured: true, desc: "For professional groovers and legacy institutions demanding radical transmission.", items: ["Full Kinetic Library Access", "Infinite Tape Space", "Priority Vibe Routing", "Custom Hardware Forge", "Full Sovereign Reserves", "24/7 Strategic Uplink"] }
@@ -273,7 +273,7 @@ const RetroMockup = ({ theme }) => {
                <motion.div 
                  key={i} 
                  whileHover={{ y: -25, rotate: i === 0 ? -2 : 2 }}
-                 className={`p-20 bg-white border-[12px] border-black rounded-[5rem] shadow-[40px_40px_0px_#000] group relative transition-all duration-700 overflow-hidden flex flex-col justify-between ${p.featured ? 'bg-[#EA580C] text-white' : ''}`}
+                 className={`p-8 bg-white border-[12px] border-black rounded-[5rem] shadow-[40px_40px_0px_#000] group relative transition-all duration-700 overflow-hidden flex flex-col justify-between ${p.featured ? 'bg-[#EA580C] text-white' : ''}`}
                >
                   <div className="space-y-16 relative z-10">
                      <div className="flex justify-between items-start border-b-[8px] border-black group-hover:border-white pb-10">
@@ -309,23 +309,23 @@ const RetroMockup = ({ theme }) => {
       </section>
 
       {/* 7. The Final Groove (CTA) */}
-      <section className="bg-white py-64 px-12 md:px-32 relative overflow-hidden text-center z-10 border-t-[30px] border-black">
+      <section className="bg-white py-20 px-12 md:px-10 relative overflow-hidden text-center z-10 border-t-[30px] border-black">
          <div className="absolute inset-0 pattern-dots opacity-5 pointer-events-none" />
          <motion.div
            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
            transition={{ duration: 1.5, type: "spring" }}
            viewport={{ once: true }}
-           className="max-w-7xl mx-auto space-y-48 relative z-10"
+           className="max-w-7xl mx-auto space-y-12 relative z-10"
          >
-            <h2 className="text-[12vw] md:text-[16rem] lg:text-[24rem] font-black italic tracking-tighter leading-[0.6] uppercase text-[#991B1B] drop-shadow-[20px_20px_0px_#FDE68A]">
+            <h2 className="text-7xl md:text-7xl lg:text-8xl font-black italic tracking-tighter leading-[0.6] uppercase text-[#991B1B] drop-shadow-[8px_8px_0px_#FDE68A]">
                STAY<br/>GROOVY.
             </h2>
             <div className="flex flex-col items-center gap-16">
                <motion.button 
                   whileHover={{ scale: 1.15, rotate: 5, skewX: -10 }}
                   whileTap={{ scale: 0.9 }}
-                  className="px-48 py-20 bg-[#EA580C] border-[12px] border-black rounded-[6rem] text-white font-black uppercase text-5xl md:text-8xl tracking-[0.4em] shadow-[40px_40px_0px_#000] hover:shadow-none transition-all flex items-center gap-16 group"
+                  className="px-12 py-20 bg-[#EA580C] border-[12px] border-black rounded-[6rem] text-white font-black uppercase text-5xl md:text-8xl tracking-[0.4em] shadow-[40px_40px_0px_#000] hover:shadow-none transition-all flex items-center gap-16 group"
                >
                   VIBE! <Sun size={100} strokeWidth={8} className="group-hover:rotate-[360deg] transition-all duration-[2000ms]" />
                </motion.button>
@@ -335,10 +335,10 @@ const RetroMockup = ({ theme }) => {
       </section>
 
       {/* 8. Super-Retro Branded Footer */}
-      <footer className="w-full p-12 md:p-48 bg-white border-t-[40px] border-black flex flex-col items-center gap-64 relative z-[110] overflow-hidden text-center">
+      <footer className="w-full p-12 md:p-48 bg-white border-t-[40px] border-black flex flex-col items-center gap-16 relative z-[110] overflow-hidden text-center">
          <div className="absolute top-[-10%] right-[-10%] text-[40vw] font-black opacity-[0.03] italic pointer-events-none uppercase text-black">RETRO</div>
          
-         <div className="grid grid-cols-1 lg:grid-cols-3 gap-48 w-full max-w-screen-2xl mx-auto items-center relative z-10 text-left">
+         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 w-full max-w-screen-2xl mx-auto items-center relative z-10 text-left">
             <div className="lg:col-span-2 space-y-24">
                <div className="flex items-center gap-10 group cursor-pointer transition-all duration-700">
                   <div className="relative">
@@ -366,7 +366,7 @@ const RetroMockup = ({ theme }) => {
             </div>
          </div>
 
-         <div className="flex flex-wrap justify-center gap-16 w-full max-w-screen-2xl mx-auto pt-48 border-t-[10px] border-black/5 relative z-10">
+         <div className="flex flex-wrap justify-center gap-16 w-full max-w-screen-2xl mx-auto pt-12 border-t-[10px] border-black/5 relative z-10">
             {[GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon, Mail, Phone].map((Icon, i) => (
                <motion.a 
                   key={i} 
@@ -381,7 +381,7 @@ const RetroMockup = ({ theme }) => {
 
          <div className="flex flex-col md:flex-row justify-between w-full max-w-screen-2xl mx-auto pt-24 text-[16px] font-black text-[#111] uppercase tracking-[1em] opacity-30 italic font-mono">
             <span>© 1977-2026 ZORVIA RADICAL SYSTEMS // ALL RIGHTS GROOVY</span>
-            <div className="flex gap-20 items-center">
+            <div className="flex gap-8 items-center">
                <div className="flex items-center gap-6">
                   <div className="w-5 h-5 bg-[#EA580C] rounded-full animate-pulse shadow-[0_0_20px_#EA580C]" />
                   <span>SIGNAL: STEADY</span>

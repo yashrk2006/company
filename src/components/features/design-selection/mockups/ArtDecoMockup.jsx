@@ -89,7 +89,7 @@ const ArtDecoMockup = ({ theme }) => {
          >
             <div className="w-[2px] h-64 md:h-96 bg-gradient-to-b from-[#D4AF37] via-[#D4AF37]/50 to-transparent shadow-[0_0_30px_#D4AF37] mb-12" />
             
-            <h1 className="text-8xl md:text-[16rem] lg:text-[22rem] font-light leading-[0.7] tracking-[0.1em] uppercase text-white drop-shadow-[0_10px_40px_rgba(212,175,55,0.4)]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-[0.7] tracking-[0.1em] uppercase text-white drop-shadow-[0_10px_40px_rgba(212,175,55,0.4)]">
                TRANS <br />
                <span className="opacity-40 italic tracking-tighter lowercase mx-[-0.1em] font-normal text-[#D4AF37] mix-blend-difference">and</span> <br />
                SCEND.
@@ -127,16 +127,16 @@ const ArtDecoMockup = ({ theme }) => {
       </section>
 
       {/* 5. Gilded Matrix (The Modules) */}
-      <section className="relative z-10 py-64 bg-black/80 border-y-4 border-[#D4AF37]/30 backdrop-blur-3xl overflow-hidden">
+      <section className="relative z-10 py-20 bg-black/80 border-y-4 border-[#D4AF37]/30 backdrop-blur-3xl overflow-hidden">
          <div className="absolute top-0 left-0 w-full h-full pattern-luxury-grid opacity-10" />
          <div className="max-w-[1600px] mx-auto px-8 md:px-24 flex flex-col items-center">
-            <div className="mb-48 text-center space-y-8">
+            <div className="mb-12 text-center space-y-8">
                <div className="flex items-center justify-center gap-12 opacity-30">
                   <div className="h-px w-24 bg-[#D4AF37]" />
                   <Anchor size={24} strokeWidth={1} />
                   <div className="h-px w-24 bg-[#D4AF37]" />
                </div>
-               <h2 className="text-7xl md:text-[12rem] font-light uppercase tracking-[0.5em] text-white drop-shadow-[0_0_30px_rgba(212,175,55,0.4)]">STRUCTURALISM.</h2>
+               <h2 className="text-4xl md:text-6xl font-light uppercase tracking-[0.5em] text-white drop-shadow-[0_0_30px_rgba(212,175,55,0.4)]">STRUCTURALISM.</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 w-full">
@@ -150,7 +150,7 @@ const ArtDecoMockup = ({ theme }) => {
                   { title: "Foundation", icon: Grid, desc: "Concrete-logic grid formations that neutralize aesthetic entropy globally." },
                   { title: "Heritage", icon: Clock, desc: "Time-tested structural patterns established in the first decade of digital eminence." }
                ].map((f, i) => (
-                  <div key={i} className="p-20 border-2 border-[#D4AF37]/20 bg-black group hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all duration-700 flex flex-col items-center gap-12 text-center hover:scale-[1.02] hover:-translate-y-4">
+                  <div key={i} className="p-8 border-2 border-[#D4AF37]/20 bg-black group hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all duration-700 flex flex-col items-center gap-12 text-center hover:scale-[1.02] hover:-translate-y-4">
                      <div className="w-32 h-32 border-2 border-[#D4AF37]/40 flex items-center justify-center group-hover:bg-[#D4AF37] group-hover:text-black hover:rotate-12 transition-all duration-1000 shadow-[10px_10px_0px_rgba(212,175,55,0.1)]">
                         <f.icon size={56} strokeWidth={0.5} />
                      </div>
@@ -165,12 +165,12 @@ const ArtDecoMockup = ({ theme }) => {
       </section>
 
       {/* 6. Prestige Portfolio (Visual Showcase) */}
-      <section className="py-64 px-8 md:px-24 bg-[#0A0A0A] relative z-10 overflow-hidden">
-         <div className="max-w-7xl mx-auto space-y-48">
+      <section className="py-20 px-8 md:px-24 bg-[#0A0A0A] relative z-10 overflow-hidden">
+         <div className="max-w-7xl mx-auto space-y-12">
             <div className="flex flex-col md:flex-row justify-between items-end gap-12 pb-16 border-b border-[#D4AF37]/20">
                <div className="space-y-6">
                   <span className="text-[11px] font-black uppercase tracking-[1.5em] text-[#D4AF37] italic">The Reserve Collection</span>
-                  <h2 className="text-7xl md:text-[10rem] font-light text-white uppercase italic tracking-[0.2em] leading-none">ARCHIVES.</h2>
+                  <h2 className="text-4xl md:text-5xl font-light text-white uppercase italic tracking-[0.2em] leading-none">ARCHIVES.</h2>
                </div>
                <p className="max-w-md text-[10px] font-black uppercase tracking-[0.5em] opacity-40 leading-relaxed text-right italic">Bespoke digital estates curated for the world's most distinguished institutions. Historical excellence MMXX-MMXXVI.</p>
             </div>
@@ -196,25 +196,25 @@ const ArtDecoMockup = ({ theme }) => {
       </section>
 
       {/* 7. Elite Subscriptions (Participation) */}
-      <section className="py-64 px-8 md:px-24 bg-white/5 border-y-2 border-[#D4AF37]/20 relative z-10">
+      <section className="py-20 px-8 md:px-24 bg-white/5 border-y-2 border-[#D4AF37]/20 relative z-10">
          <div className="max-w-[1400px] mx-auto flex flex-col items-center">
-            <div className="text-center space-y-12 mb-48">
+            <div className="text-center space-y-12 mb-12">
                <Diamond size={48} className="mx-auto opacity-30 animate-pulse" strokeWidth={1} />
-               <h2 className="text-7xl md:text-[14rem] font-light text-white uppercase tracking-[0.4em] leading-none text-shadow-xl">THE_INDEX.</h2>
+               <h2 className="text-7xl md:text-7xl font-light text-white uppercase tracking-[0.4em] leading-none text-shadow-xl">THE_INDEX.</h2>
                <p className="text-[12px] font-black uppercase tracking-[1.5em] opacity-40 italic">Participation Tiers // Institutional Tiers</p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 w-full lg:max-w-6xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full lg:max-w-6xl">
                {[
                   { tier: "VOL. 01 (SILVER)", price: "2,500", icon: Trophy, features: ["Limited Grid Vault", "Standard Luxury Support", "Static Asset Mining", "Nightly Signals", "Exclusive Archive Access"] },
                   { tier: "VOL. 02 (GOLD)", price: "8,500", featured: true, icon: Award, features: ["Unlimited Grid Access", "Direct Concierge Uplink", "Source Code Ownership", "Global Mesh Status", "Institutional Identity", "Private Key Logistics"] }
                ].map((p, i) => (
-                  <div key={i} className={`p-24 border-2 transition-all duration-1000 flex flex-col gap-16 ${p.featured ? 'border-[#D4AF37] bg-[#D4AF37]/5 shadow-[50px_50px_0px_rgba(212,175,55,0.1)]' : 'border-[#D4AF37]/10 bg-black shadow-[50px_50px_0px_rgba(0,0,0,0.5)]'}`}>
+                  <div key={i} className={`p-8 border-2 transition-all duration-1000 flex flex-col gap-16 ${p.featured ? 'border-[#D4AF37] bg-[#D4AF37]/5 shadow-[50px_50px_0px_rgba(212,175,55,0.1)]' : 'border-[#D4AF37]/10 bg-black shadow-[50px_50px_0px_rgba(0,0,0,0.5)]'}`}>
                      <div className="flex justify-between items-center pb-8 border-b border-[#D4AF37]/10">
                         <p className="text-[12px] font-black uppercase tracking-[0.8em] opacity-40 italic" style={{ color: p.featured ? '#D4AF37' : 'inherit' }}>{p.tier}</p>
                         <p.icon size={40} className={p.featured ? "text-[#D4AF37]" : "text-white/20"} strokeWidth={0.5} />
                      </div>
-                     <div className="text-8xl md:text-[12rem] font-light text-white tracking-tighter italic">
+                     <div className="text-5xl md:text-6xl font-light text-white tracking-tighter italic">
                         <span className="text-2xl font-bold opacity-30 text-[#D4AF37]">$</span>{p.price}
                         <span className="text-xs font-black uppercase tracking-[0.4em] opacity-10 ml-6 not-italic">/unit</span>
                      </div>
@@ -236,8 +236,8 @@ const ArtDecoMockup = ({ theme }) => {
       </section>
 
       {/* 8. Global Presence (The Network) */}
-      <section className="py-64 px-12 md:px-32 relative z-10 bg-black overflow-hidden border-b-2 border-[#D4AF37]/30">
-         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-32">
+      <section className="py-20 px-12 md:px-10 relative z-10 bg-black overflow-hidden border-b-2 border-[#D4AF37]/30">
+         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10">
             <div className="space-y-16 max-w-xl">
                <span className="text-[11px] font-black uppercase tracking-[1em] text-[#D4AF37] italic">Global Distribution</span>
                <h2 className="text-7xl md:text-9xl font-light text-white uppercase italic tracking-[0.2em] leading-none">THE_MESH.</h2>
@@ -268,19 +268,19 @@ const ArtDecoMockup = ({ theme }) => {
       </section>
 
       {/* 9. Final Assertion (The Inquiry) */}
-      <footer className="p-12 md:p-48 bg-black border-t-[40px] border-black flex flex-col items-center gap-48 text-center text-[#D4AF37] relative z-20">
-         <div className="flex flex-col items-center gap-24 group">
+      <footer className="p-12 md:p-48 bg-black border-t-[40px] border-black flex flex-col items-center gap-12 text-center text-[#D4AF37] relative z-20">
+         <div className="flex flex-col items-center gap-8 group">
             <div className="w-72 h-72 border-4 border-[#D4AF37] flex items-center justify-center rotate-12 group-hover:rotate-0 transition-transform duration-1000 cursor-pointer shadow-[30px_30px_0px_rgba(212,175,55,0.1)] bg-[#D4AF37]/5 relative">
                <Diamond size={150} strokeWidth={0.5} className="drop-shadow-[0_0_40px_#D4AF37] group-hover:scale-125 transition-transform duration-1000" />
                <Sparkles size={40} className="absolute top-4 right-4 animate-pulse" />
             </div>
             <div className="space-y-12">
-               <h3 className="text-8xl md:text-[16rem] font-light uppercase tracking-[0.1em] text-white italic leading-none drop-shadow-2xl">ZORVIA.LUXE</h3>
+               <h3 className="text-5xl md:text-7xl font-light uppercase tracking-[0.1em] text-white italic leading-none drop-shadow-2xl">ZORVIA.LUXE</h3>
                <p className="text-[12px] font-black tracking-[2em] uppercase opacity-30 italic">High Fidelity Systems Institutionalized // ARCHIVED MMXXVI</p>
             </div>
          </div>
 
-         <div className="grid grid-cols-2 md:grid-cols-4 gap-24 w-full md:max-w-6xl text-[11px] font-black uppercase tracking-[0.8em] opacity-40">
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full md:max-w-6xl text-[11px] font-black uppercase tracking-[0.8em] opacity-40">
             {['Archives', 'Manifesto', 'Glossary', 'Protocols', 'Galleries', 'Security', 'Inquiry', 'Legal'].map(item => (
                 <a key={item} href="#" className="hover:text-white transition-all hover:scale-110 hover:tracking-[1.2em] relative group py-4">
                   {item}

@@ -15,7 +15,7 @@ const ClayMockup = ({ theme }) => {
         <motion.div 
           animate={{ y: [0, -40, 0], rotate: [0, 15, 0] }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-20 left-20 w-32 h-32 bg-[#FBCFE8] rounded-full blur-2xl opacity-60"
+          className="absolute top-8 left-20 w-32 h-32 bg-[#FBCFE8] rounded-full blur-2xl opacity-60"
         />
         <motion.div 
           animate={{ x: [0, 50, 0] }}
@@ -50,7 +50,7 @@ const ClayMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero Section (Peak Tactility) */}
-      <section className="relative z-10 p-12 lg:p-32 flex flex-col items-center justify-center text-center">
+      <section className="relative z-10 p-12 lg:p-10 flex flex-col items-center justify-center text-center">
          <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
@@ -185,8 +185,8 @@ const ClayMockup = ({ theme }) => {
       </section>
 
       {/* 6. Soft Footer */}
-      <footer className="bg-white/40 backdrop-blur-xl border-t border-white p-12 md:p-32 rounded-t-[5rem] mt-24">
-         <div className="max-w-7xl mx-auto flex flex-col gap-24 font-bold">
+      <footer className="bg-white/40 backdrop-blur-xl border-t border-white p-12 md:p-10 rounded-t-[5rem] mt-24">
+         <div className="max-w-7xl mx-auto flex flex-col gap-8 font-bold">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
                <div className="lg:col-span-2 space-y-10">
                   <div className="flex items-center gap-6">

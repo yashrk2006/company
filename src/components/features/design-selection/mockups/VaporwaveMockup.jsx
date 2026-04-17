@@ -20,7 +20,7 @@ const VaporwaveMockup = ({ theme }) => {
          <motion.div 
            animate={{ scale: [1, 1.05, 1], y: [0, -20, 0] }}
            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-           className="absolute top-24 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-gradient-to-b from-[#FF71CE] via-[#FF71CE]/90 to-transparent shadow-[0_0_120px_rgba(255,113,206,0.5)]"
+           className="absolute top-8 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-gradient-to-b from-[#FF71CE] via-[#FF71CE]/90 to-transparent shadow-[0_0_120px_rgba(255,113,206,0.5)]"
          >
             <div className="absolute inset-0 flex flex-col gap-6 py-12 opacity-50">
                {[...Array(12)].map((_, i) => (
@@ -59,20 +59,20 @@ const VaporwaveMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero Section */}
-      <section className="relative z-20 min-h-fit flex flex-col items-center justify-center text-center p-8 md:p-32">
+      <section className="relative z-20 min-h-fit flex flex-col items-center justify-center text-center p-8 md:p-10">
          <motion.div
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity: 1, scale: 1 }}
            className="relative mb-24"
          >
-            <h1 className="text-8xl md:text-[12rem] lg:text-[15rem] font-black italic uppercase tracking-tighter leading-none text-white drop-shadow-[0_0_40px_rgba(255,113,206,0.6)] relative z-10">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black italic uppercase tracking-tighter leading-none text-white drop-shadow-[0_0_40px_rgba(255,113,206,0.6)] relative z-10">
                VISUAL <br />
                <span className="text-[#05FFA1] drop-shadow-[0_0_30px_rgba(5,255,161,0.5)]">EUPHORIA.</span>
             </h1>
             <motion.div 
               animate={{ x: [-4, 4, -4], opacity: [0.4, 0.7, 0.4] }}
               transition={{ duration: 0.15, repeat: Infinity }}
-              className="absolute inset-0 text-8xl md:text-[12rem] lg:text-[15rem] font-black italic uppercase tracking-tighter leading-none text-[#FF71CE] blur-[6px] -z-10 translate-x-2 translate-y-2"
+              className="absolute inset-0 text-5xl md:text-6xl lg:text-7xl font-black italic uppercase tracking-tighter leading-none text-[#FF71CE] blur-[6px] -z-10 translate-x-2 translate-y-2"
             >
                VISUAL <br /> EUPHORIA.
             </motion.div>
@@ -123,7 +123,7 @@ const VaporwaveMockup = ({ theme }) => {
       </section>
 
       {/* 4. Feature Matrix (Neon Wave) */}
-      <section className="relative z-20 py-48 bg-[#1A103C] border-y-8 border-[#B967FF]">
+      <section className="relative z-20 py-16 bg-[#1A103C] border-y-8 border-[#B967FF]">
          <div className="max-w-7xl mx-auto px-8 md:px-16 text-center">
             <h2 className="text-6xl md:text-9xl font-black italic text-[#FF71CE] mb-32 tracking-tighter drop-shadow-[0_0_20px_#FF71CE]">CORE_DYNAMICS.</h2>
             
@@ -149,9 +149,9 @@ const VaporwaveMockup = ({ theme }) => {
       </section>
 
       {/* 5. Aesthetic Subs (Pricing) */}
-      <section className="py-48 px-8 md:px-16 max-w-7xl mx-auto flex flex-col items-center">
+      <section className="py-16 px-8 md:px-16 max-w-7xl mx-auto flex flex-col items-center">
          <div className="text-center mb-40">
-            <h2 className="text-7xl md:text-[8rem] font-black italic uppercase tracking-tighter text-[#05FFA1] leading-none mb-4 drop-shadow-[0_0_15px_rgba(5,255,161,0.3)]">THE_INDEX.</h2>
+            <h2 className="text-4xl md:text-5xl font-black italic uppercase tracking-tighter text-[#05FFA1] leading-none mb-4 drop-shadow-[0_0_15px_rgba(5,255,161,0.3)]">THE_INDEX.</h2>
             <div className="h-4 w-64 bg-[#FF71CE] mx-auto opacity-40 shadow-[0_0_20px_#FF71CE]" />
          </div>
 
@@ -182,7 +182,7 @@ const VaporwaveMockup = ({ theme }) => {
       </section>
 
       {/* 6. Massive Footer */}
-      <footer className="p-12 md:p-32 bg-[#1A103C] border-t-8 border-[#05FFA1] flex flex-col items-center gap-24 text-center relative overflow-hidden">
+      <footer className="p-12 md:p-10 bg-[#1A103C] border-t-8 border-[#05FFA1] flex flex-col items-center gap-8 text-center relative overflow-hidden">
          <div className="relative z-10 flex flex-col items-center gap-12 group">
             <div className="w-40 h-40 bg-[#FF71CE] flex items-center justify-center text-white rotate-12 group-hover:rotate-0 transition-transform cursor-pointer border-4 border-white shadow-[12px_12px_0px_#05FFA1]">
                <Mic2 size={80} strokeWidth={3} />
@@ -193,7 +193,7 @@ const VaporwaveMockup = ({ theme }) => {
             </div>
          </div>
 
-         <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-20 text-[10px] font-black uppercase tracking-[0.5em] text-white/30">
+         <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-[10px] font-black uppercase tracking-[0.5em] text-white/30">
             {['Archives', 'Spells', 'Protocols', 'Galleries', 'Waves', 'Signals', 'Studio', 'Support'].map(item => (
                 <a key={item} href="#" className="hover:text-[#FF71CE] hover:translate-y-px transition-all">{item}</a>
             ))}

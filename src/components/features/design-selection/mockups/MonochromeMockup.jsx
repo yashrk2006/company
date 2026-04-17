@@ -53,8 +53,8 @@ const MonochromeMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero: Structural Purity */}
-      <section className="relative z-10 w-full p-8 md:p-24 border-b-[20px] border-black bg-white flex flex-col justify-center min-h-[80vh] max-w-screen-2xl mx-auto shadow-none">
-         <div className="flex flex-col gap-24 relative">
+      <section className="relative z-10 w-full p-8 md:p-8 border-b-[20px] border-black bg-white flex flex-col justify-center min-h-[80vh] max-w-screen-2xl mx-auto shadow-none">
+         <div className="flex flex-col gap-8 relative">
             <div className="space-y-16">
                <motion.div
                  initial={{ opacity: 0, x: -100 }}
@@ -66,7 +66,7 @@ const MonochromeMockup = ({ theme }) => {
                   PROTOCOL_4.8_STABLE
                </motion.div>
                
-               <h1 className="text-[16vw] md:text-[18rem] lg:text-[22rem] font-black leading-[0.7] tracking-tighter uppercase break-words border-l-[40px] border-black pl-16 py-8 relative group cursor-default transition-all hover:bg-black hover:text-white">
+               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.7] tracking-tighter uppercase break-words border-l-[40px] border-black pl-16 py-8 relative group cursor-default transition-all hover:bg-black hover:text-white">
                   ABSOLUTE <br />
                   CONTRAST.
                   <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none group-hover:opacity-10 Transition-opacity">
@@ -75,7 +75,7 @@ const MonochromeMockup = ({ theme }) => {
                </h1>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-32 items-end">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
                <div className="lg:col-span-8 flex flex-col gap-16">
                   <p className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-[0.85] uppercase italic bg-black text-white px-8 py-12 shadow-[30px_30px_0px_rgba(0,0,0,0.1)]">
                      "Clarity through violent subtraction. Building high-fidelity infrastructure with zero noise."
@@ -106,10 +106,10 @@ const MonochromeMockup = ({ theme }) => {
          <motion.div 
            animate={{ x: [0, -1000] }}
            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-           className="flex whitespace-nowrap gap-32 h-auto items-center"
+           className="flex whitespace-nowrap gap-10 h-auto items-center"
          >
             {[...Array(10)].map((_, i) => (
-               <span key={i} className="text-[10rem] font-black uppercase tracking-tighter italic flex items-center gap-12 group hover:text-white/20 transition-colors cursor-crosshair">
+               <span key={i} className="text-5xl font-black uppercase tracking-tighter italic flex items-center gap-12 group hover:text-white/20 transition-colors cursor-crosshair">
                   ZERO_NOISE_ONE_SYSTEM <Hash size={80} strokeWidth={8} /> BINARY_RESERVE <Zap size={80} fill="currentColor" /> 
                </span>
             ))}
@@ -117,10 +117,10 @@ const MonochromeMockup = ({ theme }) => {
       </section>
 
       {/* 5. Structural Matrix (Architecture) */}
-      <section className="relative z-10 w-full bg-white text-black py-64 px-8 md:px-24">
-         <div className="max-w-screen-2xl mx-auto space-y-48">
+      <section className="relative z-10 w-full bg-white text-black py-20 px-8 md:px-24">
+         <div className="max-w-screen-2xl mx-auto space-y-12">
             <div className="flex flex-col lg:flex-row justify-between items-end gap-16 border-b-[20px] border-black pb-20">
-               <h2 className="text-8xl md:text-[18rem] font-black uppercase tracking-tighter italic leading-[0.7]">STRUCTURE.</h2>
+               <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter italic leading-[0.7]">STRUCTURE.</h2>
                <div className="max-w-md text-right space-y-8">
                   <div className="text-sm font-black uppercase tracking-[2em] opacity-30 italic">High Fidelity Ops</div>
                   <p className="text-2xl font-bold uppercase tracking-widest leading-none bg-black text-white px-6 py-3 italic inline-block">Absolute structural dominance in every node.</p>
@@ -160,12 +160,12 @@ const MonochromeMockup = ({ theme }) => {
       </section>
 
       {/* 6. Binary Reserve Analytics (Stats) */}
-      <section className="py-64 bg-black text-white w-full px-8 md:px-24 relative overflow-hidden">
+      <section className="py-20 bg-black text-white w-full px-8 md:px-24 relative overflow-hidden">
          <div className="absolute top-0 right-0 p-48 opacity-[0.05] italic font-black text-[30vw] pointer-events-none uppercase">STATS</div>
          <div className="max-w-7xl mx-auto space-y-32 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                <div className="space-y-16">
-                  <h2 className="text-8xl md:text-[14rem] font-black uppercase tracking-tighter leading-none italic border-b-[12px] border-white/20 pb-12">THE_NUMBERS.</h2>
+                  <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none italic border-b-[12px] border-white/20 pb-12">THE_NUMBERS.</h2>
                   <p className="text-2xl font-bold uppercase tracking-[1em] opacity-40 italic">Global Transmission Data</p>
                </div>
                <div className="grid grid-cols-2 gap-16">
@@ -182,7 +182,7 @@ const MonochromeMockup = ({ theme }) => {
                   ))}
                </div>
             </div>
-            <div className="w-full h-[600px] border-[12px] border-white/10 bg-white/5 relative group overflow-hidden flex items-center justify-center p-12">
+            <div className="w-full h-auto border-[12px] border-white/10 bg-white/5 relative group overflow-hidden flex items-center justify-center p-12">
                <div className="absolute inset-x-0 top-1/2 h-px bg-white/10" />
                <div className="absolute inset-y-0 left-1/2 w-px bg-white/10" />
                <motion.div 
@@ -198,9 +198,9 @@ const MonochromeMockup = ({ theme }) => {
       </section>
 
       {/* 7. Binary Pricing (Tier Access) */}
-      <section className="py-64 px-8 md:px-24 w-full max-w-7xl mx-auto flex flex-col items-center">
-         <div className="text-center mb-48 space-y-12">
-            <h2 className="text-7xl md:text-[18rem] font-black uppercase tracking-tighter italic leading-none underline decoration-black underline-offset-[20px] decoration-[30px]">BINARY_PLANS.</h2>
+      <section className="py-20 px-8 md:px-24 w-full max-w-7xl mx-auto flex flex-col items-center">
+         <div className="text-center mb-12 space-y-12">
+            <h2 className="text-7xl md:text-8xl font-black uppercase tracking-tighter italic leading-none underline decoration-black underline-offset-[20px] decoration-[30px]">BINARY_PLANS.</h2>
             <p className="text-[12px] font-black uppercase tracking-[2em] opacity-30 italic">Investment Tiering // System Access</p>
          </div>
 
@@ -209,7 +209,7 @@ const MonochromeMockup = ({ theme }) => {
                { tier: "VOL. 01 (CORE)", price: "320", desc: "For single node startups and independent digital architects requiring brutalist clarity.", items: ["3 Core Static Grids", "Binary Palette System", "Standard Protocol Uplink", "24hr Sync Latency", "Basic Source Access"] },
                { tier: "VOL. 02 (ENT)", price: "950", featured: true, desc: "For global clusters and legacy institutions demanding planetary architectural dominance.", items: ["12 Advanced Grid Systems", "Multi-Layer Depth Engine", "High-Priority Uplink", "Zero Latency Ops", "Full Sovereign Source", "24/7 Strategic Audit"] }
             ].map((p, i) => (
-               <div key={i} className={`p-24 bg-white group hover:bg-black hover:text-white transition-all duration-1000 flex flex-col justify-between relative overflow-hidden`}>
+               <div key={i} className={`p-8 bg-white group hover:bg-black hover:text-white transition-all duration-1000 flex flex-col justify-between relative overflow-hidden`}>
                   <div className="space-y-16 relative z-10">
                      <div className="flex justify-between items-start border-b-[8px] border-black group-hover:border-white pb-10">
                         <span className="text-xl font-black uppercase tracking-[0.8em] italic">{p.tier}</span>
@@ -217,7 +217,7 @@ const MonochromeMockup = ({ theme }) => {
                            <Zap size={24} fill={p.featured ? "currentColor" : "none"} strokeWidth={4} />
                         </div>
                      </div>
-                     <div className="text-[12rem] md:text-[16rem] font-black tracking-tighter leading-none italic relative group-hover:scale-105 transition-transform duration-1000">
+                     <div className="text-6xl md:text-7xl font-black tracking-tighter leading-none italic relative group-hover:scale-105 transition-transform duration-1000">
                         <span className="text-3xl font-black opacity-30 absolute top-0 left-[-3rem]">$</span>{p.price}
                         <span className="text-[12px] font-black uppercase tracking-[1em] opacity-20 absolute bottom-0 right-[-6rem] rotate-[-90deg] invisible md:visible">Archival Fee / Term</span>
                      </div>
@@ -244,22 +244,22 @@ const MonochromeMockup = ({ theme }) => {
       </section>
 
       {/* 8. The Final Assertion (Inquiry) */}
-      <section className="bg-white py-64 px-12 md:px-32 relative overflow-hidden text-center z-10 border-t-[40px] border-black">
+      <section className="bg-white py-20 px-12 md:px-10 relative overflow-hidden text-center z-10 border-t-[40px] border-black">
          <motion.div
            initial={{ opacity: 0, scale: 0.8 }}
            whileInView={{ opacity: 1, scale: 1 }}
            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
            viewport={{ once: true }}
-           className="max-w-7xl mx-auto space-y-48 relative z-10"
+           className="max-w-7xl mx-auto space-y-12 relative z-10"
          >
-            <h2 className="text-[12vw] md:text-[16rem] lg:text-[24rem] font-black italic tracking-tighter leading-[0.6] uppercase text-black">
+            <h2 className="text-7xl md:text-7xl lg:text-8xl font-black italic tracking-tighter leading-[0.6] uppercase text-black">
                BINARY<br/>LEGACY.
             </h2>
             <div className="flex flex-col items-center gap-16">
                <motion.button 
                   whileHover={{ scale: 1.1, skewX: -15, rotate: 2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="px-48 py-20 bg-black text-white font-black uppercase text-5xl md:text-8xl tracking-[0.3em] shadow-[60px_60px_0px_rgba(0,0,0,0.05)] hover:shadow-none transition-all flex items-center gap-16"
+                  className="px-12 py-20 bg-black text-white font-black uppercase text-5xl md:text-8xl tracking-[0.3em] shadow-[60px_60px_0px_rgba(0,0,0,0.05)] hover:shadow-none transition-all flex items-center gap-16"
                >
                   COMMENCE <ArrowDownCircle size={100} strokeWidth={8} />
                </motion.button>
@@ -269,21 +269,21 @@ const MonochromeMockup = ({ theme }) => {
       </section>
 
       {/* 9. Extra-Brutalist Monochrome Footer */}
-      <footer className="w-full p-12 md:p-48 bg-black text-white border-t-[40px] border-black flex flex-col items-center gap-64 relative z-[110] overflow-hidden">
+      <footer className="w-full p-12 md:p-48 bg-black text-white border-t-[40px] border-black flex flex-col items-center gap-16 relative z-[110] overflow-hidden">
          <div className="absolute top-[-10%] right-[-10%] text-[40vw] font-black opacity-[0.03] italic pointer-events-none uppercase">MONO</div>
          
-         <div className="flex flex-col items-center gap-24 group transition-all cursor-crosshair">
+         <div className="flex flex-col items-center gap-8 group transition-all cursor-crosshair">
             <div className="w-80 h-80 bg-white flex items-center justify-center text-black -rotate-12 group-hover:rotate-12 transition-all duration-1000 shadow-[40px_40px_0px_rgba(255,255,255,0.1)] relative">
-               <span className="text-[16rem] font-black italic select-none">M</span>
+               <span className="text-7xl font-black italic select-none">M</span>
                <div className="absolute top-8 right-8 text-xs font-black tracking-widest opacity-40">[SYN_V.4.8]</div>
             </div>
             <div className="space-y-8">
-               <div className="text-8xl md:text-[18rem] font-black tracking-tighter italic leading-none uppercase text-white hover:italic transition-all">MNCRM.STUDIO</div>
+               <div className="text-5xl md:text-7xl font-black tracking-tighter italic leading-none uppercase text-white hover:italic transition-all">MNCRM.STUDIO</div>
                <div className="text-[14px] font-black tracking-[4em] opacity-40 uppercase italic ml-10">Institutional Proprietary // Binary Reserve</div>
             </div>
          </div>
 
-         <div className="grid grid-cols-2 lg:grid-cols-4 gap-24 w-full max-w-screen-2xl text-[14px] font-black uppercase tracking-[1.5em] opacity-30 border-y-[10px] border-white/10 py-32 text-center">
+         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-screen-2xl text-[14px] font-black uppercase tracking-[1.5em] opacity-30 border-y-[10px] border-white/10 py-32 text-center">
             {['Architecture', 'Systems', 'Archives', 'Essence', 'Protocols', 'Support', 'Legal', 'Privacy'].map(item => (
                <a key={item} href="#" className="hover:text-white hover:tracking-[2em] transition-all underline decoration-8 underline-offset-12 decoration-white/5">
                   {item}
@@ -299,9 +299,9 @@ const MonochromeMockup = ({ theme }) => {
             ))}
          </div>
 
-         <div className="pt-48 flex flex-col md:flex-row justify-between w-full max-w-screen-2xl items-center gap-16 text-[18px] font-black uppercase tracking-[1.5em] opacity-20 italic font-mono">
+         <div className="pt-12 flex flex-col md:flex-row justify-between w-full max-w-screen-2xl items-center gap-16 text-[18px] font-black uppercase tracking-[1.5em] opacity-20 italic font-mono">
             <span>© MMXXVI MNCRM.STUDIO SYSTEMS // ALL RIGHTS RESERVED // V.4.8</span>
-            <div className="flex gap-24 items-center">
+            <div className="flex gap-8 items-center">
                <div className="flex items-center gap-6">
                   <div className="w-4 h-4 bg-white rounded-full animate-pulse shadow-[0_0_20px_white]" />
                   <span>LATENCY: ZERO</span>

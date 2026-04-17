@@ -89,9 +89,9 @@ const MaterialMockup = ({ theme }) => {
       </section>
 
       {/* 3. Surface Layers (The Core Logic) */}
-      <section className="relative z-10 py-48 px-8 md:px-24 bg-white overflow-hidden">
+      <section className="relative z-10 py-16 px-8 md:px-24 bg-white overflow-hidden">
          <div className="max-w-7xl mx-auto space-y-32">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                <div className="space-y-12">
                   <div className="space-y-6">
                      <span className="text-[11px] font-black uppercase tracking-[0.4em] text-[#6200EE]">Depth & Elevation</span>
@@ -135,9 +135,9 @@ const MaterialMockup = ({ theme }) => {
       </section>
 
       {/* 4. Cross-Platform Dashboard (Metrics) */}
-      <section className="py-48 px-12 md:px-32 bg-[#F3F4F6] z-10">
+      <section className="py-16 px-12 md:px-10 bg-[#F3F4F6] z-10">
          <div className="max-w-7xl mx-auto">
-            <div className="p-12 md:p-20 bg-white rounded-[4rem] shadow-xl border border-white relative overflow-hidden group">
+            <div className="p-12 md:p-8 bg-white rounded-[4rem] shadow-xl border border-white relative overflow-hidden group">
                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/micro-carbon.png')] opacity-5 pointer-events-none" />
                <div className="flex flex-col lg:flex-row justify-between items-center gap-16 relative z-10">
                   <div className="space-y-12 max-w-xl">
@@ -180,7 +180,7 @@ const MaterialMockup = ({ theme }) => {
       </section>
 
       {/* 5. Adaptive Solutions (Pricing) */}
-      <section className="py-48 px-12 md:px-32 max-w-7xl mx-auto flex flex-col items-center z-10">
+      <section className="py-16 px-12 md:px-10 max-w-7xl mx-auto flex flex-col items-center z-10">
          <div className="text-center mb-40 space-y-6">
             <span className="text-[11px] font-black uppercase tracking-[0.6em] text-[#6200EE]">Scaling Components</span>
             <h2 className="text-6xl md:text-9xl font-bold text-slate-900 tracking-tight leading-none">Access Levels.</h2>
@@ -248,8 +248,8 @@ const MaterialMockup = ({ theme }) => {
       </section>
 
       {/* 6. Material Footer */}
-      <footer className="p-12 md:p-32 bg-white border-t border-slate-100 flex flex-col items-center gap-32 relative z-10">
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 w-full max-w-7xl">
+      <footer className="p-12 md:p-10 bg-white border-t border-slate-100 flex flex-col items-center gap-10 relative z-10">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl">
             <div className="lg:col-span-2 space-y-12">
                <div className="flex items-center gap-8 group">
                   <div className="w-24 h-24 bg-[#6200EE] text-white rounded-[2rem] flex items-center justify-center text-4xl font-bold shadow-xl transition-all group-hover:rotate-6">ZM</div>

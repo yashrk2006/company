@@ -48,7 +48,7 @@ const NeumorphicMockup = ({ theme }) => {
       </nav>
 
       {/* 2. Hero Section */}
-      <section className="relative z-10 px-8 md:px-16 pt-32 pb-48 max-w-7xl mx-auto flex flex-col items-center text-center">
+      <section className="relative z-10 px-8 md:px-16 pt-32 pb-12 max-w-7xl mx-auto flex flex-col items-center text-center">
          <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ const NeumorphicMockup = ({ theme }) => {
             Tactile Intelligence v4.8
          </motion.div>
 
-         <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-slate-800 tracking-tighter leading-[0.85] mb-12 uppercase italic">
+         <h1 className="text-6xl md:text-8xl lg:text-5xl font-black text-slate-800 tracking-tighter leading-[0.85] mb-12 uppercase italic">
             Soft touch. <br />
             <span className="text-blue-500">Depp</span> Impact.
          </h1>
@@ -78,9 +78,9 @@ const NeumorphicMockup = ({ theme }) => {
       </section>
 
       {/* 3. Metrics Inset Panel (The Dashboard) */}
-      <section className="px-8 md:px-16 pb-48">
+      <section className="px-8 md:px-16 pb-12">
          <div className="max-w-7xl mx-auto p-16 rounded-[5rem] bg-[#e0e0e0] shadow-[30px_30px_60px_#bebebe,-30px_-30px_60px_#ffffff] border-4 border-white/20 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-32 opacity-[0.03] group-hover:rotate-12 transition-transform pointer-events-none">
+            <div className="absolute top-0 right-0 p-10 opacity-[0.03] group-hover:rotate-12 transition-transform pointer-events-none">
                <Cpu size={500} strokeWidth={1} />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative z-10">
@@ -105,7 +105,7 @@ const NeumorphicMockup = ({ theme }) => {
       </section>
 
       {/* 4. Core Protocol Grid */}
-      <section className="py-48 px-8 md:px-16 bg-[#e8e8e8] border-y border-white/20">
+      <section className="py-16 px-8 md:px-16 bg-[#e8e8e8] border-y border-white/20">
          <div className="max-w-7xl mx-auto space-y-32">
             <div className="flex flex-col items-center text-center space-y-8">
                <h2 className="text-5xl md:text-8xl font-black text-slate-800 tracking-[0.4em] uppercase opacity-20 italic">Architectures.</h2>
@@ -138,14 +138,14 @@ const NeumorphicMockup = ({ theme }) => {
       </section>
 
       {/* 5. Inset Pricing Protocols (The Selection) */}
-      <section className="py-48 px-8 md:px-16 max-w-7xl mx-auto flex flex-col items-center">
+      <section className="py-16 px-8 md:px-16 max-w-7xl mx-auto flex flex-col items-center">
          <div className="text-center mb-32 space-y-6">
             <span className="text-[11px] font-black uppercase tracking-[0.8em] text-blue-500">Resource Allocation</span>
             <h2 className="text-6xl md:text-9xl font-black text-slate-800 tracking-tighter uppercase italic leading-none">Scalable.</h2>
          </div>
 
-         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 w-full max-w-6xl">
-            <div className="p-20 rounded-[5rem] bg-[#e0e0e0] shadow-inner border-[12px] border-[#e0e0e0] relative group">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl">
+            <div className="p-8 rounded-[5rem] bg-[#e0e0e0] shadow-inner border-[12px] border-[#e0e0e0] relative group">
                <div className="absolute top-0 right-0 p-12 opacity-5 scale-150 text-slate-400">
                   <Activity size={200} strokeWidth={1} />
                </div>
@@ -166,7 +166,7 @@ const NeumorphicMockup = ({ theme }) => {
                </div>
             </div>
 
-            <div className="p-20 rounded-[5rem] bg-[#e0e0e0] shadow-[30px_30px_60px_#bebebe,-30px_-30px_60px_#ffffff] border-[12px] border-white/20 relative group overflow-hidden">
+            <div className="p-8 rounded-[5rem] bg-[#e0e0e0] shadow-[30px_30px_60px_#bebebe,-30px_-30px_60px_#ffffff] border-[12px] border-white/20 relative group overflow-hidden">
                <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                <div className="space-y-16 relative z-10 text-center">
                   <div className="flex justify-between items-center">
@@ -189,10 +189,10 @@ const NeumorphicMockup = ({ theme }) => {
       </section>
 
       {/* 6. Unified Footer */}
-      <footer className="p-12 md:p-40 bg-[#e0e0e0] border-t border-white/20 flex flex-col items-center gap-32 relative overflow-hidden">
+      <footer className="p-12 md:p-40 bg-[#e0e0e0] border-t border-white/20 flex flex-col items-center gap-10 relative overflow-hidden">
          <div className="absolute inset-0 pattern-max-dots opacity-[0.03] pointer-events-none" />
          
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 relative z-10 w-full max-w-7xl">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 w-full max-w-7xl">
             <div className="lg:col-span-2 space-y-12">
                <div className="flex items-center gap-8 group">
                   <div className="w-24 h-24 rounded-[2.5rem] bg-[#e0e0e0] flex items-center justify-center text-blue-500 shadow-[12px_12px_24px_#bebebe,-12px_-12px_24px_#ffffff] group-hover:shadow-inner transition-all">

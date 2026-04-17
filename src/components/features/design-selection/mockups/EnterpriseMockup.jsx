@@ -42,7 +42,7 @@ const EnterpriseMockup = ({ theme }) => {
 
       {/* 2. Hero Section: Strategic Systems */}
       <section className="relative bg-white pt-24 pb-32 px-6 md:px-12 overflow-hidden border-b border-slate-100">
-         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -122,7 +122,7 @@ const EnterpriseMockup = ({ theme }) => {
       <section className="py-16 px-6 md:px-12 bg-slate-50 border-b border-slate-100">
          <div className="max-w-7xl mx-auto">
             <div className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-12">Powering Global Frontrunners</div>
-            <div className="flex flex-wrap justify-center gap-16 md:gap-32 opacity-30 grayscale hover:grayscale-0 transition-all">
+            <div className="flex flex-wrap justify-center gap-16 md:gap-10 opacity-30 grayscale hover:grayscale-0 transition-all">
                {[GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon].map((Icon, i) => (
                  <div key={i} className="flex items-center gap-3">
                     <Icon size={32} />
@@ -163,7 +163,7 @@ const EnterpriseMockup = ({ theme }) => {
       {/* 5. Metrics Section */}
       <section className="py-32 px-6 md:px-12 bg-slate-900 text-white relative overflow-hidden">
          <div className="absolute inset-0 pattern-max-dots opacity-5" />
-         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
+         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
             <div className="space-y-12">
                <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none uppercase">Validated <br/> Performance.</h2>
                <div className="grid grid-cols-2 gap-12">

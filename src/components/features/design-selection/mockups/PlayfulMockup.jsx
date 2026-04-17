@@ -91,7 +91,7 @@ const PlayfulMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero: The Maximum Celebration */}
-      <section className="relative z-10 w-full px-8 md:px-24 pt-32 pb-48 flex flex-col items-center text-center max-w-screen-2xl mx-auto overflow-visible">
+      <section className="relative z-10 w-full px-8 md:px-24 pt-32 pb-12 flex flex-col items-center text-center max-w-screen-2xl mx-auto overflow-visible">
          <motion.div
            initial={{ scale: 0, rotate: -45 }}
            animate={{ scale: 1, rotate: 10 }}
@@ -107,7 +107,7 @@ const PlayfulMockup = ({ theme }) => {
             </div>
          </motion.div>
 
-         <h1 className="text-8xl md:text-[14rem] lg:text-[18rem] font-black leading-[0.75] mb-16 tracking-tighter text-slate-900 relative group cursor-default">
+         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.75] mb-16 tracking-tighter text-slate-900 relative group cursor-default">
             MAKE <br /> DIGITAL <br />
             <span className="text-[#8B5CF6] italic inline-block relative px-12 pb-4">
                FUN AGAIN!
@@ -116,7 +116,7 @@ const PlayfulMockup = ({ theme }) => {
                  transition={{ duration: 0.5, repeat: Infinity }}
                  className="absolute bottom-0 left-0 w-full h-[30px] bg-[#FBBF24] -z-10 rounded-full skew-x-[-15deg]" 
                />
-               <Heart size={100} className="absolute -top-20 -right-24 text-[#F472B6] fill-[#F472B6] group-hover:scale-150 transition-transform duration-500" />
+               <Heart size={100} className="absolute -top-8 -right-24 text-[#F472B6] fill-[#F472B6] group-hover:scale-150 transition-transform duration-500" />
             </span>
          </h1>
 
@@ -142,7 +142,7 @@ const PlayfulMockup = ({ theme }) => {
          </div>
 
          {/* Hero Sticker Parade (Interactive) */}
-         <div className="mt-64 w-full flex flex-wrap justify-center gap-16 md:gap-32">
+         <div className="mt-16 w-full flex flex-wrap justify-center gap-16 md:gap-10">
             {[
               { Icon: Triangle, color: '#F472B6', label: 'RAD' },
               { Icon: Square, color: '#34D399', label: 'COOL' },
@@ -177,10 +177,10 @@ const PlayfulMockup = ({ theme }) => {
       </section>
 
       {/* 4. Squishy Features Matrix (Spells) */}
-      <section className="relative z-10 py-64 w-full bg-[#FDE68A] border-y-[16px] border-slate-900 flex flex-col items-center">
-         <div className="max-w-7xl mx-auto px-8 md:px-24 flex flex-col items-center space-y-48">
+      <section className="relative z-10 py-20 w-full bg-[#FDE68A] border-y-[16px] border-slate-900 flex flex-col items-center">
+         <div className="max-w-7xl mx-auto px-8 md:px-24 flex flex-col items-center space-y-12">
             <div className="text-center space-y-8">
-               <h2 className="text-8xl md:text-[12rem] font-black text-slate-900 tracking-tighter uppercase italic leading-none textShadow">VISUAL_SPELLS.</h2>
+               <h2 className="text-5xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase italic leading-none textShadow">VISUAL_SPELLS.</h2>
                <p className="text-2xl font-black uppercase tracking-[1em] opacity-40 italic">Hyper-Energy Infrastructure</p>
             </div>
             
@@ -221,7 +221,7 @@ const PlayfulMockup = ({ theme }) => {
       </section>
 
       {/* 5. The Vibe Engine (Display/Stats) */}
-      <section className="py-64 w-full px-8 md:px-24 bg-white z-10 relative flex flex-col items-center overflow-hidden">
+      <section className="py-20 w-full px-8 md:px-24 bg-white z-10 relative flex flex-col items-center overflow-hidden">
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-60">
             <svg viewBox="0 0 100 100" className="w-full h-full stroke-slate-100 fill-none stroke-[0.1]">
                <circle cx="50" cy="50" r="40" />
@@ -229,9 +229,9 @@ const PlayfulMockup = ({ theme }) => {
                <circle cx="50" cy="50" r="20" />
             </svg>
          </div>
-         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-32 items-center relative z-10 w-full">
+         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10 w-full">
             <div className="lg:col-span-12 text-center space-y-12 mb-32">
-               <h2 className="text-8xl md:text-[14rem] font-black uppercase tracking-tighter italic leading-none text-slate-900 underline decoration-[#8B5CF6] decoration-[30px] underline-offset-[20px]">JOY_ENGINE.</h2>
+               <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter italic leading-none text-slate-900 underline decoration-[#8B5CF6] decoration-[30px] underline-offset-[20px]">JOY_ENGINE.</h2>
                <div className="text-2xl font-black uppercase tracking-[1.5em] text-slate-300 italic">Planetary Happiness Metrics</div>
             </div>
 
@@ -253,7 +253,7 @@ const PlayfulMockup = ({ theme }) => {
                ))}
             </div>
 
-            <div className="lg:col-span-7 bg-white border-[12px] border-slate-900 rounded-[6rem] shadow-pop-lg relative overflow-hidden group min-h-[600px] flex items-center justify-center p-12">
+            <div className="lg:col-span-7 bg-white border-[12px] border-slate-900 rounded-[6rem] shadow-pop-lg relative overflow-hidden group min-h-auto flex items-center justify-center p-12">
                <div className="absolute inset-0 bg-[#8B5CF6]/5 pointer-events-none group-hover:opacity-10 transition-opacity" />
                <motion.div 
                  animate={{ rotate: [0, 90, 180, 270, 360], scale: [1, 1.2, 1] }}
@@ -272,13 +272,13 @@ const PlayfulMockup = ({ theme }) => {
       </section>
 
       {/* 6. Joyful Models (Pricing) */}
-      <section className="py-64 px-12 md:px-24 w-full max-w-7xl mx-auto flex flex-col items-center z-10">
-         <div className="text-center mb-48 space-y-12">
-            <h2 className="text-8xl md:text-[16rem] font-black text-slate-900 tracking-tighter uppercase italic leading-none drop-shadow-[15px_15px_0px_#FBBF24]">CHOOSE_JOY.</h2>
+      <section className="py-20 px-12 md:px-24 w-full max-w-7xl mx-auto flex flex-col items-center z-10">
+         <div className="text-center mb-12 space-y-12">
+            <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter uppercase italic leading-none drop-shadow-[6px_6px_0px_#FBBF24]">CHOOSE_JOY.</h2>
             <p className="text-[14px] font-black uppercase tracking-[2em] opacity-30 italic">Investment Clusters // Collective Play</p>
          </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 w-full lg:max-w-6xl">
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full lg:max-w-6xl">
             {[
                { tier: "Starter_Pack", price: "24", color: "#F472B6", textColor: "white", bg: "bg-white", border: "border-slate-900", accent: "#F472B6", items: ["Core Sticker Pack V1", "Basic Playground Access", "Community Joy Channels", "Daily Vibe Monitoring", "Standard Spells Cluster"] },
                { tier: "Extreme_Pack", price: "88", color: "#8B5CF6", textColor: "white", bg: "bg-[#8B5CF6]", border: "border-slate-900", accent: "#FBBF24", items: ["Infinite Sticker Forge", "Kinetic Studio Engine", "Global Rave Clusters", "Priority Uplink Support", "Custom Joy Fabrication", "Full Source Sovereignty"] }
@@ -286,7 +286,7 @@ const PlayfulMockup = ({ theme }) => {
                <motion.div 
                  key={i} 
                  whileHover={{ y: -25, scale: 1.02 }}
-                 className={`p-20 ${p.bg} ${p.border} border-[12px] rounded-[6rem] shadow-pop-lg group relative transition-all duration-700 overflow-hidden flex flex-col justify-between`}
+                 className={`p-8 ${p.bg} ${p.border} border-[12px] rounded-[6rem] shadow-pop-lg group relative transition-all duration-700 overflow-hidden flex flex-col justify-between`}
                >
                   <div className="space-y-20 relative z-10">
                      <div className="flex justify-between items-center mb-16 px-4">
@@ -296,7 +296,7 @@ const PlayfulMockup = ({ theme }) => {
                         </div>
                      </div>
                      <div className={`space-y-6 text-center ${i === 1 ? 'text-white' : 'text-slate-900'}`}>
-                        <div className="text-[12rem] font-black tracking-tighter leading-none italic relative flex items-center justify-center">
+                        <div className="text-6xl font-black tracking-tighter leading-none italic relative flex items-center justify-center">
                            <span className="text-4xl font-black opacity-30 absolute top-0 left-[-4rem] italic">$</span>{p.price}
                            <span className="text-[12px] font-black uppercase tracking-[1em] opacity-30 absolute bottom-0 right-[-6rem] rotate-[-90deg] invisible md:visible">Archival Vibe Fee</span>
                         </div>
@@ -321,23 +321,23 @@ const PlayfulMockup = ({ theme }) => {
       </section>
 
       {/* 7. The Final Vibe (CTA) */}
-      <section className="bg-white py-64 px-12 md:px-32 relative overflow-hidden text-center z-10 border-t-[20px] border-slate-900">
+      <section className="bg-white py-20 px-12 md:px-10 relative overflow-hidden text-center z-10 border-t-[20px] border-slate-900">
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pattern-dots opacity-10 pointer-events-none" />
          <motion.div
            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
            transition={{ duration: 1.5, type: "spring", damping: 10 }}
            viewport={{ once: true }}
-           className="max-w-7xl mx-auto space-y-48 relative z-10"
+           className="max-w-7xl mx-auto space-y-12 relative z-10"
          >
-            <h2 className="text-[12vw] md:text-[18rem] lg:text-[26rem] font-black italic tracking-tighter leading-[0.6] uppercase text-slate-900 drop-shadow-[20px_20px_0px_#8B5CF6]">
+            <h2 className="text-7xl md:text-8xl lg:text-8xl font-black italic tracking-tighter leading-[0.6] uppercase text-slate-900 drop-shadow-[8px_8px_0px_#8B5CF6]">
                JUST_DO<br/>IT_FUN.
             </h2>
             <div className="flex flex-col items-center gap-20">
                <motion.button 
                   whileHover={{ scale: 1.15, rotate: 5, skewX: -10 }}
                   whileTap={{ scale: 0.9 }}
-                  className="px-48 py-20 bg-[#FBBF24] border-[12px] border-slate-900 rounded-[6rem] text-slate-900 font-black uppercase text-6xl md:text-9xl tracking-[0.2em] shadow-pop-lg hover:shadow-none transition-all flex items-center gap-20 group"
+                  className="px-12 py-20 bg-[#FBBF24] border-[12px] border-slate-900 rounded-[6rem] text-slate-900 font-black uppercase text-6xl md:text-9xl tracking-[0.2em] shadow-pop-lg hover:shadow-none transition-all flex items-center gap-8 group"
                >
                   GO! <Smile size={100} strokeWidth={8} className="group-hover:rotate-[360deg] transition-all duration-1000" />
                </motion.button>
@@ -347,10 +347,10 @@ const PlayfulMockup = ({ theme }) => {
       </section>
 
       {/* 8. Super-Sticker Powered Footer */}
-      <footer className="w-full p-12 md:p-48 bg-white border-t-[24px] border-slate-900 flex flex-col items-center gap-64 relative z-[110] overflow-hidden text-center">
+      <footer className="w-full p-12 md:p-48 bg-white border-t-[24px] border-slate-900 flex flex-col items-center gap-16 relative z-[110] overflow-hidden text-center">
          <div className="absolute top-[-10%] left-[-10%] text-[40vw] font-black opacity-[0.03] italic pointer-events-none uppercase text-slate-900">JOY</div>
          
-         <div className="grid grid-cols-1 lg:grid-cols-3 gap-48 w-full max-w-screen-2xl mx-auto items-center relative z-10">
+         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 w-full max-w-screen-2xl mx-auto items-center relative z-10">
             <div className="lg:col-span-2 space-y-24 text-left">
                <div className="flex items-center gap-10 group cursor-pointer transition-all duration-700">
                   <div className="relative">
@@ -378,7 +378,7 @@ const PlayfulMockup = ({ theme }) => {
             </div>
          </div>
 
-         <div className="flex flex-wrap justify-center gap-16 w-full max-w-screen-2xl mx-auto pt-48 border-t-[10px] border-slate-50">
+         <div className="flex flex-wrap justify-center gap-16 w-full max-w-screen-2xl mx-auto pt-12 border-t-[10px] border-slate-50">
             {[GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon, Mail, Phone].map((Icon, i) => (
                <motion.a 
                   key={i} 
@@ -393,7 +393,7 @@ const PlayfulMockup = ({ theme }) => {
 
          <div className="flex flex-col md:flex-row justify-between w-full max-w-screen-2xl mx-auto pt-24 text-[14px] font-black text-slate-200 uppercase tracking-[1.5em] italic">
             <span>© MMXXVI ZORVIA.PLAY! SYSTEMS // ALL RIGHTS RADICAL</span>
-            <div className="flex gap-20 items-center">
+            <div className="flex gap-8 items-center">
                <div className="flex items-center gap-6">
                   <div className="w-4 h-4 bg-[#34D399] rounded-full animate-pulse shadow-[0_0_20px_#34D399]" />
                   <span>JOY_LEVEL: PEAK</span>

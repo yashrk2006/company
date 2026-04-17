@@ -13,7 +13,7 @@ const FlatDesignMockup = ({ theme }) => {
     <div className="min-h-fit relative overflow-x-hidden bg-[#ECF0F1] text-[#2C3E50] font-sans selection:bg-[#3498DB] selection:text-white flex flex-col pt-0">
       {/* 1. Global 2D Geometric Vectors */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-         <div className="absolute -top-20 -right-20 w-[40rem] h-[40rem] bg-[#3498DB] rounded-full opacity-5" />
+         <div className="absolute -top-8 -right-20 w-[40rem] h-[40rem] bg-[#3498DB] rounded-full opacity-5" />
          <div className="absolute top-1/2 -left-40 w-[30rem] h-[30rem] bg-[#E74C3C] rounded-full opacity-5" />
          <div className="absolute bottom-20 right-[20%] w-[25rem] h-[25rem] bg-[#F1C40F] opacity-5 rotate-45" />
          <div className="absolute top-[20%] left-[10%] w-24 h-24 bg-[#2ECC71] opacity-5" />
@@ -50,7 +50,7 @@ const FlatDesignMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero Section (Clarity) */}
-      <section className="relative z-10 pt-32 pb-48 px-12 md:px-24 flex flex-col items-center text-center max-w-7xl mx-auto min-h-fit">
+      <section className="relative z-10 pt-32 pb-12 px-12 md:px-24 flex flex-col items-center text-center max-w-7xl mx-auto min-h-fit">
          <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ const FlatDesignMockup = ({ theme }) => {
                Peak Performance Systems
             </div>
 
-            <h1 className="text-7xl md:text-[10rem] font-black leading-[0.9] tracking-tighter text-[#2C3E50] uppercase">
+            <h1 className="text-4xl md:text-5xl font-black leading-[0.9] tracking-tighter text-[#2C3E50] uppercase">
                Keep It Simple. <br />
                <span className="text-[#3498DB] underline decoration-[#BDC3C7] decoration-8 underline-offset-8">Communicate.</span>
             </h1>
@@ -82,9 +82,9 @@ const FlatDesignMockup = ({ theme }) => {
       </section>
 
       {/* 4. Feature Blocks (2D Grid) */}
-      <section className="relative z-10 py-48 px-12 md:px-32 bg-white border-y-8 border-[#BDC3C7]">
+      <section className="relative z-10 py-16 px-12 md:px-10 bg-white border-y-8 border-[#BDC3C7]">
          <div className="max-w-7xl mx-auto space-y-40">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-end pb-16 border-b-4 border-[#ECF0F1]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end pb-16 border-b-4 border-[#ECF0F1]">
                <div className="space-y-6">
                   <span className="text-[11px] font-black uppercase tracking-[0.6em] text-[#3498DB]">Flat Architecture</span>
                   <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-[#2C3E50] uppercase leading-none">The_Standard.</h2>
@@ -121,11 +121,11 @@ const FlatDesignMockup = ({ theme }) => {
       </section>
 
       {/* 5. Flat Performance (Performance Dashboard) */}
-      <section className="py-48 px-12 md:px-32 bg-[#2C3E50] text-white z-10 relative overflow-hidden">
+      <section className="py-16 px-12 md:px-10 bg-[#2C3E50] text-white z-10 relative overflow-hidden">
          <div className="absolute top-0 right-0 p-40 opacity-5 pointer-events-none grayscale">
             <Layers size={600} />
          </div>
-         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-32 relative z-10">
+         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10 relative z-10">
             <div className="space-y-16 max-w-xl">
                <div className="space-y-6">
                   <span className="text-[11px] font-black uppercase tracking-[0.6em] text-[#3498DB]">Telemetry Sync</span>
@@ -170,10 +170,10 @@ const FlatDesignMockup = ({ theme }) => {
       </section>
 
       {/* 6. Friendly Bundles (Pricing) */}
-      <section className="py-48 px-12 md:px-32 max-w-7xl mx-auto flex flex-col items-center z-10">
+      <section className="py-16 px-12 md:px-10 max-w-7xl mx-auto flex flex-col items-center z-10">
          <div className="text-center mb-40 space-y-6">
             <span className="text-[11px] font-black uppercase tracking-[0.8em] text-[#3498DB]">Institutional Packaging</span>
-            <h2 className="text-6xl md:text-[10rem] font-black uppercase tracking-tighter text-[#2C3E50] leading-none">Bundles.</h2>
+            <h2 className="text-6xl md:text-5xl font-black uppercase tracking-tighter text-[#2C3E50] leading-none">Bundles.</h2>
          </div>
 
          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-5xl">
@@ -216,8 +216,8 @@ const FlatDesignMockup = ({ theme }) => {
       </section>
 
       {/* 7. Flat Footer */}
-      <footer className="p-12 md:p-40 bg-white border-t-8 border-[#BDC3C7] flex flex-col items-center gap-32 relative z-10">
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 relative z-10 w-full max-w-7xl">
+      <footer className="p-12 md:p-40 bg-white border-t-8 border-[#BDC3C7] flex flex-col items-center gap-10 relative z-10">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 w-full max-w-7xl">
             <div className="lg:col-span-2 space-y-12">
                <div className="flex items-center gap-10 group cursor-pointer">
                   <div className="w-24 h-24 bg-[#3498DB] rounded-3xl flex items-center justify-center text-white border-b-4 border-black/10 group-hover:rotate-12 transition-transform shadow-xl">

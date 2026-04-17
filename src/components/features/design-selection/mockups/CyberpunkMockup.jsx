@@ -117,7 +117,7 @@ const CyberpunkMockup = ({ theme }) => {
       </div>
 
       {/* 3. Hero Section (Neural Core) */}
-      <section className="relative z-10 min-h-fit flex flex-col items-center justify-center p-8 md:p-32 lg:ml-32 lg:mr-48 text-left max-w-7xl">
+      <section className="relative z-10 min-h-fit flex flex-col items-center justify-center p-8 md:p-10 lg:ml-32 lg:mr-48 text-left max-w-7xl">
          <motion.div
            initial={{ opacity: 0, x: -50 }}
            animate={{ opacity: 1, x: 0 }}
@@ -128,7 +128,7 @@ const CyberpunkMockup = ({ theme }) => {
                <div className="text-[10px] opacity-40 font-mono tracking-widest">ENCRYPTED_SIGNAL_STREAM</div>
             </div>
             
-            <h2 className="text-6xl md:text-[8rem] font-black italic tracking-tighter mb-8 skew-x-[-12deg] relative leading-none uppercase">
+            <h2 className="text-6xl md:text-5xl font-black italic tracking-tighter mb-8 skew-x-[-12deg] relative leading-none uppercase">
               <span className="relative z-10 text-white" style={{ textShadow: `0 0 20px #00FF9F` }}>{glitchText}</span>
               <span className="absolute top-1 left-1 z-0 text-[#FF00FF] opacity-50 blur-[1px] animate-pulse">{glitchText}</span>
             </h2>
@@ -154,7 +154,7 @@ const CyberpunkMockup = ({ theme }) => {
       </section>
 
       {/* 4. Cyber-Protocols Grid */}
-      <section className="relative z-10 py-32 px-8 md:px-32 lg:ml-32 lg:mr-48 bg-black/40 border-y border-[#00FF9F]/10">
+      <section className="relative z-10 py-32 px-8 md:px-10 lg:ml-32 lg:mr-48 bg-black/40 border-y border-[#00FF9F]/10">
          <div className="max-w-7xl mx-auto space-y-24">
             <div className="flex justify-between items-end border-b border-[#00FF9F]/20 pb-8">
                <div className="space-y-2">
@@ -197,7 +197,7 @@ const CyberpunkMockup = ({ theme }) => {
       </section>
 
       {/* 5. Neural Access Tiers */}
-      <section className="py-32 px-8 md:px-32 lg:ml-32 lg:mr-48">
+      <section className="py-32 px-8 md:px-10 lg:ml-32 lg:mr-48">
          <div className="max-w-7xl mx-auto flex flex-col items-center">
             <div className="text-center mb-20 space-y-4">
                <h2 className="text-5xl md:text-8xl font-black italic tracking-tighter text-white uppercase italic skew-x-[-12deg]"> neural.access </h2>
@@ -222,7 +222,7 @@ const CyberpunkMockup = ({ theme }) => {
                </div>
 
                <div className="p-16 bg-[#FF00FF]/5 border border-[#FF00FF] relative group overflow-hidden shadow-[0_0_50px_rgba(255,0,255,0.1)]">
-                  <div className="absolute top-0 right-0 p-20 opacity-5 rotate-12 pointer-events-none text-[#FF00FF]">
+                  <div className="absolute top-0 right-0 p-8 opacity-5 rotate-12 pointer-events-none text-[#FF00FF]">
                      <Cpu size={300} strokeWidth={1} />
                   </div>
                   <div className="flex justify-between items-center mb-16 relative z-10">
@@ -244,7 +244,7 @@ const CyberpunkMockup = ({ theme }) => {
       </section>
 
       {/* 6. Cyber Footer */}
-      <footer className="p-12 md:p-32 bg-black/60 border-t-4 border-[#00FF9F]/30 flex flex-col gap-24 relative z-10 lg:ml-32 lg:mr-48">
+      <footer className="p-12 md:p-10 bg-black/60 border-t-4 border-[#00FF9F]/30 flex flex-col gap-8 relative z-10 lg:ml-32 lg:mr-48">
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
             <div className="lg:col-span-2 space-y-10">
                <div className="flex items-center gap-6 group">

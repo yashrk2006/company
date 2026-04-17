@@ -40,7 +40,7 @@ const IndustrialMockup = ({ theme }) => {
       </header>
 
       {/* 3. Hero / Main Telemetry */}
-      <section className="relative z-10 p-6 md:p-12 lg:p-24 max-w-7xl mx-auto">
+      <section className="relative z-10 p-6 md:p-12 lg:p-8 max-w-7xl mx-auto">
          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-8 space-y-12">
                <div className="bg-black/40 border-l-8 border-orange-500 p-12 space-y-8 shadow-[10px_10px_30px_rgba(0,0,0,0.5)]">
@@ -139,7 +139,7 @@ const IndustrialMockup = ({ theme }) => {
       </section>
 
       {/* 4. Industrial Capability Matrix */}
-      <section className="relative z-10 py-48 bg-black/60 border-y-4 border-white/10 mt-32">
+      <section className="relative z-10 py-16 bg-black/60 border-y-4 border-white/10 mt-32">
          <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border border-white/10">
             {[
               { title: "Iron_Gate", icon: Shield, desc: "High-density access control for restricted digital zones." },
@@ -160,7 +160,7 @@ const IndustrialMockup = ({ theme }) => {
       </section>
 
       {/* 5. Pricing Index (Hardware Allocation) */}
-      <section className="py-48 px-6 md:px-12 max-w-7xl mx-auto space-y-24">
+      <section className="py-16 px-6 md:px-12 max-w-7xl mx-auto space-y-24">
          <div className="text-center space-y-4">
             <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase italic">ALLOCATION_INDEX.</h2>
             <div className="h-2 w-32 bg-orange-500 mx-auto" />
@@ -202,7 +202,7 @@ const IndustrialMockup = ({ theme }) => {
       </section>
 
       {/* 6. Contact / Terminal Submission */}
-      <section className="bg-orange-600 p-12 md:p-32 relative overflow-hidden text-center z-10">
+      <section className="bg-orange-600 p-12 md:p-10 relative overflow-hidden text-center z-10">
          <Terminal className="absolute top-10 right-10 text-white/10" size={300} />
          <div className="max-w-4xl mx-auto space-y-16 relative z-10">
             <h2 className="text-6xl md:text-9xl font-black text-white italic tracking-tighter uppercase leading-none">READY TO <br/> DEPLOY?</h2>
@@ -218,7 +218,7 @@ const IndustrialMockup = ({ theme }) => {
       </section>
 
       {/* 7. Rugged Footer */}
-      <footer className="p-12 md:p-32 bg-[#0f172a] border-t-8 border-white/5 flex flex-col gap-24 text-slate-500 relative z-10">
+      <footer className="p-12 md:p-10 bg-[#0f172a] border-t-8 border-white/5 flex flex-col gap-8 text-slate-500 relative z-10">
          <div className="flex flex-col md:flex-row justify-between items-start gap-16">
             <div className="space-y-8">
                <div className="flex items-center gap-4 group">

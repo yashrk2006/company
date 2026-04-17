@@ -22,7 +22,7 @@ const ModernDarkMockup = ({ theme }) => {
              y: [0, 30, 0]
            }}
            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-           className="absolute -top-40 -right-40 w-[800px] h-[800px] bg-[#3B82F6] rounded-full blur-[160px] opacity-20" 
+           className="absolute -top-40 -right-40 w-[800px] h-auto bg-[#3B82F6] rounded-full blur-[160px] opacity-20" 
          />
          <motion.div 
            animate={{ 
@@ -79,7 +79,7 @@ const ModernDarkMockup = ({ theme }) => {
       </nav>
 
       {/* 3. High-Impact Tech Hero Section */}
-      <section className="relative z-10 pt-32 pb-64 px-8 md:px-16 w-full max-w-screen-2xl mx-auto overflow-visible">
+      <section className="relative z-10 pt-32 pb-16 px-8 md:px-16 w-full max-w-screen-2xl mx-auto overflow-visible">
          <div className="grid grid-cols-12 gap-16 items-center">
             <div className="col-span-12 lg:col-span-7 flex flex-col space-y-12">
                <motion.div 
@@ -206,7 +206,7 @@ const ModernDarkMockup = ({ theme }) => {
       </section>
 
       {/* 4. Operations Suite Grid (Features Expanded) */}
-      <section className="relative z-10 py-64 w-full bg-[#111827]/30 border-y border-white/5 flex flex-col items-center">
+      <section className="relative z-10 py-20 w-full bg-[#111827]/30 border-y border-white/5 flex flex-col items-center">
          <div className="max-w-7xl mx-auto px-8 md:px-16 text-center space-y-32">
             <div className="space-y-6">
                <motion.h2 
@@ -238,7 +238,7 @@ const ModernDarkMockup = ({ theme }) => {
                     whileHover={{ y: -10, borderColor: "rgba(59,130,246,0.3)" }}
                     className="group p-12 bg-black/40 border border-white/5 rounded-[2.5rem] hover:bg-[#111827]/80 transition-all cursor-pointer text-left relative overflow-hidden"
                   >
-                     <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#3B82F6]/5 rounded-full blur-3xl group-hover:bg-[#3B82F6]/10 transition-all" />
+                     <div className="absolute -top-8 -right-24 w-48 h-48 bg-[#3B82F6]/5 rounded-full blur-3xl group-hover:bg-[#3B82F6]/10 transition-all" />
                      <div className="w-16 h-16 bg-[#3B82F6]/10 rounded-2xl flex items-center justify-center text-[#3B82F6] mb-10 group-hover:scale-125 transition-transform duration-500 relative z-10">
                         <f.icon size={32} />
                      </div>
@@ -254,10 +254,10 @@ const ModernDarkMockup = ({ theme }) => {
       </section>
 
       {/* 5. Metrics & Telemetry Visualization */}
-      <section className="py-64 w-full px-8 lg:px-24 bg-transparent relative z-10 flex flex-col items-center">
-         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+      <section className="py-20 w-full px-8 lg:px-24 bg-transparent relative z-10 flex flex-col items-center">
+         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-12 text-center space-y-8 mb-20">
-               <h2 className="text-6xl md:text-[10rem] font-black tracking-tighter text-white uppercase italic leading-none underline decoration-[#3B82F6] decoration-[20px] underline-offset-[20px]">SYS_TELEMETRY.</h2>
+               <h2 className="text-6xl md:text-5xl font-black tracking-tighter text-white uppercase italic leading-none underline decoration-[#3B82F6] decoration-[20px] underline-offset-[20px]">SYS_TELEMETRY.</h2>
                <p className="text-xl font-bold uppercase tracking-[1em] text-slate-500">Real-Time Core Performance</p>
             </div>
 
@@ -279,7 +279,7 @@ const ModernDarkMockup = ({ theme }) => {
                ))}
             </div>
 
-            <div className="lg:col-span-7 p-12 bg-black border border-white/5 rounded-[3rem] relative overflow-hidden group min-h-[500px] flex items-center justify-center">
+            <div className="lg:col-span-7 p-12 bg-black border border-white/5 rounded-[3rem] relative overflow-hidden group min-h-0 flex items-center justify-center">
                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1)_0%,transparent_70%)]" />
                <motion.div 
                  animate={{ rotate: 360 }}
@@ -312,7 +312,7 @@ const ModernDarkMockup = ({ theme }) => {
       </section>
 
       {/* 6. Nexus Licensing (Pricing) */}
-      <section className="py-64 px-8 md:px-16 w-full max-w-7xl mx-auto flex flex-col items-center relative z-10">
+      <section className="py-20 px-8 md:px-16 w-full max-w-7xl mx-auto flex flex-col items-center relative z-10">
          <div className="text-center mb-32 space-y-8">
              <h2 className="text-7xl md:text-9xl font-black tracking-tighter text-white uppercase italic">Scale_High.</h2>
              <p className="text-slate-400 text-2xl font-medium tracking-tight">Transparent licensing tailored for high-growth operations and data clusters.</p>
@@ -367,7 +367,7 @@ const ModernDarkMockup = ({ theme }) => {
       </section>
 
       {/* 7. Final Call to Protocol (CTA) */}
-      <section className="py-64 w-full px-8 md:px-32 bg-black border-t-[30px] border-white/5 relative flex flex-col items-center text-center overflow-hidden z-10">
+      <section className="py-20 w-full px-8 md:px-10 bg-black border-t-[30px] border-white/5 relative flex flex-col items-center text-center overflow-hidden z-10">
          <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-[#3B82F6]/10 to-transparent pointer-events-none" />
          <motion.div
            initial={{ opacity: 0, scale: 0.95 }}
@@ -375,7 +375,7 @@ const ModernDarkMockup = ({ theme }) => {
            className="max-w-6xl mx-auto space-y-32"
          >
             <div className="space-y-12">
-               <h2 className="text-8xl md:text-[14rem] lg:text-[18rem] font-black italic tracking-tighter text-white leading-[0.7] uppercase">
+               <h2 className="text-5xl md:text-7xl lg:text-8xl font-black italic tracking-tighter text-white leading-[0.7] uppercase">
                   NEXUS <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-cyan-400">TERMINAL.</span>
                </h2>
                <div className="flex flex-col items-center gap-16 pt-12">
@@ -392,10 +392,10 @@ const ModernDarkMockup = ({ theme }) => {
       </section>
 
       {/* 8. Extra-Premium Professional Footer */}
-      <footer className="pt-64 pb-20 w-full px-8 md:px-24 bg-black border-t-4 border-white/5 relative z-[110] flex flex-col items-center overflow-hidden text-center">
+      <footer className="pt-16 pb-20 w-full px-8 md:px-24 bg-black border-t-4 border-white/5 relative z-[110] flex flex-col items-center overflow-hidden text-center">
          <div className="absolute top-0 right-0 p-48 opacity-[0.03] italic font-black text-[30vw] pointer-events-none uppercase">CORE</div>
          
-         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-32 w-full max-w-screen-2xl mx-auto text-left relative z-10">
+         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 w-full max-w-screen-2xl mx-auto text-left relative z-10">
             <div className="lg:col-span-2 space-y-24">
                <div className="flex items-center gap-6 group cursor-pointer lg:justify-start">
                   <div className="relative">
@@ -427,7 +427,7 @@ const ModernDarkMockup = ({ theme }) => {
             ))}
          </div>
 
-         <div className="pt-48 border-t border-white/5 w-full max-w-screen-2xl mx-auto mt-48 flex flex-col md:flex-row justify-between items-center gap-20 relative z-10">
+         <div className="pt-12 border-t border-white/5 w-full max-w-screen-2xl mx-auto mt-12 flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
             <div className="flex gap-12">
                {[GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon, Mail, Phone].map((Icon, i) => (
                   <a key={i} href="#" className="w-16 h-16 rounded-[1.2rem] bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-[#3B82F6] hover:bg-[#3B82F6]/5 transition-all group overflow-hidden">

@@ -45,7 +45,7 @@ const SwissMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero Section (Compositional Precision) */}
-      <section className="relative z-10 p-12 lg:p-32 grid grid-cols-12 gap-12 min-h-fit">
+      <section className="relative z-10 p-12 lg:p-10 grid grid-cols-12 gap-12 min-h-fit">
          <motion.div
            initial={{ opacity: 0, x: -50 }}
            animate={{ opacity: 1, x: 0 }}
@@ -56,7 +56,7 @@ const SwissMockup = ({ theme }) => {
                <span className="text-xs font-black uppercase tracking-[0.6em] text-slate-400">Section 01 // Abstract Draft</span>
             </div>
 
-            <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-black leading-[0.8] tracking-[-0.06em] uppercase">
+            <h1 className="text-6xl md:text-5xl lg:text-5xl font-black leading-[0.8] tracking-[-0.06em] uppercase">
                Modular <br />
                Precision <br />
                <span className="text-[#E6192E]">Above All.</span>
@@ -134,7 +134,7 @@ const SwissMockup = ({ theme }) => {
       </section>
 
       {/* 4. Grid Specifications (Features) */}
-      <section className="relative z-10 py-48 px-12 md:px-32 bg-slate-50 border-y-2 border-black">
+      <section className="relative z-10 py-16 px-12 md:px-10 bg-slate-50 border-y-2 border-black">
          <div className="max-w-7xl mx-auto space-y-32">
             <div className="flex flex-col md:flex-row justify-between items-end gap-12 pb-16 border-b-2 border-black">
                <div className="space-y-6">
@@ -174,15 +174,15 @@ const SwissMockup = ({ theme }) => {
       </section>
 
       {/* 5. Access Tiers (The Licensing) */}
-      <section className="py-48 px-12 md:px-32">
+      <section className="py-16 px-12 md:px-10">
          <div className="max-w-7xl mx-auto flex flex-col items-center">
             <div className="text-center mb-40 space-y-6">
                <span className="text-[11px] font-black uppercase tracking-[0.8em] text-[#E6192E]">Licensing Modules</span>
-               <h2 className="text-6xl md:text-[10rem] font-black uppercase tracking-[-0.08em] leading-none">Access.</h2>
+               <h2 className="text-6xl md:text-5xl font-black uppercase tracking-[-0.08em] leading-none">Access.</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-1px bg-black border-2 border-black w-full max-w-5xl shadow-[40px_40px_0px_#E6192E]">
-               <div className="p-20 bg-white space-y-16 group hover:bg-slate-50 transition-colors">
+               <div className="p-8 bg-white space-y-16 group hover:bg-slate-50 transition-colors">
                   <div className="flex justify-between items-start">
                      <span className="text-[10px] font-black uppercase tracking-[0.4em] border border-black px-4 py-1">Protocol_Entry</span>
                      <Minus size={24} strokeWidth={6} />
@@ -198,7 +198,7 @@ const SwissMockup = ({ theme }) => {
                   <button className="w-full py-8 bg-black text-white font-black uppercase text-xs tracking-widest hover:bg-[#E6192E] transition-all">Select Protocol</button>
                </div>
 
-               <div className="p-20 bg-white space-y-16 relative overflow-hidden group hover:bg-slate-50 transition-colors">
+               <div className="p-8 bg-white space-y-16 relative overflow-hidden group hover:bg-slate-50 transition-colors">
                   <div className="absolute top-0 right-0 p-12 opacity-5 scale-150 rotate-[-15deg]">
                      <Circle size={300} strokeWidth={40} />
                   </div>
@@ -222,8 +222,8 @@ const SwissMockup = ({ theme }) => {
       </section>
 
       {/* 6. Minimal Footer */}
-      <footer className="p-12 md:p-32 bg-white border-t-2 border-black flex flex-col gap-32 relative z-10">
-         <div className="grid grid-cols-1 lg:grid-cols-4 gap-24 font-black">
+      <footer className="p-12 md:p-10 bg-white border-t-2 border-black flex flex-col gap-10 relative z-10">
+         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 font-black">
             <div className="lg:col-span-2 space-y-12">
                <div className="flex items-center gap-10 group">
                   <div className="w-24 h-24 bg-black text-white flex items-center justify-center text-5xl font-black transition-all group-hover:rotate-12">Z</div>

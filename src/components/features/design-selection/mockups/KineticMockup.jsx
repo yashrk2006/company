@@ -56,7 +56,7 @@ const KineticMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero Transition (Acceleration) */}
-      <section className="relative z-10 pt-32 pb-48 px-8 md:px-24 max-w-7xl mx-auto min-h-fit">
+      <section className="relative z-10 pt-32 pb-12 px-8 md:px-24 max-w-7xl mx-auto min-h-fit">
          <motion.div
            initial={{ opacity: 0, x: -100, skewX: 10 }}
            animate={{ opacity: 1, x: 0, skewX: -12 }}
@@ -66,7 +66,7 @@ const KineticMockup = ({ theme }) => {
                <Flash size={16} fill="currentColor" /> Pulse Velocity Ref_00
             </div>
 
-            <h1 className="text-8xl md:text-[12rem] font-black italic tracking-tighter leading-[0.8] uppercase text-white">
+            <h1 className="text-5xl md:text-6xl font-black italic tracking-tighter leading-[0.8] uppercase text-white">
                MOTION <br />
                IS THE <br />
                <span className="text-[#DFE104]" style={{ textShadow: '0 0 40px rgba(223, 225, 4, 0.3)' }}>ARCHITECTURE.</span>
@@ -91,11 +91,11 @@ const KineticMockup = ({ theme }) => {
          </motion.div>
 
          {/* Trust Marquee (Inversed) */}
-         <div className="mt-40 border-y border-white/10 py-10 flex gap-20 overflow-hidden skew-y-[-2deg]">
+         <div className="mt-40 border-y border-white/10 py-10 flex gap-8 overflow-hidden skew-y-[-2deg]">
             <motion.div 
                animate={{ x: [0, -1000] }}
                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-               className="flex items-center gap-32 whitespace-nowrap text-3xl font-black italic uppercase opacity-20"
+               className="flex items-center gap-10 whitespace-nowrap text-3xl font-black italic uppercase opacity-20"
             >
                {['Mach_9', 'Propel_Inc', 'Turbo_Vault', 'Vector_Core', 'Velocity_AI', 'Sonic_Sync'].map(brand => (
                   <span key={brand}>{brand}</span>
@@ -105,12 +105,12 @@ const KineticMockup = ({ theme }) => {
       </section>
 
       {/* 4. Velocity Grid (Features) */}
-      <section className="relative z-10 py-48 px-12 md:px-32 bg-white text-black border-y-8 border-[#DFE104] skew-y-[1deg]">
+      <section className="relative z-10 py-16 px-12 md:px-10 bg-white text-black border-y-8 border-[#DFE104] skew-y-[1deg]">
          <div className="max-w-7xl mx-auto space-y-40 skew-y-[-1deg]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-end pb-16 border-b-2 border-black/10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end pb-16 border-b-2 border-black/10">
                <div className="space-y-6">
                   <span className="text-[11px] font-black uppercase tracking-[0.8em] text-[#DFE104]">Core Velocity</span>
-                  <h2 className="text-6xl md:text-[10rem] font-black tracking-tighter text-black uppercase leading-none italic">The_Mach.</h2>
+                  <h2 className="text-6xl md:text-5xl font-black tracking-tighter text-black uppercase leading-none italic">The_Mach.</h2>
                </div>
                <p className="text-2xl font-black uppercase tracking-widest text-black/40 italic leading-none pt-10 border-t-4 border-black">
                   Optimizing for instantaneous response and sub-millisecond execution.
@@ -145,11 +145,11 @@ const KineticMockup = ({ theme }) => {
       </section>
 
       {/* 5. Performance Dashboard (Kinetic Visual) */}
-      <section className="py-48 px-12 md:px-32 bg-black text-white z-10 relative overflow-hidden">
+      <section className="py-16 px-12 md:px-10 bg-black text-white z-10 relative overflow-hidden">
          <div className="absolute top-0 right-0 p-40 opacity-5 pointer-events-none rotate-12">
             <Gauge size={600} strokeWidth={0.5} />
          </div>
-         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-32 relative z-10">
+         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10 relative z-10">
             <div className="space-y-16 max-w-xl">
                <div className="space-y-6">
                   <span className="text-[11px] font-black uppercase tracking-[0.6em] text-[#DFE104]">Pulse Telemetry</span>
@@ -194,14 +194,14 @@ const KineticMockup = ({ theme }) => {
       </section>
 
       {/* 6. Turbine Tiers (Pricing) */}
-      <section className="py-48 px-12 md:px-32 max-w-7xl mx-auto flex flex-col items-center z-10">
+      <section className="py-16 px-12 md:px-10 max-w-7xl mx-auto flex flex-col items-center z-10">
          <div className="text-center mb-40 space-y-6">
             <span className="text-[11px] font-black uppercase tracking-[0.8em] text-[#DFE104]">Performance Bundles</span>
-            <h2 className="text-7xl md:text-[14rem] font-black uppercase tracking-tighter text-white leading-none italic">Tiers.</h2>
+            <h2 className="text-7xl md:text-7xl font-black uppercase tracking-tighter text-white leading-none italic">Tiers.</h2>
          </div>
 
          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-6xl">
-            <div className="p-20 bg-white text-black border-l-[24px] border-[#DFE104] flex flex-col gap-12 group hover:bg-slate-100 transition-all duration-500 skew-x-[-4deg]">
+            <div className="p-8 bg-white text-black border-l-[24px] border-[#DFE104] flex flex-col gap-12 group hover:bg-slate-100 transition-all duration-500 skew-x-[-4deg]">
                <div className="space-y-12 skew-x-[4deg]">
                   <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-[0.4em] opacity-40">
                      <span>Turbine_01: Subsonic</span>
@@ -219,7 +219,7 @@ const KineticMockup = ({ theme }) => {
                </div>
             </div>
 
-            <div className="p-20 bg-[#DFE104] text-black border-l-[24px] border-white flex flex-col gap-12 relative overflow-hidden group hover:bg-white transition-all duration-700 skew-x-[-4deg] scale-105 shadow-[0_40px_100px_rgba(223,225,4,0.3)]">
+            <div className="p-8 bg-[#DFE104] text-black border-l-[24px] border-white flex flex-col gap-12 relative overflow-hidden group hover:bg-white transition-all duration-700 skew-x-[-4deg] scale-105 shadow-[0_40px_100px_rgba(223,225,4,0.3)]">
                <div className="absolute top-0 right-0 p-12 opacity-10 rotate-[-15deg] group-hover:rotate-0 transition-transform duration-700 pointer-events-none">
                   <Flash size={300} fill="currentColor" />
                </div>
@@ -249,7 +249,7 @@ const KineticMockup = ({ theme }) => {
             <Zap size={400} strokeWidth={4} />
          </div>
          
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 relative z-10 w-full max-w-7xl">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 w-full max-w-7xl">
             <div className="lg:col-span-2 space-y-16">
                <div className="flex items-center gap-12 group cursor-pointer skew-x-[-12deg]">
                   <div className="w-28 h-28 bg-[#DFE104] flex items-center justify-center text-black shadow-[12px_12px_0_0_white] group-hover:translate-y-4 transition-transform">
@@ -283,7 +283,7 @@ const KineticMockup = ({ theme }) => {
             </div>
          </div>
 
-         <div className="flex flex-wrap justify-center gap-20 pt-32 border-t-2 border-white/10 w-full max-w-7xl relative z-10">
+         <div className="flex flex-wrap justify-center gap-8 pt-32 border-t-2 border-white/10 w-full max-w-7xl relative z-10">
             {[GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon].map((Icon, i) => (
                <a key={i} href="#" className="w-24 h-24 border-2 border-white/10 rounded-full flex items-center justify-center text-white/20 hover:text-[#DFE104] hover:border-[#DFE104] hover:-translate-y-4 transition-all italic font-black text-3xl">
                   <Icon size={40} />

@@ -65,7 +65,7 @@ const BrutalistMockup = ({ theme }) => {
 
       {/* 4. Structural Hero (Raw Force) */}
       <section className="relative z-10 border-b-8 border-black flex flex-col lg:flex-row divide-y-8 lg:divide-y-0 lg:divide-x-8 divide-black">
-         <div className="flex-grow p-12 md:p-32 space-y-20 bg-white relative group">
+         <div className="flex-grow p-12 md:p-10 space-y-20 bg-white relative group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFD600] border-l-8 border-b-8 border-black flex items-center justify-center opacity-10 group-hover:opacity-100 transition-opacity">
                <Construction size={120} strokeWidth={4} />
             </div>
@@ -79,12 +79,12 @@ const BrutalistMockup = ({ theme }) => {
                   <AlertTriangle size={18} strokeWidth={3} /> Heavy Structural Build
                </div>
 
-               <h1 className="text-8xl md:text-[14rem] font-black uppercase leading-[0.75] tracking-tighter text-black italic">
+               <h1 className="text-5xl md:text-7xl font-black uppercase leading-[0.75] tracking-tighter text-black italic">
                   RAW<br />
                   <span className="bg-black text-[#FFD600] px-6 py-2 ml-[-0.1em] shadow-[20px_20px_0px_#888]">FORCE.</span>
                </h1>
 
-               <div className="flex flex-col md:flex-row gap-20 items-start md:items-end">
+               <div className="flex flex-col md:flex-row gap-8 items-start md:items-end">
                   <p className="max-w-2xl text-2xl font-black uppercase tracking-tight leading-none border-l-[16px] border-black pl-12 py-8 italic bg-slate-50">
                      We strip away the digital vanity. No gradients. No soft shadows. Just pure structural intent and high-velocity communication for total institutional dominion.
                   </p>
@@ -123,12 +123,12 @@ const BrutalistMockup = ({ theme }) => {
       </section>
 
       {/* 5. Manifesto Matrix (Features) */}
-      <section className="relative z-10 py-48 px-12 md:px-32 bg-white border-b-8 border-black">
+      <section className="relative z-10 py-16 px-12 md:px-10 bg-white border-b-8 border-black">
          <div className="max-w-7xl mx-auto space-y-40">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-end pb-16 border-b-8 border-black">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end pb-16 border-b-8 border-black">
                <div className="space-y-6">
                   <span className="text-[11px] font-black uppercase tracking-[1em] text-black italic">Functional Purity</span>
-                  <h2 className="text-7xl md:text-[12rem] font-black tracking-tighter text-black uppercase leading-none italic">The_Mass.</h2>
+                  <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-black uppercase leading-none italic">The_Mass.</h2>
                </div>
                <p className="text-3xl font-black uppercase tracking-widest text-black leading-none border-t-[12px] border-[#FFD600] pt-12">
                   Heavy architectures optimized for absolute performance and zero aesthetic compromise.
@@ -144,7 +144,7 @@ const BrutalistMockup = ({ theme }) => {
                   { title: "Brute_Armor", icon: Lock, desc: "Solid-state security modules designed to neutralize recursive threat vectors." },
                   { title: "Mach_Speed", icon: Activity, desc: "Raw processing velocity delivered through un-ornamented infrastructure sync." }
                ].map((f, i) => (
-                  <div key={i} className="p-20 flex flex-col gap-12 group hover:bg-[#FFD600] transition-colors bg-white">
+                  <div key={i} className="p-8 flex flex-col gap-12 group hover:bg-[#FFD600] transition-colors bg-white">
                      <div className="w-28 h-28 bg-black flex items-center justify-center text-[#FFD600] border-8 border-black group-hover:bg-white group-hover:text-black transition-all shadow-[12px_12px_0_0_#aaa]">
                         <f.icon size={56} strokeWidth={4} />
                      </div>
@@ -163,15 +163,15 @@ const BrutalistMockup = ({ theme }) => {
       </section>
 
       {/* 6. Technical Specifications (Dashboard/Data) */}
-      <section className="py-48 px-12 md:px-32 bg-black text-white z-10 relative overflow-hidden">
+      <section className="py-16 px-12 md:px-10 bg-black text-white z-10 relative overflow-hidden">
          <div className="absolute top-0 right-0 p-40 opacity-15 pointer-events-none grayscale">
             <Construction size={700} strokeWidth={2} />
          </div>
-         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-end gap-32 relative z-10">
+         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-end gap-10 relative z-10">
             <div className="space-y-24 max-w-2xl">
                <div className="space-y-10">
                   <span className="text-[11px] font-black uppercase tracking-[1em] text-[#FFD600]">Structural Telemetry</span>
-                  <h2 className="text-8xl md:text-[11rem] font-black uppercase tracking-tighter leading-none italic text-transparent" style={{ WebkitTextStroke: '3px white' }}>The_Rig.</h2>
+                  <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none italic text-transparent" style={{ WebkitTextStroke: '3px white' }}>The_Rig.</h2>
                </div>
                <p className="text-3xl font-black italic opacity-60 leading-tight uppercase tracking-widest italic border-l-[24px] border-[#FFD600] pl-16 py-8 bg-white/5">Monitoring 10^12 metrics per cycle with zero decorative overhead. High-fidelity structural health analysis.</p>
                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 pt-12">
@@ -215,20 +215,20 @@ const BrutalistMockup = ({ theme }) => {
       </section>
 
       {/* 7. Capacity Bundles (Pricing) */}
-      <section className="py-48 px-12 md:px-32 max-w-7xl mx-auto flex flex-col items-center z-10">
+      <section className="py-16 px-12 md:px-10 max-w-7xl mx-auto flex flex-col items-center z-10">
          <div className="text-center mb-40 space-y-10">
             <span className="text-[11px] font-black uppercase tracking-[1.5em] text-black italic">Structural Tiers</span>
-            <h2 className="text-7xl md:text-[18rem] font-black uppercase tracking-tighter text-black leading-none italic underline decoration-black decoration-[24px] underline-offset-[40px]">Bundles.</h2>
+            <h2 className="text-7xl md:text-8xl font-black uppercase tracking-tighter text-black leading-none italic underline decoration-black decoration-[24px] underline-offset-[40px]">Bundles.</h2>
          </div>
 
          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-[16px] border-black divide-x-0 md:divide-x-[16px] divide-y-[16px] md:divide-y-0 divide-black w-full max-w-6xl shadow-[40px_40px_0_0_#FFD600]">
-            <div className="p-20 bg-white flex flex-col gap-16 group hover:bg-slate-100 transition-all duration-500">
+            <div className="p-8 bg-white flex flex-col gap-16 group hover:bg-slate-100 transition-all duration-500">
                <div className="space-y-16">
                   <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-[0.6em] opacity-40">
                      <span>Rank_01: Infantry</span>
                      <Hammer size={32} strokeWidth={4} className="group-hover:text-black" />
                   </div>
-                  <div className="text-[10rem] font-black italic text-black tracking-tighter leading-none">$480<span className="text-sm font-black uppercase tracking-[0.4em] opacity-30 ml-8 not-italic">/unit</span></div>
+                  <div className="text-5xl font-black italic text-black tracking-tighter leading-none">$480<span className="text-sm font-black uppercase tracking-[0.4em] opacity-30 ml-8 not-italic">/unit</span></div>
                   <ul className="space-y-8 pt-12 border-t-[12px] border-black">
                      {['Standard Concrete Build', 'Monochrome Asset Forge', 'Daily Health Status', 'Core Node Access'].map(item => (
                         <li key={item} className="flex items-center gap-8 text-[14px] font-black uppercase tracking-widest text-black/60 italic group-hover:text-black">
@@ -240,7 +240,7 @@ const BrutalistMockup = ({ theme }) => {
                </div>
             </div>
 
-            <div className="p-20 bg-[#FFD600] text-black flex flex-col gap-16 relative overflow-hidden group hover:bg-white transition-all duration-1000">
+            <div className="p-8 bg-[#FFD600] text-black flex flex-col gap-16 relative overflow-hidden group hover:bg-white transition-all duration-1000">
                <div className="absolute top-0 right-0 p-12 opacity-10 rotate-[-15deg] group-hover:rotate-0 transition-transform duration-1000 pointer-events-none">
                   <Star size={400} strokeWidth={8} fill="currentColor" />
                </div>
@@ -249,7 +249,7 @@ const BrutalistMockup = ({ theme }) => {
                      <span className="px-8 py-3 bg-black text-white italic">Rank_02: Battalion</span>
                      <Zap size={32} strokeWidth={4} className="fill-black" />
                   </div>
-                  <div className="text-[11rem] font-black italic tracking-tighter leading-none text-black">$1,480<span className="text-xs font-black uppercase tracking-[1em] text-black ml-8 not-italic">/silo</span></div>
+                  <div className="text-6xl font-black italic tracking-tighter leading-none text-black">$1,480<span className="text-xs font-black uppercase tracking-[1em] text-black ml-8 not-italic">/silo</span></div>
                   <p className="text-sm font-black uppercase tracking-[0.5em] leading-loose opacity-60 italic max-w-sm">Full high-fidelity structural dominion. Elite signal strength for sovereign node builders requiring permanent infrastructure sync.</p>
                   <ul className="space-y-8 pt-10 border-t-[12px] border-black">
                      {['Total Infrastructure Sync', 'Unlimited Silo Capacity', '24/7 Field Repair Priority', 'Custom Brutal Logic Suite', 'Force Field Authority'].map(item => (
@@ -265,12 +265,12 @@ const BrutalistMockup = ({ theme }) => {
       </section>
 
       {/* 8. Savage Industrial Footer */}
-      <footer className="p-12 md:p-40 bg-[#FFD600] border-t-[32px] border-black flex flex-col items-center gap-48 relative z-10">
+      <footer className="p-12 md:p-40 bg-[#FFD600] border-t-[32px] border-black flex flex-col items-center gap-12 relative z-10">
          <div className="absolute top-0 left-0 p-40 opacity-15 pointer-events-none rotate-[-12deg]">
             <Hash size={500} strokeWidth={10} />
          </div>
          
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-32 relative z-10 w-full max-w-screen-2xl">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10 w-full max-w-screen-2xl">
             <div className="lg:col-span-2 space-y-24">
                <div className="flex items-center gap-16 group cursor-pointer skew-x-[-12deg]">
                   <div className="w-40 h-40 bg-black flex items-center justify-center text-[#FFD600] shadow-[24px_24px_0_0_white] group-hover:translate-x-8 transition-transform border-4 border-black">
@@ -305,7 +305,7 @@ const BrutalistMockup = ({ theme }) => {
             </div>
          </div>
 
-         <div className="flex flex-wrap justify-center gap-24 pt-48 border-t-[16px] border-black w-full max-w-screen-2xl relative z-10">
+         <div className="flex flex-wrap justify-center gap-8 pt-12 border-t-[16px] border-black w-full max-w-screen-2xl relative z-10">
             {[GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon].map((Icon, i) => (
                <a key={i} href="#" className="w-32 h-32 bg-black text-[#FFD600] border-8 border-black flex items-center justify-center hover:bg-white hover:text-black hover:-translate-y-8 transition-all shadow-[20px_20px_0_0_#000]">
                   <Icon size={56} strokeWidth={4} />

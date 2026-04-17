@@ -20,7 +20,7 @@ const OrganicMockup = ({ theme }) => {
             y: [0, 30, 0],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/4 -left-1/4 w-[800px] h-[800px] bg-[#D8E2DC] rounded-full blur-[100px] opacity-40"
+          className="absolute -top-1/4 -left-1/4 w-[800px] h-auto bg-[#D8E2DC] rounded-full blur-[100px] opacity-40"
         />
         <motion.div
           animate={{
@@ -30,7 +30,7 @@ const OrganicMockup = ({ theme }) => {
             y: [0, 50, 0],
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] bg-[#EAE4E9] rounded-full blur-[80px] opacity-50"
+          className="absolute -bottom-1/4 -right-1/4 w-[600px] h-auto bg-[#EAE4E9] rounded-full blur-[80px] opacity-50"
         />
         <div className="absolute top-[30%] left-[20%] w-64 h-64 bg-green-100 rounded-full blur-[120px] opacity-30" />
       </div>
@@ -78,7 +78,7 @@ const OrganicMockup = ({ theme }) => {
                <div className="w-16 h-px bg-[#8BA888]/30" />
             </div>
 
-            <h1 className="text-6xl md:text-[8rem] font-light leading-[0.9] tracking-tight italic mb-16 text-[#2D3A3A]">
+            <h1 className="text-6xl md:text-5xl font-light leading-[0.9] tracking-tight italic mb-16 text-[#2D3A3A]">
                Digital gardens grown <br />
                from <span className="text-[#8BA888]">pure intention.</span>
             </h1>
@@ -105,9 +105,9 @@ const OrganicMockup = ({ theme }) => {
       </section>
 
       {/* 5. Living Modules (Feature Canopy) */}
-      <section className="relative z-10 py-48 px-8 md:px-24 bg-white/40 backdrop-blur-md border-y border-[#2D3A3A]/5">
+      <section className="relative z-10 py-16 px-8 md:px-24 bg-white/40 backdrop-blur-md border-y border-[#2D3A3A]/5">
          <div className="max-w-7xl mx-auto space-y-32">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-end pb-16 border-b border-[#2D3A3A]/10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end pb-16 border-b border-[#2D3A3A]/10">
                <div className="space-y-8">
                   <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#8BA888]">Seasonal Architecture</span>
                   <h2 className="text-5xl md:text-7xl font-light italic leading-none text-[#2D3A3A]">The Flora Collection.</h2>
@@ -142,11 +142,11 @@ const OrganicMockup = ({ theme }) => {
       </section>
 
       {/* 6. Growth Cycles (Metrics) */}
-      <section className="py-48 px-12 md:px-32 bg-[#2D3A3A] text-[#F2F2EB] relative overflow-hidden z-10">
+      <section className="py-16 px-12 md:px-10 bg-[#2D3A3A] text-[#F2F2EB] relative overflow-hidden z-10">
          <div className="absolute top-0 right-0 p-40 opacity-5 pointer-events-none">
             <Trees size={600} strokeWidth={1} />
          </div>
-         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-16">
                <h2 className="text-6xl md:text-9xl font-light italic leading-none tracking-tighter">Measured <br/> <span className="opacity-30">Harmony.</span></h2>
                <div className="grid grid-cols-2 gap-16">
@@ -183,14 +183,14 @@ const OrganicMockup = ({ theme }) => {
       </section>
 
       {/* 7. Biological Tiers (Pricing) */}
-      <section className="py-48 px-12 md:px-32 max-w-7xl mx-auto flex flex-col items-center">
+      <section className="py-16 px-12 md:px-10 max-w-7xl mx-auto flex flex-col items-center">
          <div className="text-center mb-40 space-y-8">
             <span className="text-[11px] font-bold uppercase tracking-[0.6em] text-[#8BA888]">Ecosystem Access</span>
             <h2 className="text-6xl md:text-9xl font-light italic leading-none text-[#2D3A3A] tracking-tighter">Growth Tiers.</h2>
          </div>
 
-         <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 w-full max-w-6xl">
-            <div className="p-20 bg-white/40 rounded-[5rem] border border-[#2D3A3A]/5 hover:shadow-2xl transition-all duration-1000 flex flex-col justify-between group">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full max-w-6xl">
+            <div className="p-8 bg-white/40 rounded-[5rem] border border-[#2D3A3A]/5 hover:shadow-2xl transition-all duration-1000 flex flex-col justify-between group">
                <div className="space-y-12">
                   <div className="flex justify-between items-center">
                      <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#8BA888]">The_Sprout</span>
@@ -208,7 +208,7 @@ const OrganicMockup = ({ theme }) => {
                </div>
             </div>
 
-            <div className="p-24 bg-white rounded-[5rem] shadow-[0_40px_100px_rgba(45,58,58,0.05)] border border-[#8BA888]/20 flex flex-col justify-between relative overflow-hidden group">
+            <div className="p-8 bg-white rounded-[5rem] shadow-[0_40px_100px_rgba(45,58,58,0.05)] border border-[#8BA888]/20 flex flex-col justify-between relative overflow-hidden group">
                <div className="absolute bottom-[-100px] right-[-100px] opacity-5 group-hover:opacity-10 transition-opacity">
                   <Leaf size={400} strokeWidth={1} />
                </div>
@@ -233,7 +233,7 @@ const OrganicMockup = ({ theme }) => {
       </section>
 
       {/* 8. Serene Footer */}
-      <footer className="p-12 md:p-40 bg-[#D8E2DC]/30 border-t border-[#2D3A3A]/5 flex flex-col items-center gap-32 relative z-10">
+      <footer className="p-12 md:p-40 bg-[#D8E2DC]/30 border-t border-[#2D3A3A]/5 flex flex-col items-center gap-10 relative z-10">
          <div className="absolute bottom-0 left-0 p-40 opacity-5 pointer-events-none rotate-12">
             <Droplets size={400} strokeWidth={1} />
          </div>
@@ -248,7 +248,7 @@ const OrganicMockup = ({ theme }) => {
             </div>
          </div>
 
-         <div className="grid grid-cols-2 lg:grid-cols-4 gap-24 text-[10px] font-bold uppercase tracking-[0.5em] text-[#2D3A3A]/40 w-full max-w-5xl justify-items-center">
+         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-[10px] font-bold uppercase tracking-[0.5em] text-[#2D3A3A]/40 w-full max-w-5xl justify-items-center">
             {['The Garden', 'Archives', 'Saplings', 'Root_API', 'Growth_Status', 'Canopy_Log', 'Flora_Docs', 'Support'].map(item => (
                <a key={item} href="#" className="hover:text-[#8BA888] transition-colors relative group">
                   {item}

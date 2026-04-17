@@ -183,7 +183,7 @@ const TerminalMockup = ({ theme }) => {
       </section>
 
       {/* 3. Core Modules (Features) */}
-      <section className="py-48 bg-black border-y border-[#00FF00]/10">
+      <section className="py-16 bg-black border-y border-[#00FF00]/10">
          <div className="max-w-7xl mx-auto px-8 md:px-16 flex flex-col items-center">
             <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-40 text-white italic border-b-8 border-[#00FF00] inline-block pr-12">SYSTEM_CAPS.</h2>
             
@@ -207,9 +207,9 @@ const TerminalMockup = ({ theme }) => {
       </section>
 
       {/* 4. Access Tiers (Pricing) */}
-      <section className="py-48 px-8 md:px-16 max-w-7xl mx-auto">
+      <section className="py-16 px-8 md:px-16 max-w-7xl mx-auto">
          <div className="text-center mb-40">
-            <h2 className="text-7xl md:text-[8rem] font-black uppercase tracking-tighter text-[#00FF00] leading-none mb-8 italic">THE_INDEX_::P</h2>
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-[#00FF00] leading-none mb-8 italic">THE_INDEX_::P</h2>
             <div className="h-2 w-full max-w-lg bg-[#00FF00]/20 mx-auto" />
          </div>
 
@@ -240,18 +240,18 @@ const TerminalMockup = ({ theme }) => {
       </section>
 
       {/* 5. Terminal Footer */}
-      <footer className="p-12 md:p-32 bg-black border-t-8 border-[#00FF00] flex flex-col items-center gap-24 text-center">
+      <footer className="p-12 md:p-10 bg-black border-t-8 border-[#00FF00] flex flex-col items-center gap-8 text-center">
          <div className="flex flex-col items-center gap-12 group">
             <div className="w-32 h-32 border-4 border-[#00FF00] flex items-center justify-center text-[#00FF00] rotate-12 group-hover:rotate-0 transition-transform cursor-pointer shadow-[12px_12px_0px_rgba(0,255,0,0.1)] bg-[#00FF00]/5">
                <Server size={64} strokeWidth={3} />
             </div>
             <div className="space-y-6">
-               <h4 className="text-6xl md:text-[8rem] font-black uppercase tracking-tighter text-white italic drop-shadow-[4px_4px_0px_#00FF00]">ZORVIA_OS</h4>
+               <h4 className="text-6xl md:text-5xl font-black uppercase tracking-tighter text-white italic drop-shadow-[4px_4px_0px_#00FF00]">ZORVIA_OS</h4>
                <p className="text-[10px] font-black tracking-[1.5em] text-[#00FF00] uppercase opacity-40">System Finalized // Total Ownership Institutionalized</p>
             </div>
          </div>
 
-         <div className="grid grid-cols-2 md:grid-cols-4 gap-20 text-[10px] font-black uppercase tracking-[0.5em] text-[#00FF00]/40">
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-[10px] font-black uppercase tracking-[0.5em] text-[#00FF00]/40">
             {['Archives', 'Manifesto', 'Glossary', 'Protocols', 'Galleries', 'Security', 'Legal', 'Index'].map(item => (
                 <a key={item} href="#" className="hover:text-white transition-colors">{item}</a>
             ))}

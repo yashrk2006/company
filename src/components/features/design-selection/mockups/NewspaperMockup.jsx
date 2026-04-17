@@ -35,7 +35,7 @@ const NewspaperMockup = ({ theme }) => {
            initial={{ letterSpacing: "1em", opacity: 0 }}
            animate={{ letterSpacing: "-0.02em", opacity: 1 }}
            transition={{ duration: 1.5 }}
-           className="text-7xl md:text-[10rem] lg:text-[13rem] font-black tracking-tighter uppercase text-center leading-none"
+           className="text-4xl md:text-5xl lg:text-[13rem] font-black tracking-tighter uppercase text-center leading-none"
          >
             The Zorvia Times
          </motion.h1>
@@ -66,7 +66,7 @@ const NewspaperMockup = ({ theme }) => {
                   <div className="h-px flex-grow bg-black/10" />
                </div>
                
-               <h2 className="text-6xl md:text-[8rem] lg:text-[10rem] font-black leading-[0.8] tracking-tighter uppercase">
+               <h2 className="text-6xl md:text-5xl lg:text-5xl font-black leading-[0.8] tracking-tighter uppercase">
                   Systems <br/> as Sovereign <br/> Assets.
                </h2>
 
@@ -87,7 +87,7 @@ const NewspaperMockup = ({ theme }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 pt-16 border-t-[4px] border-black">
                <div className="space-y-8">
-                  <p className="text-xl leading-relaxed text-justify first-letter:text-[8rem] first-letter:font-black first-letter:float-left first-letter:mr-6 first-letter:leading-[0.7] first-letter:text-[#CC0000] first-letter:mt-4">
+                  <p className="text-xl leading-relaxed text-justify first-letter:text-5xl first-letter:font-black first-letter:float-left first-letter:mr-6 first-letter:leading-[0.7] first-letter:text-[#CC0000] first-letter:mt-4">
                      The shift toward maximal structural integrity is not accidental. As digital landscapes become increasingly saturated, the organizations that command attention are those that wield information with the weight of physical architecture.
                   </p>
                   <div className="p-8 bg-black/5 border-l-8 border-[#CC0000] italic text-2xl font-bold opacity-80 decoration-black underline decoration-1 underline-offset-4">
@@ -147,9 +147,9 @@ const NewspaperMockup = ({ theme }) => {
       </section>
 
       {/* 5. Classification Index (Pricing) */}
-      <section className="py-48 px-8 md:px-24 max-w-7xl mx-auto flex flex-col items-center gap-32">
+      <section className="py-16 px-8 md:px-24 max-w-7xl mx-auto flex flex-col items-center gap-10">
          <div className="text-center space-y-4">
-            <h2 className="text-7xl md:text-[10rem] font-black tracking-tighter uppercase leading-[0.8] border-b-[32px] border-black inline-block italic mb-4">THE_PLAN.</h2>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-[0.8] border-b-[32px] border-black inline-block italic mb-4">THE_PLAN.</h2>
             <div className="flex items-center gap-8 justify-center opacity-40 italic font-bold">
                <Filter size={24} />
                <span>FILTERING_BY_AUTHORITY</span>
@@ -167,7 +167,7 @@ const NewspaperMockup = ({ theme }) => {
                      <span className={`text-xs font-mono font-black uppercase tracking-widest ${p.featured ? 'text-[#CC0000]' : 'opacity-40'}`}>{p.tier}</span>
                      <div className="h-2 w-16 bg-black/10 group-hover:w-full transition-all duration-700" />
                   </div>
-                  <div className="text-[10rem] font-black tracking-tighter leading-none italic">
+                  <div className="text-5xl font-black tracking-tighter leading-none italic">
                      <span className="text-sm font-bold opacity-30">$</span>{p.price}
                   </div>
                   <ul className="space-y-6 pb-12 border-b-2 border-black/10">
@@ -186,7 +186,7 @@ const NewspaperMockup = ({ theme }) => {
       </section>
 
       {/* 6. Footer (Official Documents) */}
-      <footer className="p-12 md:p-32 bg-[#111111] text-white border-t-[32px] border-black flex flex-col items-center gap-32 text-center relative">
+      <footer className="p-12 md:p-10 bg-[#111111] text-white border-t-[32px] border-black flex flex-col items-center gap-10 text-center relative">
          <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(ellipse_at_center,white_0%,transparent_70%)]" />
          
          <div className="flex flex-col items-center gap-12 group transition-all relative z-10">
@@ -194,12 +194,12 @@ const NewspaperMockup = ({ theme }) => {
                <Newspaper size={96} strokeWidth={3} />
             </div>
             <div className="space-y-6">
-               <h3 className="text-6xl md:text-[10rem] font-black tracking-tighter uppercase italic leading-none text-[#CC0000] drop-shadow-[4px_4px_0px_white]">THE_GAZETTE.</h3>
+               <h3 className="text-6xl md:text-5xl font-black tracking-tighter uppercase italic leading-none text-[#CC0000] drop-shadow-[4px_4px_0px_white]">THE_GAZETTE.</h3>
                <div className="text-xs font-mono font-black tracking-[1.2em] opacity-40 uppercase">Archived Transmission MMXXVI // ZORVIA</div>
             </div>
          </div>
 
-         <div className="grid grid-cols-2 md:grid-cols-4 gap-24 text-[10px] font-mono font-black uppercase tracking-[0.5em] text-white/40 relative z-10">
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-[10px] font-mono font-black uppercase tracking-[0.5em] text-white/40 relative z-10">
             {['Archives', 'Manifesto', 'Glossary', 'Protocols', 'Galleries', 'Security', 'Legal', 'Index'].map(item => (
                 <a key={item} href="#" className="hover:text-[#CC0000] transition-colors">{item}</a>
             ))}

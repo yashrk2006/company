@@ -58,7 +58,7 @@ const ModernMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero: Precision Scalability */}
-      <section className="relative z-10 w-full px-6 md:px-16 pt-32 pb-48 flex flex-col items-center text-center max-w-screen-2xl mx-auto overflow-hidden">
+      <section className="relative z-10 w-full px-6 md:px-16 pt-32 pb-12 flex flex-col items-center text-center max-w-screen-2xl mx-auto overflow-hidden">
          <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ const ModernMockup = ({ theme }) => {
             v4.0 Update: Unified Intelligence Protocol
          </motion.div>
 
-         <h1 className="text-6xl md:text-9xl lg:text-[11rem] font-black text-slate-900 tracking-tighter leading-[0.85] mb-12">
+         <h1 className="text-6xl md:text-9xl lg:text-6xl font-black text-slate-900 tracking-tighter leading-[0.85] mb-12">
             Scale your vision <br />
             with <span className="text-blue-600 italic">global</span> precision.
          </h1>
@@ -99,7 +99,7 @@ const ModernMockup = ({ theme }) => {
            initial={{ opacity: 0, y: 60 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.3, duration: 1 }}
-           className="mt-48 w-full max-w-7xl aspect-[16/10] bg-white rounded-[3rem] border border-slate-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] p-4 relative"
+           className="mt-12 w-full max-w-7xl aspect-[16/10] bg-white rounded-[3rem] border border-slate-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] p-4 relative"
          >
             <div className="absolute -top-12 -left-12 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl animate-pulse" />
             <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-indigo-500/10 rounded-full blur-2xl animate-pulse" />
@@ -159,8 +159,8 @@ const ModernMockup = ({ theme }) => {
       </section>
 
       {/* 4. Infrastructure Matrix (Services) */}
-      <section className="relative z-10 py-64 w-full bg-white border-y border-slate-200 flex flex-col items-center">
-         <div className="max-w-7xl mx-auto px-8 md:px-24 flex flex-col items-center space-y-48">
+      <section className="relative z-10 py-20 w-full bg-white border-y border-slate-200 flex flex-col items-center">
+         <div className="max-w-7xl mx-auto px-8 md:px-24 flex flex-col items-center space-y-12">
             <div className="text-center space-y-6">
                <h2 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter leading-none uppercase">Architectural Excellence.</h2>
                <p className="text-xl md:text-2xl font-medium text-slate-400 max-w-3xl mx-auto italic">Precision engineering for the most demanding global projects.</p>
@@ -200,8 +200,8 @@ const ModernMockup = ({ theme }) => {
       </section>
 
       {/* 5. Telemetry & Impact (Stats) */}
-      <section className="py-64 w-full px-8 md:px-24 bg-slate-50 z-10 relative flex flex-col items-center">
-         <div className="max-w-7xl mx-auto space-y-48 w-full">
+      <section className="py-20 w-full px-8 md:px-24 bg-slate-50 z-10 relative flex flex-col items-center">
+         <div className="max-w-7xl mx-auto space-y-12 w-full">
             <div className="flex flex-col lg:flex-row justify-between items-end gap-16 border-b border-slate-200 pb-12">
                <div className="space-y-6 text-left">
                   <h2 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter leading-none uppercase">Precision Impact.</h2>
@@ -240,8 +240,8 @@ const ModernMockup = ({ theme }) => {
       </section>
 
       {/* 6. Strategic Pricing */}
-      <section className="py-64 px-12 md:px-24 w-full max-w-7xl mx-auto flex flex-col items-center z-10">
-         <div className="text-center mb-48 space-y-8">
+      <section className="py-20 px-12 md:px-24 w-full max-w-7xl mx-auto flex flex-col items-center z-10">
+         <div className="text-center mb-12 space-y-8">
             <h2 className="text-6xl md:text-9xl font-black text-slate-900 tracking-tighter leading-none uppercase">Global Plans.</h2>
             <p className="text-xl md:text-2xl font-medium text-slate-400">Architecture that grows with your ambition.</p>
          </div>
@@ -254,7 +254,7 @@ const ModernMockup = ({ theme }) => {
                <motion.div 
                  key={i} 
                  whileHover={{ y: -20 }}
-                 className={`p-20 bg-white border border-slate-200 rounded-[5rem] shadow-sm group relative transition-all duration-700 overflow-hidden flex flex-col justify-between ${p.featured ? 'border-blue-100 shadow-2xl shadow-blue-600/10' : ''}`}
+                 className={`p-8 bg-white border border-slate-200 rounded-[5rem] shadow-sm group relative transition-all duration-700 overflow-hidden flex flex-col justify-between ${p.featured ? 'border-blue-100 shadow-2xl shadow-blue-600/10' : ''}`}
                >
                   {p.featured && (
                      <div className="absolute top-0 inset-x-0 h-4 bg-blue-600" />
@@ -265,7 +265,7 @@ const ModernMockup = ({ theme }) => {
                         {p.featured && <div className="px-4 py-1 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg shadow-blue-600/20">Recommended</div>}
                      </div>
                      <div className="text-center space-y-8">
-                        <div className="text-[10rem] font-black tracking-tighter text-slate-900 leading-none">
+                        <div className="text-5xl font-black tracking-tighter text-slate-900 leading-none">
                            <span className="text-4xl opacity-20">$</span>{p.price}
                            <span className="text-sm opacity-20 ml-4 font-black uppercase tracking-[0.5em]">/Month</span>
                         </div>
@@ -291,7 +291,7 @@ const ModernMockup = ({ theme }) => {
       </section>
 
       {/* 7. Final Call to Action */}
-      <section className="w-full py-64 px-12 md:px-32 bg-slate-900 text-white relative overflow-hidden text-center z-10 border-t border-slate-800">
+      <section className="w-full py-20 px-12 md:px-10 bg-slate-900 text-white relative overflow-hidden text-center z-10 border-t border-slate-800">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none" />
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/10 rounded-full blur-[200px] pointer-events-none" />
          <motion.div
@@ -301,7 +301,7 @@ const ModernMockup = ({ theme }) => {
            viewport={{ once: true }}
            className="max-w-7xl mx-auto space-y-24 relative z-10"
          >
-            <h2 className="text-6xl md:text-9xl lg:text-[11rem] font-black tracking-tighter leading-none uppercase"> Ready to <br /> scale <span className="text-blue-500 italic">instantly</span>?</h2>
+            <h2 className="text-6xl md:text-9xl lg:text-6xl font-black tracking-tighter leading-none uppercase"> Ready to <br /> scale <span className="text-blue-500 italic">instantly</span>?</h2>
             <p className="text-xl md:text-3xl font-medium text-slate-400 max-w-4xl mx-auto leading-relaxed italic">
                Join 2,400+ forward-thinking teams operating on the Zorvia.X architectural protocol. High-fidelity infrastructure for high-vibe innovation.
             </p>
@@ -320,8 +320,8 @@ const ModernMockup = ({ theme }) => {
       </section>
 
       {/* 8. Modern Branded Footer */}
-      <footer className="w-full p-12 md:p-32 bg-white border-t border-slate-200 flex flex-col items-center gap-48 relative z-[110] overflow-hidden text-center">
-         <div className="grid grid-cols-1 lg:grid-cols-4 gap-32 w-full max-w-7xl mx-auto items-start text-left relative z-10">
+      <footer className="w-full p-12 md:p-10 bg-white border-t border-slate-200 flex flex-col items-center gap-12 relative z-[110] overflow-hidden text-center">
+         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 w-full max-w-7xl mx-auto items-start text-left relative z-10">
             <div className="lg:col-span-2 space-y-12">
                <div className="flex items-center gap-4 group cursor-pointer transition-all duration-700">
                   <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-blue-600/10 group-hover:rotate-12 transition-transform">
@@ -337,7 +337,7 @@ const ModernMockup = ({ theme }) => {
                </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-20 w-full">
+            <div className="grid grid-cols-2 gap-8 w-full">
                <div className="space-y-8">
                   <h5 className="text-xs font-black uppercase tracking-widest text-slate-900">Protocol</h5>
                   <div className="flex flex-col gap-6">
