@@ -5,23 +5,23 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const TerminalMockup = ({ theme }) => {
   const [logs, setLogs] = useState([
-    '[INIT] ZORVIA_CORE_OS REV: 4.8.x',
-    '[OK] MOUNTING NEURAL_DRIVE... DONE',
-    '[OK] ESTABLISHING SECURE_TUNNEL... DONE',
-    '[INFO] FETCHING GLOBAL_ARCHETYPES...',
+    '[START] Zorvia Studio v4.0',
+    '[OK] Connecting to design drive...',
+    '[OK] Loading secure dashboard...',
+    '[INFO] Updating creative assets...',
   ]);
   const logEndRef = useRef(null);
 
   useEffect(() => {
     const logMessages = [
-      '[OK] DESIGN_SYSTEM::BAUHAUS LOADED',
-      '[OK] DESIGN_SYSTEM::MAXIMALISM LOADED',
-      '[WARN] LATENCY SPIKE IN SECTOR_D',
-      '[OK] CLEANING CACHE FILES...',
-      '[INFO] USER_CONNECTED: ADMIN_01',
-      '[OK] COMPILING ASSETS...',
-      '[OK] REFRESHING_STATE...',
-      '[INFO] KERNEL_UPLINK::STABLE',
+      '[OK] Modern theme loaded',
+      '[OK] Brutalist theme loaded',
+      '[OK] New assets compiled',
+      '[OK] Cache cleaned',
+      '[INFO] User connected: Studio_Admin',
+      '[OK] Synchronizing styles...',
+      '[OK] UI refresh complete',
+      '[INFO] Connection stable',
     ];
 
     const interval = setInterval(() => {
@@ -36,24 +36,24 @@ const TerminalMockup = ({ theme }) => {
   }, [logs]);
 
   return (
-    <div className="min-h-fit bg-[#050505] text-[#00FF00] font-mono selection:bg-[#00FF00] selection:text-black">
+    <div className="min-h-[100dvh] bg-[#0A0A0B] text-[#00FF00] font-mono selection:bg-[#00FF00] selection:text-black">
       
       {/* 1. System Header (Static) */}
-      <header className="fixed top-0 w-full z-[100] bg-black border-b border-[#00FF00]/30 px-8 py-4 flex justify-between items-center text-[10px] tracking-widest uppercase">
+      <header className="fixed top-0 w-full z-[100] bg-[#0A0A0B] border-b border-[#00FF00]/30 px-8 py-4 flex justify-between items-center text-[10px] tracking-widest uppercase">
          <div className="flex items-center gap-6">
             <div className="flex items-center gap-3">
                <div className="w-2 h-2 rounded-full bg-[#00FF00] animate-pulse" />
-               <span className="font-bold">SYSTEM_READY</span>
+               <span className="font-bold">STUDIO_READY</span>
             </div>
             <div className="hidden md:flex gap-8 opacity-40">
                <span>ID: Z-9941</span>
-               <span>LOC: BOM-BASE-01</span>
-               <span>OS: ZORVIA_v4</span>
+               <span>LOC: DIGITAL-HUB</span>
+               <span>VER: 4.0</span>
             </div>
          </div>
          <div className="flex gap-8">
-            <span className="opacity-40">TRANSMISSION: SECURE</span>
-            <span className="text-white">USER: ADMIN_ROOT</span>
+            <span className="opacity-40">CONNECTION: ENCRYPTED</span>
+            <span className="text-white">USER: STUDIO_MANAGER</span>
          </div>
       </header>
 
@@ -71,16 +71,16 @@ const TerminalMockup = ({ theme }) => {
  ╚══════╝ ╚═════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝  ╚═╝`}
                </pre>
                <div className="inline-flex items-center gap-4 bg-[#00FF00]/10 px-4 py-2 border border-[#00FF00]/30 shadow-[4px_4px_0px_#00FF00]">
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em]">BOOTING_ZORVIA_PROTOCOL_STABLE</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em]">BOOTING_ZORVIA_STUDIO</span>
                </div>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-2 gap-x-12 gap-y-6 w-full lg:w-auto">
                {[
-                  { label: "CPU_CAPACITY", icon: Cpu, val: "68%", animate: true },
-                  { label: "MEMORY_HEAP", icon: Database, val: "42%", animate: true },
-                  { label: "UPLINK_SPEED", icon: Activity, val: "1.2 GB/S" },
-                  { label: "FIREWALL_ST", icon: Lock, val: "ACTIVE" }
+                  { label: "PERFORMANCE", icon: Cpu, val: "68%", animate: true },
+                  { label: "STORAGE_STATUS", icon: Database, val: "42%", animate: true },
+                  { label: "NETWORK_SPEED", icon: Activity, val: "1.2 GB/S" },
+                  { label: "SECURITY", icon: Lock, val: "ACTIVE" }
                ].map((v, i) => (
                   <div key={i} className="flex flex-col gap-2">
                      <div className="flex items-center gap-2 opacity-40 text-[9px] uppercase tracking-widest font-bold">

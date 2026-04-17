@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { supabaseAdmin as supabase } from '../lib/supabaseAdminClient';
+import { supabase } from '../lib/supabaseClient';
 import { themes } from '../data/themes';
 import emailjs from '@emailjs/browser';
 import { 
@@ -27,7 +27,7 @@ import {
   Database
 } from 'lucide-react';
 
-const ACCESS_KEY = "ZORVIA_HQ_2026";
+const ACCESS_KEY = import.meta.env.VITE_ADMIN_ACCESS_KEY || "ZORVIA_HQ_2026";
 
 const AdminDashboard = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);

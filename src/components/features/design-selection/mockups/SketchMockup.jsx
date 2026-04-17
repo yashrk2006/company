@@ -9,22 +9,14 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const SketchMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#E7EEF6] text-[#2C4872] font-mono selection:bg-[#B1C9E8] selection:text-[#2C4872] flex flex-col">
-      {/* 1. Blueprint / Graph Paper Background */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#B1C9E8_1px,transparent_1px),linear-gradient(to_bottom,#B1C9E8_1px,transparent_1px)] bg-[size:30px_30px] opacity-30" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#B1C9E8_2px,transparent_2px),linear-gradient(to_bottom,#B1C9E8_2px,transparent_2px)] bg-[size:150px_150px] opacity-40" />
-      </div>
-
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#FDFCF7] text-[#2C2C2C] font-serif selection:bg-[#4A5D4E] selection:text-white pt-0">
+      
       {/* 2. Hand-Drawn Navbar */}
-      <nav className="sticky top-0 z-[100] bg-[#E7EEF6]/80 backdrop-blur-md border-b-[3px] border-[#2C4872] px-8 py-6 flex justify-between items-center group">
-         <div className="flex items-center gap-6">
-            <div className="p-2 border-2 border-[#2C4872] rounded-[15px_5px_12px_8px] rotate-3 bg-white group-hover:rotate-[-3deg] transition-transform shadow-sm">
-               <Ruler size={24} />
-            </div>
-            <div className="flex flex-col">
-               <span className="text-xl font-black italic tracking-tighter uppercase leading-none">ZORVIA.DRAFT</span>
-               <span className="text-[10px] uppercase font-bold opacity-50 tracking-widest mt-1 italic">REV_2026.B // Engineering</span>
+      <nav className="sticky top-0 z-[100] bg-[#FDFCF7]/90 backdrop-blur-md border-b-2 border-[#2C2C2C]/10 px-8 md:px-16 py-8 flex justify-between items-center transition-all duration-700">
+         <div className="flex items-center gap-12 group cursor-pointer">
+            <div className="flex flex-col leading-tight">
+               <span className="text-3xl font-extralight tracking-[0.2em] uppercase text-[#2C2C2C]">Sketch</span>
+               <span className="text-[10px] font-bold tracking-[0.4em] uppercase opacity-40">Creative Archive</span>
             </div>
          </div>
 
@@ -286,4 +278,3 @@ const SketchMockup = ({ theme }) => {
 };
 
 export default SketchMockup;
-旋

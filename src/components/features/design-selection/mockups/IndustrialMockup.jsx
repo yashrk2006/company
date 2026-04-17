@@ -5,23 +5,25 @@ import { GithubIcon, TwitterIcon, LinkedinIcon } from '../../../ui/Icons';
 
 const IndustrialMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#0f172a] text-slate-300 font-mono selection:bg-orange-500 selection:text-white pb-4">
-      {/* 1. Structural Grid Overlay */}
-      <div className="fixed inset-0 pointer-events-none opacity-20 z-0" 
-           style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#1A1A1A] text-[#E0E0E0] font-mono selection:bg-[#FFD700] selection:text-black pt-0">
+      
+      {/* 1. Raw Industrial Background */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30" />
+         <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(rgba(255,215,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,215,0,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
+      </div>
 
-      {/* 2. Heavy Header */}
-      <header className="sticky top-0 z-[100] bg-[#0f172a]/95 backdrop-blur-xl border-b-4 border-orange-500/50 px-6 md:px-12 py-6 flex justify-between items-center shadow-2xl">
-         <div className="flex items-center gap-10">
-            <div className="flex items-center gap-3">
-               <div className="w-12 h-12 bg-orange-500 text-white flex items-center justify-center rounded-sm shadow-[4px_4px_0px_#7c2d12]">
-                  <Factory size={28} />
-               </div>
-               <div>
-                  <div className="text-xl font-black tracking-tighter text-white leading-none">ZORVIA.INDUSTRIAL</div>
-                  <div className="text-[10px] font-bold text-orange-500 uppercase tracking-widest mt-1">HEAVY_INFRASTRUCTURE_NODE</div>
-               </div>
+      {/* 2. Heavy Duty Navbar */}
+      <nav className="sticky top-0 z-[100] bg-[#1A1A1A]/95 backdrop-blur-md border-b-4 border-[#FFD700] px-8 md:px-16 py-8 flex justify-between items-center transition-all duration-500">
+         <div className="flex items-center gap-8 group cursor-pointer">
+            <div className="w-16 h-16 bg-[#FFD700] text-black flex items-center justify-center font-black text-4xl shadow-lg">
+               I
             </div>
+            <div className="flex flex-col leading-none">
+               <span className="text-4xl font-black uppercase tracking-tighter">IND.ARCHIVE</span>
+               <span className="text-[10px] font-bold tracking-[0.5em] uppercase opacity-40 mt-1 text-[#FFD700]">Heavy Infrastructure</span>
+            </div>
+         </div>
             <div className="hidden lg:flex gap-8 text-[11px] font-black uppercase tracking-widest text-slate-500">
                {['Assets', 'Telemetry', 'Logistics', 'Security', 'Protocols'].map(item => (
                  <a key={item} href="#" className="hover:text-orange-500 transition-colors flex items-center gap-2">
@@ -29,7 +31,6 @@ const IndustrialMockup = ({ theme }) => {
                  </a>
                ))}
             </div>
-         </div>
          <div className="flex items-center gap-8">
             <div className="hidden sm:flex items-center gap-3 px-4 py-2 bg-black/40 border border-white/10 rounded-sm">
                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -37,7 +38,7 @@ const IndustrialMockup = ({ theme }) => {
             </div>
             <button className="px-6 py-3 bg-white text-black font-black uppercase text-xs tracking-widest border-b-4 border-slate-400 hover:translate-y-px hover:border-b-0 transition-all">TERMINAL_EXIT</button>
          </div>
-      </header>
+      </nav>
 
       {/* 3. Hero / Main Telemetry */}
       <section className="relative z-10 p-6 md:p-12 lg:p-8 max-w-7xl mx-auto">

@@ -9,7 +9,7 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const EnterpriseMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-slate-50 text-slate-800 font-sans selection:bg-slate-800 selection:text-white flex flex-col">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-slate-50 text-slate-800 font-sans selection:bg-slate-800 selection:text-white flex flex-col">
       
       {/* 1. Global Navigation */}
       <nav className="sticky top-0 z-[100] bg-white border-b border-slate-200 px-6 md:px-12 py-4 flex justify-between items-center shadow-sm">
@@ -51,7 +51,7 @@ const EnterpriseMockup = ({ theme }) => {
             >
                <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-500">
                   <Shield size={12} className="text-slate-900" />
-                  SLA-BACKED PERFORMANCE // v4.8
+                  SLA-BACKED PERFORMANCE
                </div>
                
                <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-[0.95] uppercase">

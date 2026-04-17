@@ -34,23 +34,26 @@ const CyberpunkMockup = ({ theme }) => {
   }, []);
 
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#0D0221] text-[#00FF9F] font-mono selection:bg-[#FF00FF] selection:text-white flex flex-col">
-      {/* 1. Global HUD Infrastructure */}
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#050507] text-[#00F3FF] font-mono selection:bg-[#FF003C] selection:text-white pt-0">
+      
+      {/* 1. Glitch Grid Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1A0B2E_1px,transparent_1px),linear-gradient(to_bottom,#1A0B2E_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
-         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.1),rgba(0,255,0,0.05),rgba(0,0,255,0.1))] bg-[length:100%_4px,5px_100%] animate-pulse" />
+         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,243,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,243,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
+         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,0,60,0.05)_0%,transparent_70%)]" />
+         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
       </div>
 
-      {/* 2. HUD Navbar */}
-      <nav className="sticky top-0 z-[100] bg-black/40 backdrop-blur-md border-b border-[#00FF9F]/20 px-8 py-6 flex justify-between items-center">
-         <div className="flex items-center gap-6">
-            <div className="w-10 h-10 border border-[#00FF9F] flex items-center justify-center relative overflow-hidden group">
-               <div className="absolute inset-0 bg-[#00FF9F]/20 group-hover:bg-[#00FF9F]/40 transition-colors" />
-               <Terminal size={20} className="relative z-10" />
+      {/* 2. Neural Interface Header */}
+      <nav className="sticky top-0 z-[100] bg-[#050507]/90 backdrop-blur-xl border-b-2 border-[#00F3FF]/30 px-6 md:px-12 py-6 flex justify-between items-center overflow-hidden">
+         <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(0,243,255,0.05)_0px,rgba(0,243,255,0.05)_1px,transparent_1px,transparent_2px)] pointer-events-none" />
+         
+         <div className="flex items-center gap-6 relative group cursor-pointer">
+            <div className="w-12 h-12 bg-[#FF003C] flex items-center justify-center skew-x-[-12deg] shadow-[4px_4px_0px_#00F3FF]">
+               <Zap size={24} fill="white" strokeWidth={0} />
             </div>
-            <div className="flex flex-col">
-               <span className="text-xl font-black italic tracking-tighter text-white">ZORVIA.NEON</span>
-               <span className="text-[8px] tracking-[0.4em] text-[#00FF9F] opacity-60">NEURAL_AGENCY_PORT_77</span>
+            <div className="flex flex-col leading-none group-hover:translate-x-2 transition-transform">
+               <span className="text-3xl font-black italic tracking-tighter text-white">CYBER.LINK</span>
+               <span className="text-[9px] font-bold tracking-[0.5em] uppercase text-[#00F3FF] opacity-60">Neural Node Access</span>
             </div>
          </div>
 

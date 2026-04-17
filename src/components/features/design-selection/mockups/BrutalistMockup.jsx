@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   ArrowUpRight, Star, Zap, Layout, Shapes, Layers, Hash, Command, 
-  ArrowRight, Shield, Globe, Cpu, Check, Lock, Smartphone, Github, 
-  Twitter, Linkedin, Instagram, Activity, Box, Grid, Construction,
+  ArrowRight, Shield, Globe, Cpu, Check, Lock, Smartphone, Repeat, Grid,
+  Activity, Box, Construction, Search,
   AlertTriangle, Hammer, Ruler, HardHat, FileText, Download,
   Menu, X, ChevronDown, CheckCircle, ExternalLink, Mail, Phone,
   MapPin, Clock
@@ -12,37 +12,26 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const BrutalistMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit bg-white flex flex-col font-heading selection:bg-black selection:text-[#FFD600] border-[12px] border-black m-0 md:m-0 pt-0 relative overflow-x-hidden">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-white text-[#09090B] font-sans selection:bg-[#09090B] selection:text-white pt-0 flex flex-col items-center">
       
-      {/* 1. Massive Structural Grid Background (Fixed) */}
-      <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.03]">
-        <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(black 2px, transparent 2px), linear-gradient(90deg, black 2px, transparent 2px)', backgroundSize: '100px 100px' }} />
-        <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(black 1px, transparent 1px), linear-gradient(90deg, black 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+      {/* 1. Raw Structural Grid */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+         <div className="absolute top-0 left-[10%] h-full w-[2px] bg-[#09090B] opacity-10" />
+         <div className="absolute top-0 right-[10%] h-full w-[2px] bg-[#09090B] opacity-10" />
+         <div className="absolute top-[20%] left-0 w-full h-[2px] bg-[#09090B] opacity-10" />
       </div>
 
-      {/* 2. Global Safety Yellow Banner (Top) */}
-      <div className="relative z-[110] bg-[#FFD600] border-b-8 border-black py-4 px-8 overflow-hidden h-14 flex items-center">
-        <motion.div 
-           animate={{ x: [0, -1000] }}
-           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-           className="whitespace-nowrap flex gap-12 font-black text-xs uppercase tracking-[0.5em] text-black italic"
-        >
-           {[...Array(10)].map((_, i) => (
-             <span key={i}>CAUTION: RAW_PROTOCOL_IN_USE // DO_NOT_DECORATE // STRUCTURAL_INTEGRITY_INDEX_4.8 // </span>
-           ))}
-        </motion.div>
-      </div>
-
-      {/* 3. Extreme Brutal Header */}
-      <nav className="sticky top-0 z-[100] bg-white border-b-8 border-black flex items-stretch divide-x-8 divide-black h-24 shadow-none">
-         <div className="w-24 bg-[#FFD600] flex items-center justify-center text-black hover:bg-black hover:text-[#FFD600] transition-all cursor-pointer group">
-            <Layout size={40} strokeWidth={4} className="group-hover:rotate-90 transition-transform" />
-         </div>
-         <div className="flex-grow flex items-center px-12 gap-12">
-            <div className="flex items-center gap-6 group cursor-pointer skew-x-[-4deg]">
-               <div className="w-10 h-10 bg-black flex items-center justify-center text-[#FFD600] font-black text-2xl group-hover:bg-[#FFD600] group-hover:text-black transition-all">Z</div>
-               <span className="text-4xl font-black italic tracking-tighter uppercase leading-none text-black">BRUTAL.SYNC</span>
+      {/* 2. Massive Navbar */}
+      <nav className="sticky top-0 z-[110] w-full bg-white border-b-[12px] border-[#09090B] px-8 md:px-16 py-8 flex justify-between items-center transition-all duration-500">
+         <div className="flex items-center gap-6 group cursor-pointer">
+            <div className="w-16 h-16 bg-[#09090B] text-white flex items-center justify-center -rotate-3 group-hover:rotate-0 transition-all duration-700 shadow-[12px_12px_0px_rgba(0,0,0,0.1)]">
+               <span className="text-5xl font-black italic">B</span>
             </div>
+            <div className="flex flex-col leading-none">
+               <span className="text-5xl font-black uppercase tracking-tighter">BRUT.FORCE</span>
+               <span className="text-[10px] font-bold tracking-[1.5em] uppercase opacity-40 mt-1">Institutional Archive</span>
+            </div>
+         </div>
             
             <div className="hidden lg:flex gap-12 text-[11px] font-black uppercase tracking-[0.4em] text-black">
                {['Foundation', 'Superstructure', 'Concrete_Logic', 'Silos'].map((item, i) => (
@@ -51,7 +40,6 @@ const BrutalistMockup = ({ theme }) => {
                   </a>
                ))}
             </div>
-         </div>
          <div className="hidden md:flex items-center px-10 gap-8">
             <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] bg-black text-[#FFD600] px-6 py-2 border-4 border-black">
                <Activity size={14} strokeWidth={3} />

@@ -10,7 +10,7 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const BoldTypographyMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-black text-white font-sans selection:bg-white selection:text-black pb-0 pt-0 flex flex-col items-center">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#09090B] text-white font-sans selection:bg-white selection:text-[#09090B] pb-0 pt-0 flex flex-col items-center">
       
       {/* 1. Immersive Kinetic Typography Background (Fixed) */}
       <div className="fixed inset-0 flex flex-col justify-around overflow-hidden opacity-[0.03] pointer-events-none select-none mix-blend-overlay z-0">
@@ -41,10 +41,10 @@ const BoldTypographyMockup = ({ theme }) => {
       </div>
 
       {/* 2. Minimized Ultra-Bold Header */}
-      <header className="sticky top-0 z-[110] bg-black/80 backdrop-blur-3xl px-8 md:px-24 py-10 flex justify-between items-center border-b-[12px] border-white uppercase font-black tracking-[0.4em] text-xs w-full max-w-screen-2xl">
+      <header className="sticky top-0 z-[110] bg-[#09090B]/80 backdrop-blur-3xl px-8 md:px-24 py-10 flex justify-between items-center border-b-[12px] border-white uppercase font-black tracking-[0.4em] text-xs w-full max-w-screen-2xl">
          <div className="flex items-center gap-10">
             <div className="flex items-baseline gap-4 group cursor-pointer skew-x-[-10deg]">
-               <span className="text-4xl italic tracking-tighter text-white group-hover:bg-white group-hover:text-black px-2 transition-all">ZORVIA.TXT</span>
+               <span className="text-4xl italic tracking-tighter text-white group-hover:bg-white group-hover:text-[#09090B] px-2 transition-all">ZORVIA.TXT</span>
             </div>
             <div className="hidden lg:flex gap-12 text-[9px] opacity-30 mt-1">
                {['Manifesto', 'Archive', 'Protocol', 'Systems'].map(item => (
@@ -53,13 +53,13 @@ const BoldTypographyMockup = ({ theme }) => {
             </div>
          </div>
          <div className="flex items-center gap-12">
-            <div className="hidden md:flex items-center gap-6 px-10 py-3 bg-white text-black font-black text-xs h-10 italic">
+            <div className="hidden md:flex items-center gap-6 px-10 py-3 bg-white text-[#09090B] font-black text-xs h-10 italic">
                <Activity size={16} strokeWidth={4} />
                <span>ACTIVE_SESSION</span>
             </div>
             <motion.button 
               whileHover={{ scale: 1.05, skewX: -10 }}
-              className="px-10 py-3 border-[4px] border-white text-white font-black hover:bg-white hover:text-black transition-all h-10 flex items-center"
+              className="px-10 py-3 border-[4px] border-white text-white font-black hover:bg-white hover:text-[#09090B] transition-all h-10 flex items-center"
             >
                CONTACT_SYS
             </motion.button>
@@ -68,7 +68,7 @@ const BoldTypographyMockup = ({ theme }) => {
       </header>
 
       {/* 3. Aggressive Hero Section (The Message) */}
-      <section className="relative z-10 w-full p-8 md:p-16 lg:p-40 flex flex-col justify-center min-h-fit max-w-screen-2xl mx-auto border-x-[12px] border-white shadow-none">
+      <section className="relative z-10 w-full p-8 md:p-16 lg:p-40 flex flex-col justify-center min-h-[100dvh] max-w-screen-2xl mx-auto border-x-[12px] border-white shadow-none">
          <motion.div
            initial={{ opacity: 0, y: 100 }}
            whileInView={{ opacity: 1, y: 0 }}
@@ -78,11 +78,10 @@ const BoldTypographyMockup = ({ theme }) => {
          >
             <div className="space-y-8">
                <div className="flex items-baseline gap-8">
-                  <span className="text-xl font-black italic tracking-[1em] opacity-40 uppercase">Issue_048</span>
+                  <span className="text-xl font-black italic tracking-[1em] opacity-40 uppercase">Archive</span>
                   <div className="h-[4px] flex-grow bg-white/20" />
-                  <span className="text-xl font-black opacity-20">[MMXXVI]</span>
                </div>
-               <h2 className="text-[14vw] md:text-7xl lg:text-8xl font-black leading-[0.7] tracking-tighter uppercase italic pr-8 relative">
+               <h2 className="text-[14vw] md:text-7xl lg:text-9xl font-black leading-[0.7] tracking-tighter uppercase italic pr-8 relative">
                   <span className="block border-t-[20px] border-white pt-10">FORM_</span>
                   <span className="block text-transparent bg-clip-text relative hover:text-white transition-all cursor-default" style={{ WebkitTextStroke: '3px white' }}>
                     FOLLOWS
@@ -242,7 +241,7 @@ const BoldTypographyMockup = ({ theme }) => {
                </motion.button>
                <div className="text-xl font-black uppercase tracking-[2em] opacity-40 italic mt-8">Transmitting High Fidelity Signals MMXXVI</div>
             </div>
-         </div>
+         </motion.div>
       </section>
 
       {/* 8. Extra-Large Typographic Footer */}

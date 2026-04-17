@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Leaf, Wind, Sun, Sprout, Droplets, Flower2, Bird, Cloud, 
+import {
+  Leaf, Wind, Sun, Sprout, Droplets, Flower2, Bird, Cloud,
   Globe, Heart, Star, Anchor, Navigation, Shield, Zap,
-  ChevronDown, ArrowUpRight, Check, Waves, Trees, Tent
+  ChevronDown, ArrowUpRight, Check, Waves, Trees, Tent, Plus
 } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
 const OrganicMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#F2F2EB] text-[#2D3A3A] font-serif selection:bg-[#8BA888] selection:text-white flex flex-col">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#F2F2EB] text-[#2D3A3A] font-serif selection:bg-[#8BA888] selection:text-white flex flex-col">
       {/* 1. Fluid Background Blobs */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <motion.div
@@ -44,9 +44,9 @@ const OrganicMockup = ({ theme }) => {
             <div className="w-12 h-12 border border-[#2D3A3A]/10 rounded-full flex items-center justify-center italic font-bold group-hover:rotate-12 transition-transform">
                <Leaf size={24} className="text-[#8BA888]" />
             </div>
-            <div className="flex flex-col">
-               <span className="text-xl tracking-[0.3em] uppercase font-light text-[#2D3A3A]">Zorvia Botanical</span>
-               <span className="text-[8px] tracking-[0.6em] uppercase opacity-40 mt-1">Living Infrastructure Systems</span>
+            <div className="flex flex-col leading-none">
+               <span className="text-3xl font-bold tracking-tight text-[#2D3A3A] italic">Organic.Studio</span>
+               <span className="text-[10px] font-black tracking-[0.5em] uppercase opacity-30 mt-1">Nature-Infused Systems</span>
             </div>
          </div>
          

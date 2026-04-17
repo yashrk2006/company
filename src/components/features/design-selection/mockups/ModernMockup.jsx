@@ -4,57 +4,44 @@ import {
   Sparkles, Activity, BarChart3, Globe, Zap, Users, ShieldCheck, 
   ChevronRight, Bell, Search, CheckCircle2, ArrowRight, Layers,
   Cloud, Lock, Cpu, Database, Network, Briefcase, ExternalLink,
-  MessageSquare, Settings, Share2, Mail, Phone, MapPin, Tablet, Smartphone
+  MessageSquare, Settings, Share2, Mail, Phone, MapPin, Tablet, Smartphone, Play
 } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
 const ModernMockup = ({ theme }) => {
-  const primary = theme?.styles?.primary || '#3b82f6';
-  
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-slate-50 font-sans selection:bg-blue-500/20 pt-0 flex flex-col items-center">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-white text-slate-900 font-sans selection:bg-slate-900 selection:text-white pt-0 flex flex-col">
       
-      {/* 1. Subtle High-Fidelity Background Gradients */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-         <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-blue-500/5 rounded-full blur-[150px]" />
-         <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-500/5 rounded-full blur-[150px]" />
-         <div className="absolute top-[30%] left-[20%] w-px h-px shadow-[0_0_400px_400px_rgba(59,130,246,0.03)]" />
-      </div>
-
-      {/* 2. Sleek Enterprise Navbar */}
-      <nav className="sticky top-6 z-[110] w-full max-w-7xl px-4 flex items-center h-20">
-        <motion.div 
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="w-full h-full bg-white/80 backdrop-blur-xl border border-slate-200 shadow-sm rounded-3xl px-8 flex justify-between items-center"
-        >
-           <div className="flex items-center gap-12">
-              <div className="flex items-center gap-3 group cursor-pointer">
-                 <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-600/20 group-hover:scale-110 transition-transform">
-                    <Zap size={22} fill="currentColor" />
-                 </div>
-                 <span className="font-black text-2xl tracking-tighter text-slate-900 uppercase">ZORVIA.X</span>
-              </div>
-              <div className="hidden lg:flex gap-8 text-sm font-bold text-slate-500">
-                 {['Platform', 'Solutions', 'Enterprise', 'Security', 'Pricing'].map(item => (
-                   <a key={item} href="#" className="hover:text-blue-600 transition-colors flex items-center gap-1 group">
-                      {item}
-                      {item !== 'Pricing' && <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />}
-                   </a>
-                 ))}
-              </div>
-           </div>
+      {/* 1. Global Navigation */}
+      <nav className="sticky top-0 z-[100] bg-white border-b border-slate-100 px-8 md:px-16 py-6 flex justify-between items-center transition-all duration-500 shadow-sm">
+         <div className="flex items-center gap-6 group cursor-pointer">
+            <div className="w-10 h-10 bg-slate-900 rounded flex items-center justify-center text-white shadow-lg">
+               <Zap size={20} />
+            </div>
+            <div className="flex flex-col leading-none">
+               <span className="text-2xl font-black uppercase tracking-tight text-slate-900">MODERN.SYS</span>
+               <span className="text-[10px] font-bold tracking-[0.1em] uppercase opacity-40 mt-1">Design Archive</span>
+            </div>
+         </div>
+              
+         <div className="hidden lg:flex gap-8 text-sm font-bold text-slate-500">
+            {['Platform', 'Solutions', 'Enterprise', 'Security', 'Pricing'].map(item => (
+              <a key={item} href="#" className="hover:text-blue-600 transition-colors flex items-center gap-1 group">
+                 {item}
+                 {item !== 'Pricing' && <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />}
+              </a>
+            ))}
+         </div>
            
-           <div className="flex items-center gap-6">
-              <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-400 border border-slate-200 focus-within:bg-white focus-within:border-blue-500/50 transition-all">
-                 <Search size={14} />
-                 <input className="bg-transparent border-none outline-none text-xs w-24 font-medium text-slate-900" placeholder="Search..." />
-              </div>
-              <button className="px-6 py-2.5 bg-slate-900 text-white font-black rounded-xl text-xs hover:bg-blue-600 transition-all shadow-lg shadow-slate-900/10 uppercase tracking-widest">
-                 Get_Started
-              </button>
-           </div>
-        </motion.div>
+         <div className="flex items-center gap-6">
+            <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-400 border border-slate-200 focus-within:bg-white focus-within:border-blue-500/50 transition-all">
+               <Search size={14} />
+               <input className="bg-transparent border-none outline-none text-xs w-24 font-medium text-slate-900" placeholder="Search..." />
+            </div>
+            <button className="px-6 py-2.5 bg-slate-900 text-white font-black rounded-xl text-xs hover:bg-blue-600 transition-all shadow-lg shadow-slate-900/10 uppercase tracking-widest">
+               Get_Started
+            </button>
+         </div>
       </nav>
 
       {/* 3. Hero: Precision Scalability */}
@@ -169,7 +156,7 @@ const ModernMockup = ({ theme }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 w-full">
                {[
                  { title: "Global Intelligence", icon: Globe, desc: "Deploy resilient nodes across 40+ regions with optimized latency and high-tier military security." },
-                 { title: "Unified Analytics", icon: BarChart3, desc: "Consolidate all enterprise data streams into a single source of truth for real-time decisioning." },
+                 { title: "Unified Analytics", icon: BarChart3, icon: BarChart3, desc: "Consolidate all enterprise data streams into a single source of truth for real-time decisioning." },
                  { title: "Zero-Trust Security", icon: ShieldCheck, desc: "Advanced encryption and automated threat detection for every byte within your digital ecosystem." },
                  { title: "Pulse Workflows", icon: Activity, desc: "High-frequency event processing that keeps your business running at the speed of modern thought." },
                  { title: "Elastic Scaling", icon: Zap, desc: "Automatically adapt your infrastructure to meet demand surges without a millisecond of downtime." },

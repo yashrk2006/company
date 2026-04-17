@@ -10,72 +10,44 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const ModernDarkMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#0B0F19] text-white font-sans selection:bg-[#3B82F6] selection:text-white pt-0 flex flex-col items-center">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#0A0A0B] text-white font-sans selection:bg-[#3B82F6] selection:text-white pt-0">
       
-      {/* 1. Immersive Atmospheric Background */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-         <motion.div 
-           animate={{ 
-             scale: [1, 1.2, 1], 
-             opacity: [0.3, 0.5, 0.3],
-             x: [0, 50, 0],
-             y: [0, 30, 0]
-           }}
-           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-           className="absolute -top-40 -right-40 w-[800px] h-auto bg-[#3B82F6] rounded-full blur-[160px] opacity-20" 
-         />
-         <motion.div 
-           animate={{ 
-             scale: [1, 1.4, 1], 
-             opacity: [0.2, 0.4, 0.2],
-             x: [0, -60, 0],
-             y: [0, -80, 0]
-           }}
-           transition={{ duration: 20, repeat: Infinity, delay: 2, ease: "easeInOut" }}
-           className="absolute top-1/2 -left-40 w-[700px] h-[700px] bg-indigo-600 rounded-full blur-[140px] opacity-10" 
-         />
-         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5" />
+      {/* 1. Tech Gradient Background */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.05),transparent_50%)]" />
+         <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.03),transparent_50%)]" />
       </div>
 
-      {/* 2. Advanced Glassmorphic Navbar */}
-      <nav className="sticky top-6 z-[110] w-full max-w-7xl px-4 flex items-center h-20">
-        <motion.div 
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="w-full h-full bg-[#111827]/40 backdrop-blur-2xl border border-white/5 rounded-2xl px-10 flex justify-between items-center shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
-        >
-           <div className="flex items-center gap-4 group cursor-pointer transition-transform duration-500 hover:scale-105">
-              <div className="relative">
-                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#3B82F6] to-indigo-600 flex items-center justify-center shadow-[0_0_30px_rgba(59,130,246,0.5)] group-hover:rotate-[360deg] transition-all duration-1000">
-                    <Zap size={24} fill="white" className="drop-shadow-lg" />
-                 </div>
-                 <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-[#111827] animate-pulse" />
-              </div>
-              <div className="flex flex-col leading-none">
-                 <span className="font-black tracking-tighter text-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">NEXUS</span>
-                 <span className="text-[9px] font-bold tracking-[0.3em] text-[#3B82F6] uppercase">Active_Sys</span>
-              </div>
-           </div>
-           
-           <div className="hidden lg:flex items-center gap-14">
-              {['Overview', 'Solutions', 'Systems', 'Security', 'Pricing'].map(item => (
-                <a key={item} href="#" className="text-xs font-black text-slate-400 hover:text-white transition-all uppercase tracking-[0.2em] relative group py-2">
-                   {item}
-                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#3B82F6] group-hover:w-full transition-all duration-500" />
-                </a>
-              ))}
-           </div>
+      {/* 2. Modern Navbar */}
+      <nav className="sticky top-0 z-[100] bg-[#0A0A0B]/80 backdrop-blur-xl border-b border-white/5 px-8 md:px-16 py-6 flex justify-between items-center transition-all duration-500">
+         <div className="flex items-center gap-6 group cursor-pointer">
+            <div className="w-10 h-10 bg-[#3B82F6] rounded-xl flex items-center justify-center shadow-lg">
+               <span className="text-xl font-black">M</span>
+            </div>
+            <div className="flex flex-col leading-none">
+               <span className="text-2xl font-black uppercase tracking-tight">MODERN.SYS</span>
+               <span className="text-[9px] font-bold tracking-[0.2em] uppercase opacity-40 mt-1">Institutional Archive</span>
+            </div>
+         </div>
+            
+            <div className="hidden lg:flex items-center gap-14">
+               {['Overview', 'Solutions', 'Systems', 'Security', 'Pricing'].map(item => (
+                 <a key={item} href="#" className="text-xs font-black text-slate-400 hover:text-white transition-all uppercase tracking-[0.2em] relative group py-2">
+                    {item}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#3B82F6] group-hover:w-full transition-all duration-500" />
+                 </a>
+               ))}
+            </div>
 
-           <div className="flex items-center gap-6">
-              <button className="hidden sm:block px-8 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 transition-all rounded-xl font-black text-xs uppercase tracking-widest">
-                 Log_In
-              </button>
-              <button className="px-8 py-2.5 bg-[#3B82F6] hover:bg-blue-500 transition-all rounded-xl font-black text-xs uppercase tracking-widest shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]">
-                 Console_Sys
-              </button>
-              <Menu size={28} className="lg:hidden text-white/60 hover:text-white cursor-pointer" />
-           </div>
-        </motion.div>
+            <div className="flex items-center gap-6">
+               <button className="hidden sm:block px-8 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 transition-all rounded-xl font-black text-xs uppercase tracking-widest">
+                  Log_In
+               </button>
+               <button className="px-8 py-2.5 bg-[#3B82F6] hover:bg-blue-500 transition-all rounded-xl font-black text-xs uppercase tracking-widest shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]">
+                  Console_Sys
+               </button>
+               <Menu size={28} className="lg:hidden text-white/60 hover:text-white cursor-pointer" />
+            </div>
       </nav>
 
       {/* 3. High-Impact Tech Hero Section */}

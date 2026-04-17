@@ -22,6 +22,7 @@ const DesignSelection = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [measuredHeight, setMeasuredHeight] = useState(2000); // Default fallback
   const contentRef = useRef(null);
+  const scrollContainerRef = useRef(null);
 
   // Measure content height dynamically to remove empty space
   useEffect(() => {
@@ -82,6 +83,13 @@ const DesignSelection = () => {
     localStorage.setItem('zorvia_selected_theme', selectedTheme.id);
     navigate('/start-project');
   };
+
+  // Auto-scroll to top when theme changes
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [selectedThemeId]);
 
   const naturalW  = NATURAL_WIDTHS[previewDevice];
   const scaledH   = measuredHeight * scale;
@@ -297,7 +305,10 @@ const DesignSelection = () => {
           </div>
 
           {/* Scrollable area */}
-          <div className="flex-1 overflow-y-auto overflow-x-hidden no-scrollbar p-3 sm:p-4 lg:p-8">
+          <div 
+            ref={scrollContainerRef}
+            className="flex-1 overflow-y-auto overflow-x-hidden no-scrollbar p-3 sm:p-4 lg:p-8"
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedTheme.id}

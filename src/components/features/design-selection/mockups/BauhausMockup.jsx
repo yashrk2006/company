@@ -10,32 +10,32 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const BauhausMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit bg-white flex flex-col font-sans relative overflow-x-hidden text-black selection:bg-black selection:text-white pt-0">
+    <div className="min-h-[100dvh] bg-white flex flex-col font-sans relative overflow-x-hidden text-[#09090B] selection:bg-[#09090B] selection:text-white pt-0">
       
       {/* 1. Geometric Background Architecture (Global) */}
       <div className="fixed inset-0 pointer-events-none z-0">
-         <div className="absolute top-0 right-0 w-[50%] h-full bg-[#E6192E] border-l-8 border-black opacity-5" />
+         <div className="absolute top-0 right-0 w-[50%] h-full bg-[#E6192E] border-l-8 border-[#09090B] opacity-5" />
          <motion.div 
            animate={{ scale: [1, 1.15, 1], x: [0, 40, 0], rotate: 10 }}
            transition={{ duration: 15, repeat: Infinity }}
-           className="absolute -top-8 -left-20 w-96 h-96 bg-[#FFE100] rounded-full border-8 border-black mix-blend-multiply opacity-20" 
+           className="absolute -top-8 -left-20 w-96 h-96 bg-[#FFE100] rounded-full border-8 border-[#09090B] mix-blend-multiply opacity-20" 
          />
          <motion.div 
            animate={{ rotate: 360 }}
            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
            className="absolute bottom-[20%] right-[10%] w-[35rem] h-[35rem] border-[30px] border-[#0055A4] mix-blend-multiply opacity-10" 
          />
-         <div className="absolute top-1/2 left-0 w-full h-[8px] bg-black opacity-10" />
+         <div className="absolute top-1/2 left-0 w-full h-[8px] bg-[#09090B] opacity-10" />
       </div>
 
       {/* 2. Unified Bauhaus Header */}
-      <nav className="sticky top-0 z-[100] bg-white border-b-8 border-black flex items-stretch divide-x-8 divide-black h-24">
-         <div className="w-24 bg-[#E6192E] flex items-center justify-center text-white hover:bg-black transition-colors cursor-pointer">
+      <nav className="sticky top-0 z-[100] bg-white border-b-8 border-[#09090B] flex items-stretch divide-x-8 divide-[#09090B] h-24">
+         <div className="w-24 bg-[#E6192E] flex items-center justify-center text-white hover:bg-[#09090B] transition-colors cursor-pointer">
             <Layout size={32} />
          </div>
          <div className="flex-grow flex items-center px-10 gap-10">
             <div className="flex items-center gap-4 group cursor-pointer">
-               <div className="w-10 h-10 bg-black border-2 border-black flex items-center justify-center text-white group-hover:rotate-90 transition-transform">
+               <div className="w-10 h-10 bg-[#09090B] border-2 border-[#09090B] flex items-center justify-center text-white group-hover:rotate-90 transition-transform">
                   <Square size={20} fill="currentColor" />
                </div>
                <span className="text-3xl font-black uppercase tracking-tighter italic">BAUHAUS_SYSTEM</span>
@@ -43,7 +43,7 @@ const BauhausMockup = ({ theme }) => {
             
             <div className="hidden lg:flex gap-10 text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">
                {['Laboratory', 'Archives', 'Workshop', 'Foundation'].map((item, i) => (
-                  <a key={item} href="#" className={`${i === 0 ? 'text-black border-b-4 border-[#E6192E]' : 'hover:text-[#0055A4]'} pb-1 transition-all`}>
+                  <a key={item} href="#" className={`${i === 0 ? 'text-[#09090B] border-b-4 border-[#E6192E]' : 'hover:text-[#0055A4]'} pb-1 transition-all`}>
                      {item}
                   </a>
                ))}
@@ -51,14 +51,14 @@ const BauhausMockup = ({ theme }) => {
          </div>
          <div className="hidden md:flex items-center px-10 gap-6">
             <span className="text-[9px] font-black uppercase tracking-widest opacity-40">INSTITUTION_01</span>
-            <button className="px-10 py-3 bg-black text-white font-black text-xs uppercase tracking-widest hover:bg-[#FFE100] hover:text-black transition-all border-l-8 border-black">
-               Initialize Sync
+            <button className="px-10 py-3 bg-[#09090B] text-white font-black text-xs uppercase tracking-widest hover:bg-[#FFE100] hover:text-[#09090B] transition-all border-l-8 border-[#09090B]">
+               Login
             </button>
          </div>
       </nav>
 
       {/* 3. Hero Composition (Functionalism) */}
-      <section className="relative z-10 flex border-x-8 border-black mx-auto w-full max-w-screen-2xl divide-x-8 divide-black border-b-8">
+      <section className="relative z-10 flex border-x-8 border-[#09090B] mx-auto w-full max-w-screen-2xl divide-x-8 divide-[#09090B] border-b-8 min-h-[100dvh]">
          <div className="flex-grow p-16 md:p-10 space-y-16 bg-white/40 backdrop-blur-sm">
             <motion.div
               initial={{ opacity: 0, x: -50 }}

@@ -10,20 +10,27 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const MaterialMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#F3F4F6] text-slate-800 font-sans selection:bg-[#6200EE] selection:text-white flex flex-col">
-      {/* 1. Top App Bar (Institutional Header) */}
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#F5F5F5] text-[#212121] font-sans selection:bg-[#6200EE] selection:text-white pt-0">
+      
+      {/* 1. Global Elevation Background */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+         <div className="absolute top-0 left-0 w-full h-full bg-[#E0E0E0]" />
+         <div className="absolute top-0 left-0 w-full h-64 bg-[#6200EE] shadow-lg" />
+      </div>
+
+      {/* 2. MD3 Navbar */}
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="sticky top-0 w-full h-20 bg-[#6200EE] text-white flex justify-between items-center px-8 z-[100] shadow-lg"
+        className="sticky top-0 z-[100] bg-[#6200EE] px-8 md:px-16 py-8 flex justify-between items-center transition-all duration-500 shadow-xl text-white"
       >
-         <div className="flex items-center gap-6">
-            <motion.button whileTap={{ scale: 0.9 }} className="p-3 rounded-full hover:bg-white/10 transition-colors">
-               <Menu size={28} />
-            </motion.button>
+         <div className="flex items-center gap-8 group cursor-pointer">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#6200EE] shadow-md">
+               <Layers size={24} />
+            </div>
             <div className="flex flex-col leading-none">
-               <span className="text-2xl font-bold tracking-tight">ZORVIA MATERIAL</span>
-               <span className="text-[10px] font-medium tracking-widest opacity-60 mt-1 uppercase">Adaptive Design System v3.0</span>
+               <span className="text-3xl font-black uppercase tracking-tight text-white">MD.SYSTEM</span>
+               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white opacity-60">Material Design Unit</span>
             </div>
          </div>
          

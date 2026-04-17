@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Crown, Star, ShieldCheck, Diamond, Sparkles, ChevronDown, Compass, 
-  UserCheck, ArrowRight, Globe, Lock, Clock, Heart, Menu, X, LucideIcon,
+  UserCheck, ArrowRight, Globe, Lock, Clock, Heart, Menu, X,
   Award, Anchor, Eye, Zap, Shield, Bookmark, MapPin, Share2, PhoneCall,
   Mail, ExternalLink, ArrowUpRight
 } from 'lucide-react';
@@ -10,7 +10,7 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const LuxuryMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#050505] text-[#D4AF37] font-serif selection:bg-[#D4AF37] selection:text-black flex flex-col pt-0">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#0A0A0A] text-[#D4AF37] font-serif selection:bg-[#D4AF37] selection:text-black flex flex-col pt-0">
       
       {/* 1. Immersive Ethereal Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -36,7 +36,7 @@ const LuxuryMockup = ({ theme }) => {
       </div>
 
       {/* 2. Global Prestige Header */}
-      <nav className="sticky top-0 z-[100] bg-black/80 backdrop-blur-3xl border-b border-[#D4AF37]/10 px-8 md:px-24 py-10 flex justify-between items-center transition-all duration-700">
+      <nav className="sticky top-0 z-[100] bg-[#0A0A0A]/80 backdrop-blur-3xl border-b border-[#D4AF37]/10 px-8 md:px-24 py-10 flex justify-between items-center transition-all duration-700">
          <div className="flex items-center gap-16">
             <div className="flex flex-col items-start group cursor-pointer">
                <div className="flex items-center gap-4">
@@ -45,7 +45,7 @@ const LuxuryMockup = ({ theme }) => {
                   </div>
                   <h1 className="text-3xl font-extralight tracking-[0.4em] uppercase text-white group-hover:tracking-[0.6em] transition-all">ZORVIA</h1>
                </div>
-               <span className="text-[9px] tracking-[1em] uppercase opacity-30 mt-2 ml-14">PRESTIGE · SYSTEMS</span>
+               <span className="text-[9px] tracking-[1em] uppercase opacity-30 mt-2 ml-14">PRESTIGE · ARCHIVE</span>
             </div>
          </div>
          
@@ -67,12 +67,12 @@ const LuxuryMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero: The Sovereign Decree */}
-      <section className="relative z-10 min-h-fit flex flex-col items-center justify-center p-12 lg:p-48 text-center bg-transparent">
+      <section className="relative z-10 min-h-[100dvh] flex flex-col items-start justify-center p-12 lg:p-48 text-left bg-transparent">
          <motion.div
-           initial={{ opacity: 0, y: 50 }}
-           animate={{ opacity: 1, y: 0 }}
+           initial={{ opacity: 0, x: -50 }}
+           whileInView={{ opacity: 1, x: 0 }}
            transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
-           className="max-w-7xl flex flex-col items-center"
+           className="max-w-7xl flex flex-col items-start"
          >
             <motion.div
               animate={{ opacity: [0.3, 0.6, 0.3] }}
@@ -82,18 +82,18 @@ const LuxuryMockup = ({ theme }) => {
                <Star size={56} strokeWidth={0.5} className="text-[#D4AF37]" />
             </motion.div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extralight tracking-[0.25em] uppercase leading-[0.8] mb-16 text-white text-shadow-xl">
+            <h1 className="text-4xl md:text-6xl lg:text-9xl font-extralight tracking-[0.25em] uppercase leading-[0.8] mb-16 text-white text-shadow-xl">
               CURATED <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F9E498] to-[#D4AF37] italic font-light lowercase tracking-tighter">dominion.</span>
             </h1>
             
-            <div className="w-[1px] h-64 bg-gradient-to-b from-[#D4AF37] via-[#D4AF37]/10 to-transparent mb-20 shadow-[0_0_20px_rgba(212,175,55,0.5)]" />
+            <div className="h-[1px] w-64 bg-gradient-to-r from-[#D4AF37] via-[#D4AF37]/10 to-transparent mb-20 shadow-[0_0_20px_rgba(212,175,55,0.5)]" />
 
             <div className="max-w-4xl space-y-16">
                <p className="text-2xl lg:text-5xl font-extralight italic leading-[1.2] opacity-70 uppercase tracking-[0.4em] text-white">
                   "Exquisite digital architectures designed for the world's most distinguished institutions."
                </p>
-               <p className="text-sm font-light uppercase tracking-[1.2em] opacity-40 italic">Reserved Access // Institutional Grade // High Fidelity</p>
+               <p className="text-sm font-light uppercase tracking-[1.2em] opacity-40 italic">Reserved Access // Institutional Grade</p>
             </div>
 
             <div className="flex flex-col md:flex-row items-center gap-16 mt-32">

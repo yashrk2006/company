@@ -4,33 +4,25 @@ import {
   BookOpen, PenTool, Search, Archive, Bookmark, Scroll, Library,
   Globe, Heart, Star, Anchor, Navigation, Shield, Zap,
   ChevronDown, ArrowUpRight, Check, Waves, Trees, Tent,
-  Feather, Compass, GraduationCap, Microscope, Coffee
+  Feather, Compass, GraduationCap, Microscope, Coffee, Plus
 } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
 const AcademiaMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#FDFBF7] text-[#2C241E] font-serif selection:bg-[#4A3728] selection:text-[#FDFBF7] flex flex-col">
-      {/* 1. Paper Texture Overlay */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/old-map.png')] grayscale z-0" />
-      <div className="fixed inset-0 pointer-events-none opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] z-0" />
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#FDFCF7] text-[#2C2C2C] font-serif selection:bg-[#4A5D4E] selection:text-white pt-0">
+      
+      {/* 1. Global Texture Layer */}
+      <div className="fixed inset-0 pointer-events-none z-0 opacity-40">
+         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
+      </div>
 
-      {/* 2. Manuscript Borders */}
-      <div className="fixed inset-6 border border-[#2C241E]/10 pointer-events-none z-50 transition-all group-hover:inset-4" />
-      <div className="fixed top-12 left-12 w-32 h-[1px] bg-[#2C241E]/30 z-50" />
-      <div className="fixed top-12 left-12 h-32 w-[1px] bg-[#2C241E]/30 z-50" />
-      <div className="fixed bottom-12 right-12 w-32 h-[1px] bg-[#2C241E]/30 z-50" />
-      <div className="fixed bottom-12 right-12 h-32 w-[1px] bg-[#2C241E]/30 z-50" />
-
-      {/* 3. Scholarly Navbar */}
-      <nav className="sticky top-0 z-[100] bg-[#FDFBF7]/80 backdrop-blur-md px-12 md:px-24 py-10 flex justify-between items-center border-b border-[#2C241E]/10">
-         <div className="flex items-center gap-6 group cursor-pointer">
-            <div className="w-14 h-14 border-2 border-[#2C241E]/10 rounded-full flex items-center justify-center text-[#2C241E] shadow-sm transform group-hover:rotate-12 transition-transform">
-               <Library size={28} />
-            </div>
-            <div className="flex flex-col leading-none">
-               <span className="text-2xl font-bold tracking-tighter text-[#2C241E]">ZORVIA ACADEMY</span>
-               <span className="text-[9px] uppercase tracking-[0.6em] opacity-40 mt-1 font-black underline underline-offset-4 decoration-[#8B4513]/20">Folio No. 042 // Est. MMXXVI</span>
+      {/* 2. Classical Header */}
+      <nav className="sticky top-0 z-[100] bg-[#FDFCF7]/90 backdrop-blur-md border-b border-[#2C2C2C]/10 px-8 md:px-16 py-8 flex justify-between items-center transition-all duration-700">
+         <div className="flex items-center gap-12 group cursor-pointer">
+            <div className="flex flex-col leading-tight">
+               <span className="text-3xl font-extralight tracking-[0.2em] uppercase text-[#2C2C2C]">Academia</span>
+               <span className="text-[10px] font-bold tracking-[0.4em] uppercase opacity-40">Institute Archive</span>
             </div>
          </div>
          

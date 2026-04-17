@@ -9,7 +9,7 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const MinimalDarkMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-black text-[#EAB308] font-sans selection:bg-[#EAB308] selection:text-black pt-0 flex flex-col">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#09090B] text-[#EAB308] font-sans selection:bg-[#EAB308] selection:text-black pt-0 flex flex-col">
       
       {/* 1. Immersive Ethereal Void Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -27,7 +27,7 @@ const MinimalDarkMockup = ({ theme }) => {
       </div>
 
       {/* 2. Zen Minimalist Navbar */}
-      <nav className="sticky top-0 z-[110] bg-black/80 backdrop-blur-3xl border-b border-white/5 px-8 md:px-24 py-10 flex justify-between items-center transition-all duration-700">
+      <nav className="sticky top-0 z-[110] bg-[#09090B]/80 backdrop-blur-3xl border-b border-white/5 px-8 md:px-24 py-10 flex justify-between items-center transition-all duration-700">
          <div className="flex items-center gap-10 group cursor-pointer">
             <div className="relative">
                <div className="w-12 h-12 border border-[#EAB308]/20 flex items-center justify-center group-hover:border-[#EAB308] transition-all duration-700">
@@ -279,7 +279,7 @@ const MinimalDarkMockup = ({ theme }) => {
                   <p className="text-xs font-light text-white/20 italic tracking-[0.6em]">Ref: SYS_MMXXVI_VOID</p>
                </div>
             </div>
-         </div>
+         </motion.div>
       </section>
 
       {/* 8. Global Minimal Footer */}

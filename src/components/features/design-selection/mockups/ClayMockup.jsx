@@ -9,34 +9,23 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const ClayMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#FDF2F8] font-sans selection:bg-[#F472B6] selection:text-white flex flex-col">
-      {/* 1. Playful Background Shapes */}
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#F0F2F5] text-[#4A5568] font-sans selection:bg-[#667EEA] selection:text-white pt-0">
+      
+      {/* 1. Soft Clay Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <motion.div 
-          animate={{ y: [0, -40, 0], rotate: [0, 15, 0] }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-8 left-20 w-32 h-32 bg-[#FBCFE8] rounded-full blur-2xl opacity-60"
-        />
-        <motion.div 
-          animate={{ x: [0, 50, 0] }}
-          transition={{ duration: 12, repeat: Infinity }}
-          className="absolute bottom-40 right-40 w-64 h-64 bg-[#DBEAFE] rounded-full blur-3xl opacity-60"
-        />
-        <motion.div 
-           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-           transition={{ duration: 10, repeat: Infinity }}
-           className="absolute top-[40%] right-[10%] w-96 h-96 bg-pink-100 rounded-full blur-[100px]"
-        />
+         <div className="absolute top-[10%] left-[10%] w-64 h-64 bg-white/40 rounded-[3rem] blur-2xl" />
+         <div className="absolute bottom-[10%] right-[10%] w-96 h-96 bg-[#667EEA]/5 rounded-full blur-3xl" />
       </div>
 
-      {/* 2. Soft Navbar */}
-      <nav className="sticky top-6 z-[100] mx-6 md:mx-auto max-w-7xl w-[calc(100%-3rem)] bg-white/60 backdrop-blur-2xl px-8 py-4 flex justify-between items-center rounded-[2.5rem] border border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.03),inset_5px_5px_10px_#ffffff]">
-         <div className="flex items-center gap-4">
-            <div className="w-10 h-10 bg-[#F472B6] rounded-2xl flex items-center justify-center text-white shadow-[inset_3px_3px_6px_rgba(255,255,255,0.4),4px_4px_8px_rgba(244,114,182,0.3)]">
-               <Smile size={24} />
-            </div>
-            <span className="text-xl font-black tracking-tighter text-slate-800">zorvia.<span className="text-[#F472B6]">clay</span></span>
-         </div>
+      {/* 2. Tactile Navbar */}
+      <nav className="sticky top-6 z-[100] mx-auto max-w-5xl px-4 flex items-center h-20">
+        <div className="w-full h-full bg-white/70 backdrop-blur-xl border border-white/50 rounded-[2rem] flex justify-between items-center px-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+           <div className="flex items-center gap-4 group cursor-pointer">
+              <div className="w-10 h-10 bg-gradient-to-br from-[#667EEA] to-[#764BA2] rounded-xl shadow-lg flex items-center justify-center text-white">
+                 <span className="text-xl font-black">C</span>
+              </div>
+              <span className="font-bold text-xl tracking-tight text-slate-800">CLAY.DESIGN</span>
+           </div>
          
          <div className="hidden lg:flex gap-10 text-sm font-bold text-slate-500">
             {['Tactile', 'Objects', 'Physics', 'Playbook'].map(item => (
@@ -47,6 +36,7 @@ const ClayMockup = ({ theme }) => {
          <button className="px-8 py-3 bg-white text-slate-800 font-black text-xs uppercase tracking-widest rounded-full shadow-[5px_5px_10px_rgba(0,0,0,0.05),-5px_-5px_10px_#ffffff,inset_2px_2px_4px_#ffffff] hover:scale-105 transition-all">
             Join Play
          </button>
+        </div>
       </nav>
 
       {/* 3. Hero Section (Peak Tactility) */}
@@ -70,7 +60,7 @@ const ClayMockup = ({ theme }) => {
 
             <div className="mb-8">
                <div className="inline-flex px-6 py-2 bg-white rounded-full text-[10px] font-black uppercase tracking-widest text-[#F472B6] 
-                               shadow-[inset_2px_2px_4px_#ffffff,inset_-2px_-2px_4px_rgba(0,0,0,0.02),4px_4px_8px_rgba(0,0,0,0.05)]">
+                                shadow-[inset_2px_2px_4px_#ffffff,inset_-2px_-2px_4px_rgba(0,0,0,0.02),4px_4px_8px_rgba(0,0,0,0.05)]">
                   Tactile Protocol // v4.0
                </div>
             </div>

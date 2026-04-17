@@ -4,27 +4,23 @@ import {
   Search, Bell, User, Zap, Activity, Shield, Users, BarChart3, 
   ChevronRight, CheckCircle2, Star, Mail, Phone, MapPin, Globe, 
   Lock, Cpu, Layers, MousePointer2, Settings, Check, CreditCard,
-  Target, Zap as ZapIcon
+  Target, Zap as ZapIcon, Radio
 } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
 const NeumorphicMockup = ({ theme }) => {
-  // Neumorphic shadow presets for styling consistency
-  const shadowOuter = "12px 12px 24px #cacaca, -12px -12px 24px #f6f6f6";
-  const shadowInner = "inset 6px 6px 12px #cacaca, inset -6px -6px 12px #f6f6f6";
-  const shadowSmall = "6px 6px 12px #cacaca, -6px -6px 12px #f6f6f6";
-
   return (
-    <div className="min-h-fit relative bg-[#e0e0e0] text-slate-600 font-sans selection:bg-blue-200 selection:text-slate-800 flex flex-col pt-4">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#E0E5EC] text-[#444] font-sans selection:bg-[#A3B1C6] selection:text-white pt-0">
       
-      {/* 1. Neumorphic Header */}
-      <nav className="sticky top-6 z-[100] mx-6 md:mx-12 bg-[#e0e0e0] flex justify-between items-center px-10 py-6 rounded-[2.5rem] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] border border-white/20">
-         <div className="flex items-center gap-10">
-            <div className="flex items-center gap-4 group cursor-pointer">
-               <div className="w-12 h-12 rounded-2xl bg-[#e0e0e0] flex items-center justify-center text-blue-500 shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] group-hover:shadow-inner transition-all">
-                  <Zap size={24} fill="currentColor" fillOpacity={0.2} />
-               </div>
-               <span className="font-black text-2xl tracking-tight text-slate-800 uppercase">NEU.ZORVIA</span>
+      {/* 2. Soft Tactile Header */}
+      <nav className="sticky top-0 z-[100] bg-[#E0E5EC]/80 backdrop-blur-md px-8 md:px-16 py-8 flex justify-between items-center transition-all duration-500">
+         <div className="flex items-center gap-6 group cursor-pointer">
+            <div className="w-12 h-12 bg-[#E0E5EC] rounded-2xl flex items-center justify-center text-[#444] shadow-[6px_6px_12px_#b8b9be,-6px_-6px_12px_#ffffff]">
+               <Activity size={24} />
+            </div>
+            <div className="flex flex-col leading-none">
+               <span className="text-2xl font-black uppercase tracking-tight text-[#444]">NEU.SYSTEM</span>
+               <span className="text-[10px] font-bold tracking-[0.1em] uppercase opacity-40 mt-1">Institutional Archive</span>
             </div>
             
             <div className="hidden lg:flex gap-6">

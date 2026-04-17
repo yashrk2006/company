@@ -10,60 +10,19 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const PlayfulMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-white text-slate-900 font-sans selection:bg-[#8B5CF6] selection:text-white pt-0 flex flex-col items-center">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#FFEB3B] text-[#1A1A1A] font-sans selection:bg-[#E91E63] selection:text-white pt-0">
       
-      {/* 1. Immersive Floating Sticker Background */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-         {[
-            { Icon: Star, color: '#FBBF24', top: '10%', left: '5%', size: 120, rotate: 15 },
-            { Icon: Heart, color: '#F472B6', top: '75%', left: '85%', size: 160, rotate: -10 },
-            { Icon: Ghost, color: '#8B5CF6', top: '25%', left: '80%', size: 100, rotate: 45 },
-            { Icon: Rocket, color: '#60A5FA', top: '65%', left: '10%', size: 140, rotate: -30 },
-            { Icon: Sun, color: '#F87171', top: '45%', left: '92%', size: 80, rotate: 20 },
-            { Icon: Moon, color: '#34D399', top: '85%', left: '15%', size: 90, rotate: 10 },
-         ].map((p, i) => (
-            <motion.div 
-               key={i}
-               animate={{ 
-                  y: [0, -60, 0], 
-                  rotate: [p.rotate, p.rotate + 40, p.rotate],
-                  scale: [1, 1.2, 0.9, 1]
-               }} 
-               transition={{ duration: 5 + i, repeat: Infinity, ease: "easeInOut" }}
-               className="absolute opacity-5 border-[16px] flex items-center justify-center p-8 bg-white/40" 
-               style={{ 
-                  top: p.top, 
-                  left: p.left, 
-                  width: p.size, 
-                  height: p.size, 
-                  borderColor: p.color,
-                  borderRadius: i % 2 === 0 ? '50%' : '3rem',
-                  boxShadow: `15px 15px 0px 0px ${p.color}40`
-               }}
-            >
-               <p.Icon size={p.size * 0.5} style={{ color: p.color }} fill={p.color} fillOpacity={0.2} />
-            </motion.div>
-         ))}
-         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none" />
-      </div>
-
-      {/* 2. Super Bouncy Neobrutalist Navbar */}
-      <nav className="sticky top-6 z-[110] w-full max-w-7xl px-4 flex items-center h-24">
-        <motion.div 
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          className="w-full h-full bg-white border-[8px] border-slate-900 rounded-[4rem] px-10 flex justify-between items-center shadow-pop-lg"
-        >
-           <motion.div 
-             whileHover={{ scale: 1.1, rotate: -5, skewX: -10 }}
-             className="flex items-center gap-6 bg-[#8B5CF6] text-white px-8 py-5 rounded-full border-[6px] border-slate-900 shadow-pop cursor-pointer"
-           >
-              <Smile size={40} strokeWidth={4} />
-              <div className="flex flex-col leading-none">
-                 <span className="font-black text-3xl uppercase tracking-tighter">ZORVIA!</span>
-                 <span className="text-[10px] font-bold tracking-[0.4em] uppercase opacity-60">Playground_V4</span>
-              </div>
-           </motion.div>
+      {/* 2. Bouncy Navbar */}
+      <nav className="sticky top-0 z-[100] bg-white border-b-4 border-black px-8 md:px-16 py-6 flex justify-between items-center transition-all duration-500 shadow-[8px_8px_0px_#1A1A1A]">
+         <div className="flex items-center gap-6 group cursor-pointer">
+            <div className="w-12 h-12 bg-[#E91E63] border-4 border-black rounded-full flex items-center justify-center text-white group-hover:scale-110 group-hover:rotate-12 transition-all">
+               <span className="text-3xl font-black italic">P</span>
+            </div>
+            <div className="flex flex-col leading-none">
+               <span className="text-3xl font-black uppercase tracking-tight text-[#1A1A1A]">PLAY.SYSTEM</span>
+               <span className="text-[10px] font-bold tracking-[0.1em] uppercase opacity-40 mt-1">Design Unit</span>
+            </div>
+         </div>
 
            <div className="hidden lg:flex gap-10">
               {['Parks', 'Spells', 'Studio', 'The_Club', 'Stickers'].map((item, i) => (
@@ -87,7 +46,6 @@ const PlayfulMockup = ({ theme }) => {
                  JOIN_FUN
               </motion.button>
            </div>
-        </motion.div>
       </nav>
 
       {/* 3. Hero: The Maximum Celebration */}
@@ -144,12 +102,12 @@ const PlayfulMockup = ({ theme }) => {
          {/* Hero Sticker Parade (Interactive) */}
          <div className="mt-16 w-full flex flex-wrap justify-center gap-16 md:gap-10">
             {[
-              { Icon: Triangle, color: '#F472B6', label: 'RAD' },
-              { Icon: Square, color: '#34D399', label: 'COOL' },
-              { Icon: Circle, color: '#FBBF24', label: 'FUN' },
-              { Icon: Hexagon, color: '#60A5FA', label: 'WOW' },
-              { Icon: Heart, color: '#8B5CF6', label: 'LOVE' },
-              { Icon: Star, color: '#F87171', label: 'YAY' }
+               { Icon: Triangle, color: '#F472B6', label: 'RAD' },
+               { Icon: Square, color: '#34D399', label: 'COOL' },
+               { Icon: Circle, color: '#FBBF24', label: 'FUN' },
+               { Icon: Hexagon, color: '#60A5FA', label: 'WOW' },
+               { Icon: Heart, color: '#8B5CF6', label: 'LOVE' },
+               { Icon: Star, color: '#F87171', label: 'YAY' }
             ].map((s, i) => (
                <motion.div 
                  key={i}
@@ -192,7 +150,7 @@ const PlayfulMockup = ({ theme }) => {
                  { title: "Joy Storage", color: "#60A5FA", icon: Circle, desc: "Secure data clusters wrapped in approachable, high-spirit containers for maximum trust." },
                  { title: "Global Rave", color: "#FBBF24", icon: Star, desc: "Resilient node networks designed for massive planetary scale and zero friction ops." },
                  { title: "Primal Core", color: "#F87171", icon: Heart, desc: "The foundational engine built for peak stability, high throughput, and joyous growth." },
-                 { title: "Vibe Check", color: "#F472B6", icon: Activity, desc: "Real-time emotional telemetry to ensure your project's soul remains vibrant and active." },
+                 { title: "Vibe Check", color: "#F472B6", icon: Activity, icon: Activity, desc: "Real-time emotional telemetry to ensure your project's soul remains vibrant and active." },
                  { title: "Cloud Parks", color: "#34D399", icon: Cloud, desc: "Collaborative sandboxes for creative clusters to experiment without architectural limits." },
                  { title: "Soul Labs", color: "#8B5CF6", icon: Edit3, desc: "Advanced customization tools to forge own stickers, icons, and kinetic typography." }
                ].map((f, i) => (

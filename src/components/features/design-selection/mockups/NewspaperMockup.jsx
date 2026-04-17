@@ -5,17 +5,16 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const NewspaperMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#F9F9F7] text-[#111111] font-serif selection:bg-[#CC0000] selection:text-white pb-4">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#F9F9F7] text-[#111111] font-serif selection:bg-[#CC0000] selection:text-white pb-4">
 
       {/* 2. Top Bar (Live Status) */}
       <div className="border-b border-black/10 px-8 py-3 flex justify-between items-center bg-[#F9F9F7]/80 backdrop-blur-md sticky top-0 z-[100]">
          <div className="flex gap-8 items-center font-mono text-[10px] uppercase font-black tracking-widest">
             <Menu size={18} className="cursor-pointer" />
-            <span className="hidden md:inline">Zorvia Intelligence Unit // 59.8K Followers</span>
+            <span className="hidden md:inline">Zorvia Intelligence Unit</span>
          </div>
          <div className="flex items-center gap-4 text-[10px] font-mono font-black uppercase tracking-widest">
             <motion.span animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 1.5, repeat: Infinity }} className="text-[#CC0000]">● SIGNAL_STABLE</motion.span>
-            <span className="hidden xs:inline">Market Intensity: +14.2%</span>
          </div>
          <div className="flex gap-6 items-center">
             <Search size={18} className="cursor-pointer" />
@@ -24,18 +23,16 @@ const NewspaperMockup = ({ theme }) => {
       </div>
 
       {/* 3. Main Masthead */}
-      <header className="border-b-[12px] border-double border-black px-8 md:px-24 py-12 flex flex-col items-center gap-8 relative overflow-hidden">
-         <div className="absolute top-8 left-12 flex-col text-[10px] font-mono uppercase tracking-tighter leading-none opacity-40 hidden lg:flex">
-            <span>Edition: Global</span>
-            <span>Vol. CXVII</span>
-            <span>No. 59,842</span>
+      <header className="border-b-[12px] border-double border-black px-8 md:px-24 py-12 flex flex-col items-start gap-8 relative overflow-hidden">
+         <div className="flex flex-col text-[10px] font-mono uppercase tracking-tighter leading-none opacity-40">
+            <span>Edition: Global Archive</span>
          </div>
          
          <motion.h1 
            initial={{ letterSpacing: "1em", opacity: 0 }}
            animate={{ letterSpacing: "-0.02em", opacity: 1 }}
            transition={{ duration: 1.5 }}
-           className="text-4xl md:text-5xl lg:text-[13rem] font-black tracking-tighter uppercase text-center leading-none"
+           className="text-4xl md:text-8xl lg:text-[13rem] font-black tracking-tighter uppercase text-left leading-none"
          >
             The Zorvia Times
          </motion.h1>
@@ -48,7 +45,7 @@ const NewspaperMockup = ({ theme }) => {
             <div className="flex gap-8 text-xs font-mono uppercase font-black tracking-[0.3em] opacity-60">
                <span>Wednesday, April 15, 2026</span>
                <div className="h-4 w-px bg-black/20" />
-               <span className="text-[#CC0000]">Price: $15.00</span>
+               <span className="text-[#CC0000]">Issue: No. 59,842</span>
             </div>
          </div>
       </header>

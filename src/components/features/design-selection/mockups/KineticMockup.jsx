@@ -10,30 +10,32 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const KineticMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#09090B] text-[#FAFAFA] font-sans selection:bg-[#DFE104] selection:text-black flex flex-col pt-0">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#0A0A0A] text-white font-sans selection:bg-[#00E5FF] selection:text-black pt-0">
       
-      {/* 1. High-Velocity Background Marquees (Global) */}
-      <div className="fixed inset-0 flex flex-col justify-between py-20 opacity-[0.05] pointer-events-none z-0">
-        {[1, 2, 3, 4, 5, 6, 7].map(i => (
-          <motion.div 
-            key={i}
-            animate={{ x: i % 2 === 0 ? [-2000, 0] : [0, -2000] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="text-[20vh] font-black whitespace-nowrap uppercase italic tracking-tighter"
-          >
-            KINETIC PROTOCOL ACCELERATE MOTION ENERGY FAST FORWARD VELOCITY SYSTEM SYNC
-          </motion.div>
-        ))}
+      {/* 1. Kinetic Background Energy */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+         <motion.div 
+           animate={{ rotate: 360 }}
+           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+           className="absolute top-[-20%] right-[-20%] w-[1000px] h-[1000px] bg-[radial-gradient(circle,#00E5FF_0%,transparent_70%)] opacity-[0.05] blur-[120px]"
+         />
+         <motion.div 
+           animate={{ rotate: -360 }}
+           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+           className="absolute bottom-[-20%] left-[-20%] w-[800px] h-[800px] bg-[radial-gradient(circle,#7000FF_0%,transparent_70%)] opacity-[0.05] blur-[100px]"
+         />
       </div>
 
-      {/* 2. Kinetic Sticky Navbar */}
-      <nav className="sticky top-0 z-[100] bg-black/80 backdrop-blur-xl border-b-2 border-white/10 flex items-stretch divide-x-2 divide-white/10 h-24">
-         <div className="w-24 bg-[#DFE104] flex items-center justify-center text-black hover:bg-white transition-colors cursor-pointer group">
-            <Zap size={32} fill="currentColor" className="skew-x-[-12deg] group-hover:scale-125 transition-transform" />
-         </div>
-         <div className="flex-grow flex items-center px-12 gap-12">
-            <div className="flex items-center gap-4 group cursor-pointer skew-x-[-12deg]">
-               <span className="text-4xl font-black italic tracking-tighter uppercase leading-none">KINETIC_V2</span>
+      {/* 2. Fluid Navbar */}
+      <nav className="sticky top-0 z-[100] bg-[#0A0A0A]/80 backdrop-blur-3xl border-b border-white/10 px-8 md:px-16 py-8 flex justify-between items-center transition-all duration-500">
+         <div className="flex items-center gap-6 group cursor-pointer">
+            <div className="w-12 h-12 bg-white flex items-center justify-center rounded-full overflow-hidden relative group-hover:scale-110 transition-transform">
+               <div className="absolute inset-0 bg-gradient-to-tr from-[#00E5FF] to-[#7000FF] animate-spin-slow" />
+               <span className="relative z-10 text-black font-black text-2xl">K</span>
+            </div>
+            <div className="flex flex-col leading-none">
+               <span className="text-3xl font-black uppercase tracking-tighter">KINETIC.CORE</span>
+               <span className="text-[10px] font-bold tracking-[0.4em] uppercase opacity-40 mt-1">Dynamic Systems</span>
             </div>
             
             <div className="hidden lg:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-white/40">

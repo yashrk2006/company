@@ -6,7 +6,7 @@ const Avatar3D = () => {
   const sphereRef = useRef();
 
   useFrame((state) => {
-    const time = state.clock.getElapsedTime();
+    const time = state.clock.elapsedTime;
     if (sphereRef.current) {
       sphereRef.current.rotation.y = time * 0.5;
     }

@@ -18,7 +18,7 @@ function Particles({ count = 2000 }) {
   }, [count]);
 
   useFrame((state) => {
-    const time = state.clock.getElapsedTime();
+    const time = state.clock.elapsedTime;
     points.current.rotation.y = time * 0.05;
     points.current.rotation.x = time * 0.02;
     

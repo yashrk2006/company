@@ -10,7 +10,7 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const Web3Mockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#030712] text-white font-mono selection:bg-[#F59E0B] selection:text-black flex flex-col pt-0">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#030712] text-white font-mono selection:bg-[#F59E0B] selection:text-black flex flex-col pt-0">
       
       {/* 1. Global Neon Grid Background */}
       <div className="fixed inset-0 pointer-events-none opacity-20 z-0" style={{ backgroundImage: 'radial-gradient(circle at center, #F59E0B 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
@@ -37,7 +37,7 @@ const Web3Mockup = ({ theme }) => {
             </div>
             <div className="flex flex-col leading-tight">
                <span className="text-2xl font-black tracking-widest text-white">ZRV.FI</span>
-               <span className="text-[9px] font-bold text-[#F59E0B] opacity-60 uppercase tracking-[0.5em] animate-pulse">DECENTRALIZED_ROOT</span>
+               <span className="text-[9px] font-bold text-[#F59E0B] opacity-60 uppercase tracking-[0.5em] animate-pulse">WEB3 INFRASTRUCTURE</span>
             </div>
          </div>
          
@@ -52,7 +52,7 @@ const Web3Mockup = ({ theme }) => {
          <div className="flex items-center gap-6">
             <div className="hidden sm:flex items-center gap-4 px-6 py-2.5 bg-black/40 border border-white/5 rounded-2xl text-[11px] font-bold text-[#03DAC6]">
                <Activity size={12} className="text-green-500" />
-               <span className="opacity-80">99.9% Uptime</span>
+               <span className="opacity-80">Network Stable</span>
             </div>
             <button className="flex items-center gap-3 px-8 py-3 bg-[#F59E0B] text-black font-black text-xs uppercase tracking-widest rounded-2xl hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all">
                <Wallet size={16} /> 0x48f...2A
@@ -61,7 +61,7 @@ const Web3Mockup = ({ theme }) => {
       </nav>
 
       {/* 4. Hero Section (The Protocol) */}
-      <section className="relative z-10 pt-32 pb-12 px-12 md:px-24 flex flex-col items-center text-center max-w-7xl mx-auto min-h-fit">
+      <section className="relative z-10 pt-32 pb-12 px-12 md:px-24 flex flex-col items-center text-center max-w-7xl mx-auto min-h-[100dvh]">
          <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
@@ -69,12 +69,12 @@ const Web3Mockup = ({ theme }) => {
          >
             <div className="inline-flex items-center gap-4 px-6 py-2 bg-white/5 rounded-full text-[10px] font-black uppercase tracking-[0.6em] text-[#F59E0B] border border-[#F59E0B]/30 shadow-[0_0_30px_rgba(245,158,11,0.1)]">
                <Cpu size={14} className="animate-spin-slow" />
-               Institutional Protocol_Ref42
+               Global Protocol
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[0.8] tracking-tighter text-white">
                Decentralized <br />
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F59E0B] to-orange-400">Institutional.</span>
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F59E0B] to-orange-400">Infrastructure.</span>
             </h1>
 
             <p className="text-xl md:text-3xl font-bold leading-relaxed max-w-4xl mx-auto text-slate-400 uppercase tracking-tighter italic">
@@ -86,7 +86,7 @@ const Web3Mockup = ({ theme }) => {
                  whileHover={{ scale: 1.05, y: -4 }}
                  className="px-16 py-8 bg-[#F59E0B] text-black rounded-2xl font-black text-sm uppercase tracking-[0.4em] shadow-[0_20px_50px_rgba(245,158,11,0.2)] hover:bg-white transition-all flex items-center gap-4"
                >
-                  Infiltrate Core <ChevronRight size={20} strokeWidth={3} />
+                  Explore Ecosystem <ChevronRight size={20} strokeWidth={3} />
                </motion.button>
                <button className="px-16 py-8 bg-white/5 border-2 border-white/10 text-white rounded-2xl font-black text-sm uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all">
                   Documentation

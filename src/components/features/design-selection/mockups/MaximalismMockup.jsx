@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Sparkles, Zap, Star, Heart, Cloud, Moon, Sun, Rocket, BarChart3, 
-  Activity, ShieldCircle, Globe, CheckCircle2, ArrowRight, Ghost,
+  Activity, ShieldCheck, Globe, CheckCircle2, ArrowRight, Ghost,
   Volume2, Disc, Play, MessageCircle, Share2, Plus, Maximize,
   Trash2, Edit3, Target, MousePointer2, Layout, Command, Layers,
-  Mail, Phone, MapPin, Tablet, Smartphone, Globe2
+  Mail, Phone, MapPin, Tablet, Smartphone, Globe2, Radio
 } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
@@ -30,7 +30,7 @@ const MaximalismMockup = ({ theme }) => {
   }));
 
   return (
-    <div className="min-h-fit w-full relative bg-[#0a0a0a] text-white font-sans overflow-x-hidden selection:bg-white selection:text-black pt-0 flex flex-col items-center">
+    <div className="min-h-[100dvh] w-full relative bg-[#09090B] text-white font-sans overflow-x-hidden selection:bg-white selection:text-black pt-0 flex flex-col items-center">
       
       {/* 1. Immersive Texture & Chaos Overlays */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -76,18 +76,18 @@ const MaximalismMockup = ({ theme }) => {
         <motion.div 
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="w-full h-full bg-white border-[10px] border-black flex justify-between items-center px-12 shadow-[20px_20px_0px_#FF00FF]"
+          className="w-full h-full bg-white border-[10px] border-[#09090B] flex justify-between items-center px-12 shadow-[20px_20px_0px_#FF00FF]"
         >
            <div className="flex items-center gap-10 group cursor-pointer transition-all duration-700">
               <motion.div 
                 whileHover={{ rotate: 360, scale: 1.2 }}
-                className="w-20 h-20 bg-black flex items-center justify-center text-white -rotate-12 transition-transform shadow-[10px_10px_0px_#00FFFF]"
+                className="w-20 h-20 bg-[#09090B] flex items-center justify-center text-white -rotate-12 transition-transform shadow-[10px_10px_0px_#00FFFF]"
               >
                  <span className="text-6xl font-black italic">!Z</span>
               </motion.div>
               <div className="flex flex-col leading-none">
-                 <span className="text-5xl font-black uppercase tracking-tighter text-black italic">MAX.ZORVIA</span>
-                 <span className="text-[10px] font-black tracking-[1em] uppercase opacity-40">Absolute_Surplus_v4</span>
+                 <span className="text-5xl font-black uppercase tracking-tighter text-[#09090B] italic">MAX.ZORVIA</span>
+                 <span className="text-[10px] font-black tracking-[1em] uppercase opacity-40">Absolute Surplus</span>
               </div>
            </div>
            
@@ -207,7 +207,7 @@ const MaximalismMockup = ({ theme }) => {
                {[
                  { title: "Hyper_Intensity", icon: Sparkles, desc: "Saturating every single interaction cluster with peak sensory feedback logic for maximum user cognitive engagement." },
                  { title: "Mega_Density", icon: BarChart3, desc: "Compressing massive planetary data streams into visually explosive formats for high-fidelity decision loops." },
-                 { title: "Neon_Guard", icon: ShieldCircle, desc: "High-visibility, sovereign protection layers that refuse to be ignored by any malicious actor or legacy node." },
+                 { title: "Neon_Guard", icon: ShieldCheck, desc: "High-visibility, sovereign protection layers that refuse to be ignored by any malicious actor or legacy node." },
                  { title: "Pulse_Flow", icon: Activity, desc: "Continuous energy cycles that sustain growth in infinite loops while maintaining 100% structural veracity." },
                  { title: "Void_Link", icon: Globe, desc: "Deep-space transmission protocols delivered through high-bandwidth neural pipelines across all 40+ regions." },
                  { title: "Soul_Forge", icon: Heart, desc: "The foundational emotional engine built for peak stability, joyous growth, and total self-expression." },

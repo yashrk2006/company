@@ -3,24 +3,24 @@ import { motion } from 'framer-motion';
 import { 
   Briefcase, Building, ChevronRight, BarChart3, Users, FileText,
   Shield, Globe, Database, Zap, ArrowRight, CheckCircle2,
-  PieChart, Activity, Clock, Lock, Check, Linkedin, 
-  MapPin, Phone, Mail, Award
+  PieChart, Activity, Clock, Lock, Check,
+  MapPin, Phone, Mail, Award, Download, Star
 } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
 const ProfessionalMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#F8FAFC] text-slate-800 font-sans selection:bg-[#1E40AF] selection:text-white flex flex-col">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#F8FAFC] text-[#0F172A] font-sans selection:bg-[#3B82F6] selection:text-white pt-0">
       
-      {/* 1. Structural Corporate Header */}
-      <nav className="sticky top-0 z-[100] bg-white border-b border-slate-200 px-8 md:px-12 py-5 flex justify-between items-center shadow-sm">
-         <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="w-10 h-10 bg-[#1E40AF] rounded flex items-center justify-center text-white shadow-lg">
-               <Building size={24} />
+      {/* 2. Professional Navbar */}
+      <nav className="sticky top-0 z-[100] bg-white/90 backdrop-blur-md border-b border-slate-200 px-8 md:px-16 py-5 flex justify-between items-center transition-all duration-500 shadow-sm">
+         <div className="flex items-center gap-6 group cursor-pointer">
+            <div className="w-10 h-10 bg-[#3B82F6] rounded-lg flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+               <Briefcase size={20} />
             </div>
             <div className="flex flex-col leading-none">
-               <span className="font-bold text-2xl tracking-tight text-slate-900 italic">ZorviaCorp</span>
-               <span className="text-[9px] font-bold uppercase tracking-widest text-slate-400 mt-1">Enterprise Advisory System</span>
+               <span className="text-2xl font-black uppercase tracking-tight text-[#0F172A]">PROFESSIONAL.SYS</span>
+               <span className="text-[10px] font-bold tracking-[0.1em] uppercase opacity-40 mt-1">Enterprise Archive</span>
             </div>
          </div>
          

@@ -9,28 +9,11 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const ArtDecoMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#0A0A0A] text-[#D4AF37] font-serif selection:bg-[#D4AF37] selection:text-black pb-0">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#0A0A0A] text-[#D4AF37] font-serif selection:bg-[#D4AF37] selection:text-black pt-0">
       
-      {/* 1. Immersive Geometric Sunray Background */}
-      <div className="fixed inset-0 pointer-events-none opacity-20 z-0">
-         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-               <linearGradient id="rayGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
-               </linearGradient>
-            </defs>
-            {[...Array(72)].map((_, i) => (
-               <line 
-                 key={i}
-                 x1="50" y1="100" 
-                 x2={50 + Math.cos((i * 5 * Math.PI) / 180) * 150} 
-                 y2={100 - Math.sin((i * 5 * Math.PI) / 180) * 150} 
-                 stroke="url(#rayGradient)" 
-                 strokeWidth="0.05"
-               />
-            ))}
-         </svg>
+      {/* 1. Deco Pattern Background */}
+      <div className="fixed inset-0 pointer-events-none z-0 opacity-10">
+         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/art-deco.png')]" />
       </div>
 
       {/* 2. Symmetrical Borders (Global) */}
@@ -48,17 +31,11 @@ const ArtDecoMockup = ({ theme }) => {
       ))}
 
       {/* 3. Luxury Navbar */}
-      <nav className="sticky top-0 z-[100] bg-black/90 backdrop-blur-2xl border-b-2 border-[#D4AF37]/30 px-12 md:px-24 py-10 flex justify-between items-center h-28">
-         <div className="flex items-center gap-12 group cursor-pointer skew-x-[-10deg]">
-            <div className="relative">
-               <div className="w-14 h-14 border-2 border-[#D4AF37] rotate-45 flex items-center justify-center group-hover:rotate-0 transition-transform duration-1000 bg-[#D4AF37]/5">
-                  <Diamond size={32} className="rotate-[-45deg] group-hover:rotate-0 transition-transform duration-1000 shadow-[0_0_15px_#D4AF37]" strokeWidth={1} />
-               </div>
-               <div className="absolute inset-0 flex items-center justify-center text-[12px] font-black text-white mix-blend-difference">Z</div>
-            </div>
-            <div className="flex flex-col items-start leading-none pt-2">
-               <span className="text-4xl font-light uppercase tracking-[0.4em] italic drop-shadow-[0_0_10px_#D4AF37] text-white">ZORVIA.LUXE</span>
-               <span className="text-[9px] tracking-[1.5em] uppercase opacity-40 italic mt-1 ml-1">Prestige_MMXXVI</span>
+      <nav className="sticky top-0 z-[100] bg-[#0A0A0A]/90 backdrop-blur-md border-b-2 border-[#D4AF37]/20 px-8 md:px-16 py-8 flex justify-between items-center transition-all duration-700">
+         <div className="flex items-center gap-12 group cursor-pointer">
+            <div className="flex flex-col leading-tight">
+               <span className="text-4xl font-extralight tracking-[0.3em] uppercase text-white">DECO.STUDIO</span>
+               <span className="text-[10px] font-bold tracking-[0.8em] uppercase opacity-40 mt-1">Prestige Collection</span>
             </div>
          </div>
          

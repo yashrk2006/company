@@ -10,42 +10,42 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const MonochromeMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-white text-black font-sans selection:bg-black selection:text-white pt-0 flex flex-col items-center">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-white text-[#09090B] font-sans selection:bg-[#09090B] selection:text-white pt-0 flex flex-col items-center">
       
       {/* 1. Fine Structure Grid (Fixed) */}
       <div className="fixed inset-0 pointer-events-none z-0">
-         <div className="absolute top-0 left-12 h-full w-px bg-black opacity-5" />
-         <div className="absolute top-0 right-12 h-full w-px bg-black opacity-5" />
-         <div className="absolute top-48 left-0 w-full h-px bg-black opacity-5" />
+         <div className="absolute top-0 left-12 h-full w-px bg-[#09090B] opacity-5" />
+         <div className="absolute top-0 right-12 h-full w-px bg-[#09090B] opacity-5" />
+         <div className="absolute top-48 left-0 w-full h-px bg-[#09090B] opacity-5" />
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-[0.03] pointer-events-none" />
       </div>
 
       {/* 2. Brutalist High-Contrast Navbar */}
-      <nav className="sticky top-0 z-[110] w-full bg-white border-b-[12px] border-black px-8 md:px-24 py-10 flex justify-between items-center bg-white/80 backdrop-blur-3xl transition-all duration-500">
+      <nav className="sticky top-0 z-[110] w-full bg-white border-b-[12px] border-[#09090B] px-8 md:px-24 py-10 flex justify-between items-center bg-white/80 backdrop-blur-3xl transition-all duration-500">
          <div className="flex items-center gap-8 group cursor-pointer">
             <div className="relative">
-               <div className="w-16 h-16 bg-black text-white flex items-center justify-center -rotate-6 group-hover:rotate-0 transition-all duration-700 shadow-[10px_10px_0px_rgba(0,0,0,0.1)]">
+               <div className="w-16 h-16 bg-[#09090B] text-white flex items-center justify-center -rotate-6 group-hover:rotate-0 transition-all duration-700 shadow-[10px_10px_0px_rgba(0,0,0,0.1)]">
                   <span className="text-4xl font-black italic">M</span>
                </div>
-               <div className="absolute -top-2 -right-2 w-4 h-4 bg-black rounded-full animate-ping" />
+               <div className="absolute -top-2 -right-2 w-4 h-4 bg-[#09090B] rounded-full animate-ping" />
             </div>
             <div className="flex flex-col leading-none group-hover:translate-x-4 transition-transform duration-700">
                <span className="text-4xl font-black uppercase tracking-tighter">MNCRM.SYSTEM</span>
-               <span className="text-[10px] font-bold tracking-[1.5em] uppercase opacity-40 mt-1">Binary Reserve MMXXVI</span>
+               <span className="text-[10px] font-bold tracking-[1.5em] uppercase opacity-40 mt-1">Institutional Archive</span>
             </div>
          </div>
          
-         <div className="hidden lg:flex gap-16 text-[10px] font-black uppercase tracking-[0.5em] text-black/40">
+         <div className="hidden lg:flex gap-16 text-[10px] font-black uppercase tracking-[0.5em] text-[#09090B]/40">
             {['Architecture', 'Systems', 'Archives', 'Essence'].map(item => (
-               <a key={item} href="#" className="hover:text-black hover:tracking-[0.8em] transition-all relative group py-2">
+               <a key={item} href="#" className="hover:text-[#09090B] hover:tracking-[0.8em] transition-all relative group py-2">
                   {item}
-                  <div className="absolute bottom-0 inset-x-0 h-[4px] bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
+                  <div className="absolute bottom-0 inset-x-0 h-[4px] bg-[#09090B] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                </a>
             ))}
          </div>
 
          <div className="flex items-center gap-8">
-            <button className="hidden sm:block px-12 py-4 bg-transparent text-black font-black uppercase text-xs tracking-[0.4em] border-[4px] border-black hover:bg-black hover:text-white transition-all shadow-[10px_10px_0px_rgba(0,0,0,0.2)] hover:shadow-none">
+            <button className="hidden sm:block px-12 py-4 bg-transparent text-[#09090B] font-black uppercase text-xs tracking-[0.4em] border-[4px] border-[#09090B] hover:bg-[#09090B] hover:text-white transition-all shadow-[10px_10px_0px_rgba(0,0,0,0.2)] hover:shadow-none">
                ACCESS_SYS
             </button>
             <Menu size={40} className="lg:hidden cursor-pointer" strokeWidth={3} />
@@ -53,7 +53,7 @@ const MonochromeMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero: Structural Purity */}
-      <section className="relative z-10 w-full p-8 md:p-8 border-b-[20px] border-black bg-white flex flex-col justify-center min-h-[80vh] max-w-screen-2xl mx-auto shadow-none">
+      <section className="relative z-10 w-full p-8 md:p-8 border-b-[20px] border-[#09090B] bg-white flex flex-col justify-center min-h-[100dvh] max-w-screen-2xl mx-auto shadow-none">
          <div className="flex flex-col gap-8 relative">
             <div className="space-y-16">
                <motion.div
@@ -61,15 +61,15 @@ const MonochromeMockup = ({ theme }) => {
                  whileInView={{ opacity: 1, x: 0 }}
                  transition={{ duration: 1, ease: "easeOut" }}
                  viewport={{ once: true }}
-                 className="inline-block px-8 py-3 bg-black text-white text-[12px] font-black uppercase tracking-[1em] italic"
+                 className="inline-block px-8 py-3 bg-[#09090B] text-white text-[12px] font-black uppercase tracking-[1em] italic"
                >
-                  PROTOCOL_4.8_STABLE
+                  PROTOCOL_STABLE
                </motion.div>
                
-               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.7] tracking-tighter uppercase break-words border-l-[40px] border-black pl-16 py-8 relative group cursor-default transition-all hover:bg-black hover:text-white">
+               <h1 className="text-5xl md:text-8xl lg:text-9xl font-black leading-[0.7] tracking-tighter uppercase break-words border-l-[40px] border-[#09090B] pl-16 py-8 relative group cursor-default transition-all hover:bg-[#09090B] hover:text-white">
                   ABSOLUTE <br />
                   CONTRAST.
-                  <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none group-hover:opacity-10 Transition-opacity">
+                  <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
                      <Zap size={300} strokeWidth={8} fill="currentColor" />
                   </div>
                </h1>
@@ -77,24 +77,24 @@ const MonochromeMockup = ({ theme }) => {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
                <div className="lg:col-span-8 flex flex-col gap-16">
-                  <p className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-[0.85] uppercase italic bg-black text-white px-8 py-12 shadow-[30px_30px_0px_rgba(0,0,0,0.1)]">
-                     "Clarity through violent subtraction. Building high-fidelity infrastructure with zero noise."
+                  <p className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-[0.85] uppercase italic bg-[#09090B] text-white px-8 py-12 shadow-[30px_30px_0px_rgba(0,0,0,0.1)]">
+                     "Clarity through subtraction. Building high-fidelity infrastructure with zero noise."
                   </p>
-                  <p className="text-xl font-bold uppercase tracking-widest opacity-40 leading-snug border-l-[12px] border-black/10 pl-10 max-w-4xl italic mt-8 font-mono">
-                     In the binary reserve, only the core logic remains. Minimalist structural builds designed to sustain centuries of trend erosion and digital fragmentation.
+                  <p className="text-xl font-bold uppercase tracking-widest opacity-40 leading-snug border-l-[12px] border-[#09090B]/10 pl-10 max-w-4xl italic mt-8 font-mono">
+                     In the binary reserve, only the core logic remains. Minimalist structural builds designed to sustain centuries of trend erosion.
                   </p>
                </div>
                
                <div className="lg:col-span-4 flex flex-col gap-12 w-full">
                   <motion.button 
                     whileHover={{ scale: 1.05, skewX: -4, x: 10 }}
-                    className="w-full py-10 bg-black text-white font-black uppercase tracking-[0.5em] text-2xl flex items-center justify-center gap-6 border-[8px] border-black shadow-[20px_20px_0px_rgba(0,0,0,0.1)] hover:shadow-none transition-all"
+                    className="w-full py-10 bg-[#09090B] text-white font-black uppercase tracking-[0.5em] text-2xl flex items-center justify-center gap-6 border-[8px] border-[#09090B] shadow-[20px_20px_0px_rgba(0,0,0,0.1)] hover:shadow-none transition-all"
                   >
                      EXECUTE_UPLINK <ArrowRight size={48} strokeWidth={4} />
                   </motion.button>
                   <div className="flex gap-8">
-                     <button className="flex-1 py-8 border-[6px] border-black text-black font-black uppercase tracking-[0.4em] text-sm hover:bg-black hover:text-white transition-all">PROJECT_INDEX</button>
-                     <button className="flex-1 py-8 border-[6px] border-black text-black font-black uppercase tracking-[0.4em] text-sm hover:bg-black hover:text-white transition-all">CONTACT_STRAT</button>
+                     <button className="flex-1 py-8 border-[6px] border-[#09090B] text-[#09090B] font-black uppercase tracking-[0.4em] text-sm hover:bg-[#09090B] hover:text-white transition-all">PROJECT_INDEX</button>
+                     <button className="flex-1 py-8 border-[6px] border-[#09090B] text-[#09090B] font-black uppercase tracking-[0.4em] text-sm hover:bg-[#09090B] hover:text-white transition-all">CONTACT_STRAT</button>
                   </div>
                </div>
             </div>

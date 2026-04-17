@@ -4,13 +4,13 @@ import {
   Star, Zap, Coffee, Music, Camera, Heart, Sun, Rainbow, Sparkles, 
   ChevronRight, CheckCircle2, Volume2, Gamepad, Radio, Play, ArrowRight,
   Disc, Tv, Mic, Volume1, Repeat, SkipForward, SkipBack, Power,
-  Download, Share2, MessageCircle, HelpCircle, Mail, Phone, MapPin
+  Download, Share2, MessageCircle, HelpCircle, Mail, Phone, MapPin, ArrowUpRight
 } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
 const RetroMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#FEF3C7] text-[#111] font-serif selection:bg-[#EA580C] selection:text-white pt-0 flex flex-col items-center">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#FEF3C7] text-[#111] font-serif selection:bg-[#EA580C] selection:text-white pt-0 flex flex-col items-center">
       
       {/* 1. Immersive Animated Groovy Sunburst Background */}
       <div className="fixed inset-0 flex items-center justify-center opacity-[0.08] pointer-events-none overflow-hidden z-0">
@@ -329,7 +329,7 @@ const RetroMockup = ({ theme }) => {
                >
                   VIBE! <Sun size={100} strokeWidth={8} className="group-hover:rotate-[360deg] transition-all duration-[2000ms]" />
                </motion.button>
-               <div className="text-xl font-black uppercase tracking-[3em] opacity-40 italic mt-16 text-[#111]">Transmitting Radical Energy // MMXXVI</div>
+               <div className="text-xl font-black uppercase tracking-[3em] opacity-40 italic mt-16 text-[#111]">Transmitting Radical Energy</div>
             </div>
          </motion.div>
       </section>

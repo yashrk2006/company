@@ -7,30 +7,30 @@ const VaporwaveMockup = ({ theme }) => {
   const accents = ['#FF71CE', '#01CDFE', '#05FFA1', '#B967FF', '#FFFB96'];
 
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#01CDFE] font-sans text-white selection:bg-[#FF71CE] selection:text-white pb-4">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#0A051F] font-sans text-white selection:bg-[#FF71CE] selection:text-white pb-4">
       
       {/* 1. Immersive Retro Background */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
          {/* Perspective Grid */}
          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200%] h-[70%] perspective-1000">
-            <div className="w-full h-full bg-[linear-gradient(rgba(185,103,255,0.4)_2px,transparent_2px),linear-gradient(90deg,rgba(185,103,255,0.4)_2px,transparent_2px)] bg-[size:60px_60px] animate-grid-drift origin-bottom" style={{ transform: 'rotateX(65deg)' }} />
+            <div className="w-full h-full bg-[linear-gradient(rgba(185,103,255,0.2)_2px,transparent_2px),linear-gradient(90deg,rgba(185,103,255,0.2)_2px,transparent_2px)] bg-[size:60px_60px] animate-grid-drift origin-bottom" style={{ transform: 'rotateX(65deg)' }} />
          </div>
 
          {/* Vaporwave Sun */}
          <motion.div 
-           animate={{ scale: [1, 1.05, 1], y: [0, -20, 0] }}
-           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-           className="absolute top-8 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-gradient-to-b from-[#FF71CE] via-[#FF71CE]/90 to-transparent shadow-[0_0_120px_rgba(255,113,206,0.5)]"
+           animate={{ scale: [1, 1.05, 1], y: [0, -10, 0] }}
+           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+           className="absolute top-8 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-b from-[#FF71CE] via-[#FF71CE]/40 to-transparent"
          >
-            <div className="absolute inset-0 flex flex-col gap-6 py-12 opacity-50">
+            <div className="absolute inset-0 flex flex-col gap-6 py-12 opacity-30">
                {[...Array(12)].map((_, i) => (
-                 <div key={i} className="h-2 bg-[#01CDFE]" style={{ width: '100%', opacity: (i + 1) * 0.08 }} />
+                 <div key={i} className="h-2 bg-[#0A051F]" style={{ width: '100%', opacity: (i + 1) * 0.08 }} />
                ))}
             </div>
          </motion.div>
 
          {/* Floating Aesthetic Elements */}
-         <div className="absolute bottom-0 left-0 w-full h-full opacity-30 pointer-events-none">
+         <div className="absolute bottom-0 left-0 w-full h-full opacity-20 pointer-events-none">
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[radial-gradient(ellipse_at_bottom_left,#05FFA1_0%,transparent_70%)] blur-3xl" />
             <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(ellipse_at_top_right,#B967FF_0%,transparent_70%)] blur-3xl" />
          </div>
@@ -38,7 +38,7 @@ const VaporwaveMockup = ({ theme }) => {
 
       {/* 2. Floating Navbar */}
       <nav className="sticky top-6 z-[100] mx-auto max-w-7xl px-4 flex items-center h-24">
-        <div className="w-full h-full bg-[#1A103C]/40 backdrop-blur-3xl border-4 border-[#B967FF] flex justify-between items-center px-12 shadow-[8px_8px_0px_#05FFA1]">
+        <div className="w-full h-full bg-[#1A103C]/60 backdrop-blur-3xl border-4 border-[#B967FF] flex justify-between items-center px-12 shadow-[8px_8px_0px_#05FFA1]">
            <div className="flex items-center gap-4 group cursor-pointer">
               <div className="w-12 h-12 bg-[#FF71CE] flex items-center justify-center border-2 border-white rotate-12 group-hover:rotate-0 transition-transform shadow-[4px_4px_0px_white]">
                  <span className="text-3xl font-black italic">V</span>
@@ -59,26 +59,20 @@ const VaporwaveMockup = ({ theme }) => {
       </nav>
 
       {/* 3. Hero Section */}
-      <section className="relative z-20 min-h-fit flex flex-col items-center justify-center text-center p-8 md:p-10">
+      <section className="relative z-20 min-h-[100dvh] flex flex-col items-start justify-center p-8 md:p-24 lg:p-48 text-left">
          <motion.div
-           initial={{ opacity: 0, scale: 0.5 }}
-           animate={{ opacity: 1, scale: 1 }}
+           initial={{ opacity: 0, x: -100 }}
+           animate={{ opacity: 1, x: 0 }}
+           transition={{ duration: 1.2, ease: "easeOut" }}
            className="relative mb-24"
          >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black italic uppercase tracking-tighter leading-none text-white drop-shadow-[0_0_40px_rgba(255,113,206,0.6)] relative z-10">
+            <h1 className="text-5xl md:text-8xl lg:text-9xl font-black italic uppercase tracking-tighter leading-none text-white relative z-10">
                VISUAL <br />
-               <span className="text-[#05FFA1] drop-shadow-[0_0_30px_rgba(5,255,161,0.5)]">EUPHORIA.</span>
+               <span className="text-[#05FFA1] decoration-white underline decoration-8 underline-offset-8">EUPHORIA.</span>
             </h1>
-            <motion.div 
-              animate={{ x: [-4, 4, -4], opacity: [0.4, 0.7, 0.4] }}
-              transition={{ duration: 0.15, repeat: Infinity }}
-              className="absolute inset-0 text-5xl md:text-6xl lg:text-7xl font-black italic uppercase tracking-tighter leading-none text-[#FF71CE] blur-[6px] -z-10 translate-x-2 translate-y-2"
-            >
-               VISUAL <br /> EUPHORIA.
-            </motion.div>
          </motion.div>
 
-         <div className="max-w-3xl w-full bg-[#1A103C]/70 backdrop-blur-2xl border-4 border-[#B967FF] p-12 shadow-[15px_15px_0px_#05FFA1] text-left relative overflow-hidden">
+         <div className="max-w-3xl w-full bg-[#1A103C]/80 backdrop-blur-2xl border-4 border-[#B967FF] p-12 shadow-[15px_15px_0px_#05FFA1] text-left relative overflow-hidden">
             {/* Holographic Overlays */}
             <div className="absolute top-0 right-0 p-8 opacity-10">
                <Music size={120} className="text-[#05FFA1]" />
@@ -86,15 +80,15 @@ const VaporwaveMockup = ({ theme }) => {
 
             <div className="flex justify-between items-center border-b-2 border-[#B967FF] pb-6 mb-8">
                <div className="flex gap-3">
-                  <div className="w-4 h-4 bg-[#FF71CE] rounded-full shadow-[0_0_10px_#FF71CE]" />
-                  <div className="w-4 h-4 bg-[#05FFA1] rounded-full shadow-[0_0_10px_#05FFA1]" />
-                  <div className="w-4 h-4 bg-[#01CDFE] rounded-full shadow-[0_0_10px_#01CDFE]" />
+                  <div className="w-4 h-4 bg-[#FF71CE] rounded-full" />
+                  <div className="w-4 h-4 bg-[#05FFA1] rounded-full" />
+                  <div className="w-4 h-4 bg-[#01CDFE] rounded-full" />
                </div>
-               <span className="text-xs font-black uppercase tracking-[0.5em] opacity-40 italic">BUFFERING_MEMORY // 1994</span>
+               <span className="text-xs font-black uppercase tracking-[0.5em] opacity-40 italic">STATION: DREAMSCAPE</span>
             </div>
 
-            <p className="text-3xl md:text-4xl font-black italic leading-[1.1] text-[#05FFA1] mb-12 drop-shadow-md">
-               "Architecting the digital afterlife. Retro-futuristic realms designed for peak nostalgia and high-speed dreams."
+            <p className="text-3xl md:text-4xl font-black italic leading-[1.1] text-[#05FFA1] mb-12">
+               "Architecting the digital afterlife. Retro-futuristic realms designed for peak nostalgia."
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">

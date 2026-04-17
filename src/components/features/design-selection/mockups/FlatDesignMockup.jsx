@@ -10,7 +10,7 @@ import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../u
 
 const FlatDesignMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-[#ECF0F1] text-[#2C3E50] font-sans selection:bg-[#3498DB] selection:text-white flex flex-col pt-0">
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-[#ECF0F1] text-[#2C3E50] font-sans selection:bg-[#3498DB] selection:text-white flex flex-col pt-0">
       {/* 1. Global 2D Geometric Vectors */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
          <div className="absolute -top-8 -right-20 w-[40rem] h-[40rem] bg-[#3498DB] rounded-full opacity-5" />
@@ -27,7 +27,7 @@ const FlatDesignMockup = ({ theme }) => {
             </div>
             <div className="flex flex-col leading-none">
                <span className="text-3xl font-black tracking-tight text-[#2C3E50]">ZORVIA_FLAT</span>
-               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#7F8C8D] mt-1">Simple Systems v4.0</span>
+               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#7F8C8D] mt-1">Simple Systems</span>
             </div>
          </div>
          

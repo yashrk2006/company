@@ -3,36 +3,39 @@ import { motion } from 'framer-motion';
 import { 
   Circle, Crosshair, Plus, Minus, Move, LayoutGrid, ArrowRight,
   Database, Shield, Globe, Layers, BarChart3, Check, MousePointer2,
-  Settings, Zap, AlertCircle, ChevronRight
+  Settings, Zap, AlertCircle, ChevronRight, Star
 } from 'lucide-react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from '../../../ui/Icons';
 
 const SwissMockup = ({ theme }) => {
   return (
-    <div className="min-h-fit relative overflow-x-hidden bg-white text-black font-sans selection:bg-[#E6192E] selection:text-white flex flex-col">
-      {/* 1. Global Red Highlight Layer */}
-      <div className="fixed top-0 right-0 w-[40%] h-full bg-[#E6192E]/[0.03] border-l border-black/5 z-0" />
+    <div className="min-h-[100dvh] relative overflow-x-hidden bg-white text-[#09090B] font-sans selection:bg-[#FF0000] selection:text-white pt-0 flex flex-col items-center">
+      
+      {/* 1. Swiss Grid System */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+         <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
+         <div className="absolute top-0 left-[25%] h-full w-px bg-[#09090B] opacity-5" />
+         <div className="absolute top-0 left-[50%] h-full w-px bg-[#09090B] opacity-5" />
+         <div className="absolute top-0 left-[75%] h-full w-px bg-[#09090B] opacity-5" />
+      </div>
 
-      {/* 2. Structured Grid Navbar */}
-      <nav className="sticky top-0 z-[100] bg-white border-b-2 border-black px-12 py-8 flex justify-between items-center">
-         <div className="flex items-center gap-12">
-            <div className="flex items-center gap-4 group cursor-pointer">
-               <div className="w-10 h-10 bg-[#E6192E] flex items-center justify-center text-white transition-all group-hover:rotate-90">
-                  <Plus size={24} strokeWidth={4} />
-               </div>
-               <div className="flex flex-col leading-none">
-                  <span className="text-2xl font-black uppercase tracking-tighter">SWISS.ZORVIA</span>
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 mt-1">Ref: International_CH</span>
-               </div>
+      {/* 2. Global Functional Navbar */}
+      <nav className="sticky top-0 z-[110] w-full bg-white border-b-2 border-[#09090B] px-12 py-8 flex justify-between items-center transition-all duration-500">
+         <div className="flex items-center gap-12 group cursor-pointer">
+            <div className="w-12 h-12 bg-[#FF0000] flex items-center justify-center text-white">
+               <span className="text-3xl font-black">+</span>
             </div>
+            <div className="flex flex-col leading-none">
+               <span className="text-4xl font-black uppercase tracking-tighter">SWISS.ARCHIVE</span>
+               <span className="text-[9px] font-bold tracking-[1em] uppercase opacity-40 mt-1">Design Institute</span>
+            </div>
+         </div>
             
             <div className="hidden lg:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] opacity-40">
                {['Explore', 'Modules', 'Archives', 'Security'].map(item => (
                   <a key={item} href="#" className="hover:opacity-100 hover:text-[#E6192E] transition-all">{item}</a>
                ))}
             </div>
-         </div>
-
          <div className="flex items-center gap-8">
             <div className="hidden sm:flex flex-col items-end text-[9px] font-black uppercase tracking-widest opacity-40">
                <span>Sync: 99.8%</span>
@@ -274,4 +277,3 @@ const SwissMockup = ({ theme }) => {
 };
 
 export default SwissMockup;
-旋
